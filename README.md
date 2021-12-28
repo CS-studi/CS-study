@@ -3,7 +3,7 @@
 ### 💫 Contributor/참여자
 |___김지원___|___김병철___|___이현동___|___하현준___|
 |----------|-----------|----------|----------|
-|||<img src="img/lhd.jpeg" height="100" width="100" align-item="center">||
+|||<p align="center"><img src="img/lhd.jpeg" height="100" width="100" align-item="center"></p>||
 |[@annie1004619](https://github.com/annie1004619)|[@VSFe](https://github.com/VSFe)|[@LEEHYUNDONG](https://github.com/LEEHYUNDONG)|[@guswns3371](https://github.com/guswns3371)|
 
 ### 👊 Rules/스터디룰
