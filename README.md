@@ -1,15 +1,20 @@
-# CS_study
+# ✨ CS-study
 
-### 💫 Contributor/참여자
-|___김지원___|___김병철___|___이현동___|___하현준___|
+### 💫 Contributors
+|___🌎김지원___|___🌍김병철___|___🌏이현동___|___🌏하현준___|
 |----------|-----------|----------|----------|
-|||<p align="center"><img src="img/lhd.jpeg" height="100" width="100" align-item="center"></p>||
+|||<p align="center"><img src="img/lhd.jpeg" height="120" width="120" align-item="center"></p>||
 |[@annie1004619](https://github.com/annie1004619)|[@VSFe](https://github.com/VSFe)|[@LEEHYUNDONG](https://github.com/LEEHYUNDONG)|[@guswns3371](https://github.com/guswns3371)|
 
-### 👊 Rules/스터디룰
-> ✔️ commit 룰을 따라주세요.😾
+### 👊 Rules
+
 > ✔️  주제에 본인이 맡은 파트를 링크를 걸어주세요. ✍️
-> ✔️ 사진을 첨부할 때는 하나의 img_src 폴더에 넣고 push한 후 링크를 걸어주세요. 🧚
+
+> ✔️✔️ 사진을 첨부할 때는 하나의 img_src 폴더에 넣고 push한 후 링크를 걸어주세요. 🧚
+
+> ✔️✔️ commit 시 message/ git commit -m “Docs:주차_일자/작성자/주제”
+
+
 
 ***
 
@@ -22,3 +27,4 @@
 운영체제|2022/01/01|4주차||
 데이터베이스|2022/01/01|5주차||
 
+> 스케줄 계획 세우고 추가하기
