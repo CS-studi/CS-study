@@ -1,5 +1,5 @@
 # Data Structure
-- Array Vs Linked List
+- Array Vs Linked List 👈
 - Stack and Queue
 - Tree
     - Binary Tree
@@ -9,7 +9,7 @@
 - Heap
     - min Heap
     - max Heap
-- Red-Black Tree
+- Red-Black Tree 👈
     - 정의
     - 특징
     - 삽입
@@ -24,6 +24,6 @@
     - Graph 용어 정리
     - Graph 구현
     - Graph 탐색
-    - Minimum Spanning Tree
+    - Minimum Spanning Tree 👈
         - Kruskal algorithm
         - Prim algorithm
