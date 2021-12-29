@@ -17,14 +17,15 @@
 
 
 ***
-### 🏔 Data Structure [Link](DataStructure/README.md)
+### 🏔 Data Structure [Link](DataStructure)
 
-### 🏔 Network [Link](Network/README.md)
+### 🏔 Network [Link](Network)
 
-### 🏔 Database [Link](Database/README.md)
+### 🏔 Database [Link](Database)
 
-### 🏔 OS [Link](OS/README.md)
+### 🏔 OS [Link](OS)
 
+***
 
 ## 👊 Schedule/스터디 스케줄
 | __과목__ |__일자__|__주차__|__주제__|
