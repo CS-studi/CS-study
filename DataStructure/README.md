@@ -1,4 +1,4 @@
-# Data Structure
+# 🌳 Data Structure
 - Array Vs Linked List 👈
 - Stack and Queue
 - Tree
