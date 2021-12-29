@@ -1,10 +1,14 @@
 # ✨ CS-study
+> 함께 성장하고 각자 목표한 바를 이루기 위한 모임
+힘든 취준 기간 동안에 다 같이 으샤으샤하며 같이 성장할 수 있었으면 좋겠습니다. 서로 부족한 부분은 issue를 통해 알려주세요. 🙂
 
 ### 💫 Contributors
 |___🌎김지원___|___🌍김병철___|___🌏이현동___|___🌏하현준___|
 |----------|-----------|----------|----------|
 |||<p align="center"><img src="img/lhd.jpeg" height="120" width="120" align-item="center"></p>||
 |[@annie1004619](https://github.com/annie1004619)|[@VSFe](https://github.com/VSFe)|[@LEEHYUNDONG](https://github.com/LEEHYUNDONG)|[@guswns3371](https://github.com/guswns3371)|
+
+
 
 ### 👊 Rules
 
@@ -17,6 +21,8 @@
 
 
 ***
+
+
 ### 🏔 Data Structure [Link](DataStructure)
 
 ### 🏔 Network [Link](Network)
@@ -25,7 +31,9 @@
 
 ### 🏔 OS [Link](OS)
 
+
 ***
+
 
 ## 👊 Schedule/스터디 스케줄
 | __과목__ |__일자__|__주차__|__주제__|
