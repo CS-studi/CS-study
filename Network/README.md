@@ -1,6 +1,6 @@
 # Network
 
-### Network Curriculum
+### 🌌 Network Curriculum
 - GET, POST 방식의 차이점
 - TCP 3-way-handshake
 - TCP 와 UDP 의 차이점
