@@ -8,7 +8,7 @@
 |___🌎김지원___|___🌍김병철___|___🌏이현동___|___🌏하현준___|
 |----------|-----------|----------|----------|
 |||<p align="center"><img src="img/lhd.jpeg" height="120" width="120" align-item="center"></p>||
-|[@annie1004619](https://github.com/annie1004619)|[@VSFe](https://github.com/VSFe)|[@LEEHYUNDONG](https://github.com/LEEHYUNDONG)|[@guswns3371](https://github.com/guswns3371)|
+|[@annie1004619](https://github.com/annie1004619)|[@minseongkim97](https://github.com/minseongkim97)|[@LEEHYUNDONG](https://github.com/LEEHYUNDONG)|[@guswns3371](https://github.com/guswns3371)|
 
 
 
