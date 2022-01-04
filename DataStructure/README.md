@@ -1,6 +1,6 @@
 # 🌳 Data Structure
 - Array Vs Linked List 👈
-- [Stack and Queue](guswns3371/StackAndQueue.md)
+- [Stack and Queue](StackAndQueue.md)
 - [Tree](Tree.md)
     - Binary Tree
     - Full Binary T
