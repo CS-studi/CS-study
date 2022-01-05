@@ -70,7 +70,14 @@ __Heapify__ : 특정 노드를 중심으로 그 밑의 트리들이 힙 성질�
 
 ### 📚 참고
 
-[Heap](https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-%ED%9E%99Heap)
+[Heap1](https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-%ED%9E%99Heap)
+
+[Heap2](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
+
+[Heap3](https://www.youtube.com/watch?v=AjFlp951nz0)
+
+[Heap4](https://lipcoder.tistory.com/100)
+
 <br>
 
 
