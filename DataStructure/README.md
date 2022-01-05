@@ -6,7 +6,7 @@
     - Full Binary T
     - Complete Binary Tree
     - BST
-- Heap
+- [Heap](Heap.md)
     - min Heap
     - max Heap
 - Red-Black Tree 👈
