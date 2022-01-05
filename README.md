@@ -41,7 +41,7 @@
 ## 👊 Schedule/스터디 스케줄
 | __과목__ |__일자__|__주차__|__주제__|
 ----|-----|-----|-------|
-자료구조|2022/01/01|1주차|Array vs. LinkedList<br>[Tree](DataStructure/Tree.md)<br> [Stack and Queue](DataStructure/StackAndQueue.md)<br>BinaryHeap|
+자료구조|2022/01/01|1주차|Array vs. LinkedList<br>[Tree](DataStructure/Tree.md)<br> [Stack and Queue](DataStructure/StackAndQueue.md)<br> [BinaryHeap](DataStructure/Heap.md)|
 <!-- 자료구조|2022/01/01|2주차|Red-BlackTree<br>Hash Table<br>Graph1<br>Graph2|
 네트워크|2022/01/01|3주차|GET, POST, DELETE 방식<br>TCP, UDP<br> HTTP와 HTTPS 차이<br> 웹 통신, DNS|
 운영체제|2022/01/01|4주차||
