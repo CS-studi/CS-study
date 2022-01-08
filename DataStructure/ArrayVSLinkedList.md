@@ -1,5 +1,11 @@
 # Array and LinkedList
 
+> Array
+
+> Array vs List
+
+> LinkedList
+
 ## Array
 
 순차적으로 데이터를 저장하는 자료 구조
@@ -70,7 +76,7 @@ Array 특성상, 추가적으로 할당된 메모리 또한 순차적으로 들�
 
 ### 리스트(list)
 
-**순서가 있는 데이터의 모임**이다. 다른 말로는 시퀀스(sequencce)라고도 부른다.
+**순서가 있는 데이터의 모임**이다. 다른 말로는 시퀀스(sequence)라고도 부른다.
 
 - 순차성을 보장하지 못하기 때문에 `spacial locality` 보장이 되지 않아 `cache hit`가 어렵다.
 - 리스트에서 인덱스는 몇 번째 데이터인가 정도의 의미를 가진다. (배열에서의 인덱스는 값에 대한 유일무이한 식별자)
@@ -138,7 +144,7 @@ struct LinkedList {
 }
 ```
 
-![Untitled](img/ArrayVSLinkedList/linkedlist-2.png)
+![Untitled](img/ArrayVSLinkedList/linkedlist-2png.png)
 
 - 각 노드는 연속된 공간에 저장되어 있지 않고 메모리의 여러 부분에 분포되어 있다.
 - 각 노드에 다음 노드의 주소를 저장함으로써 다음 노드를 탐색할 수 있다.
