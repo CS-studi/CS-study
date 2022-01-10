@@ -14,7 +14,8 @@ BST가 가지는 가장 중요한 속성만 생각을 해봅시다. `나를 기�
 ![RbTree](img/RBTree/RbTree.png)
 
 <br><br>
-## 📚 Table of Content
+
+## 📚 Table of Contents
 > Red-Black Tree 조건 
 
 > Red-Black Tree 예시
