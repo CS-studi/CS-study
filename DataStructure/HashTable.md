@@ -2,11 +2,11 @@
 
 # Hash Table
 
-> Hash Table
-Hash Function
-Hash Collision
-Dynamic Resizing
-Java의 HashTable과 HashMap
+> Hash Table  
+> Hash Function  
+> Hash Collision  
+> Dynamic Resizing  
+> Java의 HashTable과 HashMap
 > 
 
 # Hash Table
@@ -109,7 +109,7 @@ while(Node != null){  // 탐색 노드가 비어있다면 searchKey가 아직 �
 
 ![Untitled](img/HashTable/Untitled%204.png)
 
-[Quadratic Probing 단점 : `Secondary Clustering` 문제]
+> Quadratic Probing 단점 : `Secondary Clustering` 문제
 
 `n^2` 간격으로 filled bucket이 존재하여 key의 hash값(index) 보다 훨씬 떨어진 곳에 데이터가 삽입되는 현상이다. 이는 filled bucket 군집을 크게만들지 않기 때문에 Primary Clustering 보다 덜 심각한 문제이다.
 
