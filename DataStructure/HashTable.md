@@ -1,6 +1,4 @@
-# Hash Table
-
-# Hash Table
+# 목차
 
 > Hash Table  
 > Hash Function  
