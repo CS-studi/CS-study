@@ -45,10 +45,51 @@ HashMap이 담을 수 있는 객체가 나타내는 값의 개수는 int 의 표
 > `hash bucket` 인덱스
 
 ```java
+Object object = new Object();
 int m = hashTableSize; // m : 해시 테이블의 크기
-int hash = X.hashCode(); // hashCode() : 자바 객체의 hash function 
+int hash = object.hashCode(); // hashCode() : 자바 객체의 hash function 
 int index = hash % m; // hash bucket 인덱스
 ```
+<details><summary>hashCode 메소드</summary>
+<p>
+
+
+```java
+/**
+* Returns a hash code value for the object. This method is
+* supported for the benefit of hash tables such as those provided by
+* {@link java.util.HashMap}.
+* @return  a hash code value for this object.
+* @see     java.lang.Object#equals(java.lang.Object)
+* @see     java.lang.System#identityHashCode
+*/
+@HotSpotIntrinsicCandidate
+public native int hashCode();
+
+/**
+* Returns the same hash code for the given object as
+* would be returned by the default method hashCode(),
+* whether or not the given object's class overrides
+* hashCode().
+* The hash code for the null reference is zero.
+*
+* @param x object for which the hashCode is to be calculated
+* @return  the hashCode
+* @since   1.1
+* @see Object#hashCode
+* @see java.util.Objects#hashCode(Object)
+*/
+@HotSpotIntrinsicCandidate
+public static native int identityHashCode(Object x);
+```
+- 자바 객체의 `hashCode()` 메소드는 int형의 해시값을 반환한다. 기본적으로 `System.identityHashCode` 반환값을 반환하며, 사용자가 재정의할 수 있다.
+
+</p>
+</details>
+  
+
+
+<br/>
 
 > `1/m` 확률의 `해시 충돌`
 
