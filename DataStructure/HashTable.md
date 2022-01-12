@@ -45,9 +45,8 @@ HashMap이 담을 수 있는 객체가 나타내는 값의 개수는 int 의 표
 > `hash bucket` 인덱스
 
 ```java
-Object object = new Object();
 int m = hashTableSize; // m : 해시 테이블의 크기
-int hash = object.hashCode(); // hashCode() : 자바 객체의 hash function 
+int hash = object.hashCode(); // object: 자바 객체, hashCode() : 자바 객체의 hash function 
 int index = hash % m; // hash bucket 인덱스
 ```
 <details><summary>hashCode 메소드</summary>
