@@ -25,7 +25,7 @@ BST가 가지는 가장 중요한 속성만 생각을 해봅시다. `나를 기�
 ## Red-Black Tree가 되기 위한 조건
 ```
 1. Root property :루트 노드의 색깔은 검정이다.
-2. External property :모든 external(lead) node들은 검정이다.
+2. External property :모든 external(leaf) node들은 검정이다.
 3. Internal property :빨강노드의 자식은 반드시 검정이다.
 -> no double red :빨간색 노드가 연속으로 나올 수 없다.
 4. Depth property :모든 리프노드에서 black depth는 같다.
@@ -52,7 +52,10 @@ BST가 가지는 가장 중요한 속성만 생각을 해봅시다. `나를 기�
 
 ## Restructuring & Recoloring
 
+> Restructuring
 ![structAndColor](img/RBTree/restructingAndRecoloring.png)
+
+> Recoloring
 ![recoloring](img/RBTree/recoloring.png)
 
 double red를 해결하는 방법은 `현재 insert노드의 부모의 형제 노드의 색깔`에 따라서 수행하는 메커니즘이 다릅니다.
@@ -115,8 +118,9 @@ restructuring은 다른 서브트리에 영향을 미치지 않기 때문에 dou
 
 ### recoloring 시간 복잡도
 그러면 recoloring에서 부모 노드와 부모의 형제 노드를 검정으로 바꿔도 4개 조건에 위배가 되지 않는가?
--> 4번 depth property를 만족합니다. black depth는 1만 증가하는 것이라 관계 없습니다.
 <br>
+-> 4번 depth property를 만족합니다. black depth는 1만 증가하는 것이라 관계 없습니다.
+<br><br>
 시간 복잡도를 알아보면 insert해줄 위치를 찾는데 O(logn) 앞에서 계속 봤으니 이것에 대한 의문점은 없으리라 생각됩니다. recoloring을 해주는데 색깔만 바꿔주기 때문에 O(1)의 시간이 걸리고 앞서 언급한 root node까지 퍼져 나가면 O(logn)시간이 걸리게 됩니다.
 <br>
 Red-black tree에서 삽입을 해주는 경우 두 가지 메커니즘의 시간 복잡도 모두 O(logn)입니다.
@@ -132,6 +136,9 @@ Red-black tree에서 삽입을 해주는 경우 두 가지 메커니즘의 시�
 <br>
 
 [개념 및 알고리즘](https://zeddios.tistory.com/237)
+
+<br>
+[시간 복잡도](https://lordofkangs.tistory.com/80)
 
 ***
 ## ⁉️ QnA
