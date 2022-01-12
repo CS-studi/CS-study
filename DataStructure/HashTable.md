@@ -197,7 +197,7 @@ target 데이터를 찾거나 empty bucket에 도달하기 전까지 탐색(prob
 
 하나의 hash bucket에 해당하는 LinkedList의 데이터 개수가 `8개`가 되면 구조를 `LinkedList -> Red-Black Tree` 로 변환한다. LinkedList 탐색 성능의 Worst Case는 O(N) 이지만 Red-Black Tree의 경우 O(logN)이기 때문이다.
 
-하나의 hash bucket에 할당된 데이터 개수가 `6개`이면 구조를 `Red-Black Tree -> LinkedList`로 변환한다. 데이터 개수가 적으면 Red-Black Tree와 LinkedList간의 탐색 성능 차이가 거의 없기 때문이다.
+하나의 hash bucket에 할당된 데이터 개수가 `6개`이면 구조를 `Red-Black Tree -> LinkedList`로 변환한다. 데이터 개수가 적으면 Red-Black Tree와 LinkedList간의 탐색 성능 차이가 거의 없고, Red-Black Tree는 LinkedList보다 메모리 사용량이 많기 때문이다.
 
 > 변환 기준이 `6개`, `8개` 인 이유
 
@@ -233,7 +233,7 @@ public class LinkedHashMap<K,V> extends HashMap<K,V> implements Map<K,V> {
 
 # Dynamic Resizing
 
-hash bucket의 개수가 적다면 메모리 사용을 아낄 수 있지만 해시 충돌로 인해 성능 저하가 발생한다. 그러므로 HashMap은 `load factor`가 임계점(`0.75`)을 넘어갈 경우, hash bucket 개수를 2배로 늘린다.
+hash bucket의 개수가 적다면 메모리 사용을 아낄 수 있지만 해시 충돌로 인해 성능 저하가 발생한다. 그러므로 자바의 HashMap은 `load factor`가 임계점(`0.75`)을 넘어갈 경우에 hash bucket 개수를 2배로 늘린다.
 
 > `load factor` (적재율)
 
@@ -250,21 +250,14 @@ load factor는 hash table에 데이터가 차있는 비율을 나타낸다.
 
 # Java의 HashTable과 HashMap
 
-`HashTable`
+| HashTable | HashMap |
+| --- | --- |
+| JDK 1.0부터 존재한 Java API | Java 2에 선보인 Java Collections Framework API |
+| 현재까지 HashTable의 구현에 변화가 거의 없다. (하위 호환성을 제공하기 위해 남아있다) | 지속적으로 개선이 이뤄지고 있다. |
+| 보조 해시 함수를 사용하지 않는다. | 보조 해시 함수를 사용하기 때문에 해시 충돌이 HashTable보다 덜 발생할 수 있다. |
+| 다중 스레드 환경에서 Thread safe 하다 | 다중 스레드 환경에서 Thread safe 하지 않다 |
+| key값에 null을 저장할 수 없다 | key값에 null을 저장할 수 있다 |
 
-- JDK 1.0부터 존재한 Java API이다.
-- 현재까지 HashTable의 구현에 변화가 거의 없다. (하위 호환성을 제공하기 위해 남아있다)
-- 보조 해시 함수를 사용하지 않는다.
-- 다중 스레드 환경에서 Thread safe 하다
-- key값에 null을 저장할 수 없다
-
-`HashMap`
-
-- Java 2에 선보인 Java Collections Framework API이다.
-- 지속적으로 개선이 이뤄지고 있다.
-- 보조 해시 함수를 사용하기 때문에 해시 충돌이 HashTable보다 덜 발생할 수 있다.
-- 다중 스레드 환경에서 Thread safe 하지 않다
-- key값에 null을 저장할 수 있다
 
 ## 참고
 
