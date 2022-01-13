@@ -72,19 +72,24 @@ restructuring에 개입하는 노드는 `현재 insert된 노드(z), 부모 노�
 
 
 1. 나, 부모, 부모의 부모 선택
-![restruturing](img/RBTree/restructuring.png)
+
+<img src="img/RBTree/restructuring.png" height="150" width="170">
 
 2. 일자로 두고 원소 정렬한다.
-![restruturing](img/RBTree/restructuring2.png)
+
+<img src = "img/RBTree/restructuring2.png" height="150" width="170">
 
 3. 정렬된 원소에서 가운데 값을 부모로 만들고 이진 탐색 트리로 구성한다.
-![restruturing](img/RBTree/restructuring3.png)
+
+<img src="img/RBTree/restructuring3.png" height="150" width="170">
 
 4. 현재 루트 노드만 검정색 나머지 자식 노드를 빨강색으로 바꿔준다.
-![restruturing](img/RBTree/restructuring4.png)
+
+<img src = "img/RBTree/restructuring4.png" height="150" width="170">
 
 5. 원래 key가 2인 노드 z의 부모의 형제 노드를 4자식으로 붙여준다.
-![restruturing](img/RBTree/restructuring5.png)
+
+<img src = "img/RBTree/restructuring5.png" height="150" width="170">
 
 #### Restructuring의 시간 복잡도
 
@@ -101,19 +106,24 @@ restructuring은 다른 서브트리에 영향을 미치지 않기 때문에 dou
 <br>
 
 1. recoloring을 하는 상황
-![recoloring](img/RBTree/recoloring1.png)
+
+<img src = "img/RBTree/recoloring1.png" height="150" width="170">
 
 2. 삽입된 노드 z의 부모 (v)와 그 것의 형제(w)의 색깔을 검정으로 만들어 준다.
-![recoloring](img/RBTree/recoloring2.png)
+
+<img src = "img/RBTree/recoloring2.png" height="150" width="170">
 
 3. 삽입된 노드(z)의 부모의 부모를 빨강으로 만들어준다.
-![recoloring](img/RBTree/recoloring3.png)
+
+<img src = "img/RBTree/recoloring3.png" height="150" width="170">
 
 4. 만약 부모의 부모가 root node라면 1번 조건에 의해서 검정이 된다.
-![recoloring](img/RBTree/recoloring4.png)
+
+<img src = "img/RBTree/recoloring4.png" height="150" width="170">
 
 5. 하지만 사실 알고보니 지금 우리가 보는 트리가 어떤 트리의 일부분 서브트리라면 (4번은 root가 아니었음) 이 상태로 둬야하는데 4번 부모 노드가 빨강일 것이다. 그렇게 되면 `double red`가 발생하게 되는데 이경우 recoloring이나 restructuring을 해줘야 할 수도 있는 상황입니다. 최악의 경우 root node까지 다시 두 가지 메커니즘을 이용해야 할 수도 있는 것입니다.
-![recoloring](img/RBTree/recoloring5.png)
+
+<img src = "img/RBTree/recoloring5.png" height="150" width="170">
 <br><br>
 
 ### recoloring 시간 복잡도
