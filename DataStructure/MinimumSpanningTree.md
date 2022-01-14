@@ -27,7 +27,7 @@
 
 
 ### 과정
-![](img\MinimumSpanningTree\kruskal.png)
+![kruskal](img/MinimumSpanningTree/kruskal.png)
 1. 그래프의 간선들을 가중치의 오름차순으로 정렬한다.
 2. 정렬된 간선 리스트에서 순서대로 사이클을 형성하지 않는 간선을 선택한다.
     - 즉, 가장 낮은 가중치를 먼저 선택한다.
@@ -102,7 +102,7 @@ print(total_cost)
 - 이전 단계에서 만들어진 신장 트리를 확장하는 방법이다.
 
 ### 과정
-![](img\MinimumSpanningTree\prim.png)
+![prim](img/MinimumSpanningTree/prim.png)
 1. 시작 단계에서는 시작 정점만이 MST 집합에 포함된다.
 2. 앞 단계에서 만들어진 MST 집합에 인접한 정점들 중에서 최소 간선으로 연결된 정점을 선택하여 트리를 확장한다.
     - 즉, 가장 낮은 가중치를 먼저 선택한다.
@@ -180,6 +180,5 @@ print(prim(graph,1))
 ---
 
 <details>
-크루스칼과 프림 알고리즘의 시간복잡도에 대해 설명하시오.
-<summary></summary>
+<summary>크루스칼과 프림 알고리즘의 시간복잡도에 대해 설명하시오.</summary>
 </details>
