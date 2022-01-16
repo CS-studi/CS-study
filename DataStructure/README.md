@@ -20,10 +20,10 @@
         - Open Addressing
         - Separate Chaining
     - Resize
-- Graph
+- [Graph](Graph.md)
     - Graph 용어 정리
     - Graph 구현
     - Graph 탐색
-    - Minimum Spanning Tree 👈
+    - [Minimum Spanning Tree](MinimumSpanningTree.md) 👈
         - Kruskal algorithm
         - Prim algorithm
