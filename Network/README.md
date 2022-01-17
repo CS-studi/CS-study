@@ -3,7 +3,7 @@
 ### 🌌 Network Curriculum
 1. [GET, POST 방식의 차이점]()👈
     - [Rest and RestAPI]()
-2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들]()
+2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
     - [SSL, 공개키/대칭키]()
 
 3. [TCP 3-way-handshake]()
