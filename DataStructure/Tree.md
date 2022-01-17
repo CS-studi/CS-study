@@ -161,11 +161,15 @@ def preorder(self, node):
 
 ***
 # ⁉️ QnA
-<details>
+> 1. BST와 Binary tree에 대해서 설명하시오.
+> 2. 중위 순회 코드를 작성해보시오.
+> 3. full binary tree와 complete binary 트리의 특징을 말하시오.
+> 4. 트리의 정의(성질) 최소 3가지를 말하시오.
+<!-- <details>
 <summary>BST와 Binary Tree에 대해서 설명하시오</summary>
 <div markdown="2">       
 
 이진 탐색 트리는 이진 탐색과 연결리스트를 결합한 자료구조이다. 이진 탐색의 효율적인 탐색 능력과 함께 빈번한 자료 입력과 삭제가 가능하다. 이진 탐색 트리는 왼쪽 트리의 모든 값이 반드시 부모 노드보다 작아야 하고, 반대로 오른쪽은 트리의 모든 값이 부모 노드보다 커야하는 특징이 있다. 이진 탐색 트리의 이상적인 상황에서의 탐색, 삽입, 삭제의 시간복잡도는 O(logn)이다. 보통의 케이스에서 O(height)이 걸린다. 그래서 균형을 맞춰 주기 위해서 AVL Tree를 이용한다.
 
 </div>
-</details>
+</details> -->
