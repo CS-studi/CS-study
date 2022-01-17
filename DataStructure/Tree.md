@@ -162,9 +162,13 @@ def preorder(self, node):
 ***
 # ⁉️ QnA
 > 1. BST와 Binary tree에 대해서 설명하시오.
+
 > 2. 중위 순회 코드를 작성해보시오.
+
 > 3. full binary tree와 complete binary 트리의 특징을 말하시오.
+
 > 4. 트리의 정의(성질) 최소 3가지를 말하시오.
+
 <!-- <details>
 <summary>BST와 Binary Tree에 대해서 설명하시오</summary>
 <div markdown="2">       
