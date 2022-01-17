@@ -45,7 +45,7 @@
 | **과목** | **일자** | **주차** | **주제**|
 | ------------- | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------| 
 | 자료구조      | 2022/01/09 | 1주차    | [Array vs. LinkedList](DataStructure/ArrayVSLinkedList.md)<br>[Tree](DataStructure/Tree.md)<br> [Stack and Queue](DataStructure/StackAndQueue.md)<br> [BinaryHeap](DataStructure/Heap.md) |
-|자료구조 | 2022/01/16 | 2주차 | [Red-BlackTree](DataStructure/Red-BlackTree.md)<br>[Hash Table](DataStructure/HashTable.md)<br>[Graph1](DataStruceture/Graph.md)<br>[Graph2](DataStruceture/MinimumSpanningTree.md) |
+|자료구조 | 2022/01/16 | 2주차 | [Red-BlackTree](DataStructure/Red-BlackTree.md)<br>[Hash Table](DataStructure/HashTable.md)<br>[Graph1](DataStructure/Graph.md)<br>[Graph2](DataStructure/MinimumSpanningTree.md) |
 | 네트워크      | 2022/01/23 | 3주차   | GET, POST, DELETE 방식<br>Rest and RestAPI<br>HTTP와 HTTPS의 차이점 & HTTP 문제점<br>SSL, 공개키, 대칭키 <br> TCP 3 way-handshake<br>TCP와 UDP의 차이점 + QUIC<br>DNS round robin 방식<br>웹 통신의 큰 흐름|
 <!-- | 운영체제      | 2022/01/01 | 4주차   ||
 | 데이터베이스  | 2022/01/01 | 5주차   ||  -->
