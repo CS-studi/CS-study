@@ -152,7 +152,10 @@ Red-black tree에서 삽입을 해주는 경우 두 가지 메커니즘의 시�
 
 ***
 ## ⁉️ QnA
-<details>
+> 1. Red Black Tree의 정의, 성질 4가지를 말하시오.
+> 2. Recoloring과 Restructing을 시간 복잡도와 함께 설명하시오.
+> 3. hash에서 red-black트리가 사용되는 경우가 있는데, 사용하는 이유와 언제 사용하는지 설명하시오.
+<!-- <details>
 <summary>Red Black Tree의 Restructuring 과 recoloring의 시간 복잡도를 말하고 두 메커니즘을 간략하게 설명하시오.</summary>
 <div markdown="2">
 우선 시간 복잡도는 recoloring,restructuring 모두 O(logn)의 시간 복잡도를 갖게 됩니다. 왜냐하면 삽입될 위치를 찾고 그 위치로 부터 색깔을 맞추는 것 모두 O(1)인 상수 시간이 걸리기 때문입니다. 
@@ -168,4 +171,4 @@ Red-black tree에서 삽입을 해주는 경우 두 가지 메커니즘의 시�
 
 
 </div>
-</details>
+</details> -->
