@@ -38,8 +38,8 @@
 | ------------- | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------| 
 | 자료구조      | 2022/01/09 | 1주차    | [Array vs. LinkedList](DataStructure/ArrayVSLinkedList.md)<br>[Tree](DataStructure/Tree.md)<br> [Stack and Queue](DataStructure/StackAndQueue.md)<br> [BinaryHeap](DataStructure/Heap.md) |
 |자료구조 | 2022/01/16 | 2주차 | [Red-BlackTree](DataStructure/Red-BlackTree.md)<br>[Hash Table](DataStructure/HashTable.md)<br>[Graph1](DataStruceture/Graph.md)<br>[Graph2](DataStruceture/MinimumSpanningTree.md) |
-<!-- | 네트워크      | 2022/01/01 | 3주차   | GET, POST, DELETE 방식<br>TCP, UDP<br> HTTP와 HTTPS 차이<br> 웹 통신, DNS|
-| 운영체제      | 2022/01/01 | 4주차   ||
+| 네트워크      | 2022/01/23 | 3주차   | GET, POST, DELETE 방식<br>TCP, UDP<br> HTTP와 HTTPS 차이<br> 웹 통신, DNS|
+<!-- | 운영체제      | 2022/01/01 | 4주차   ||
 | 데이터베이스  | 2022/01/01 | 5주차   ||  -->
 
 > 스케줄 계획 세우고 추가하기
