@@ -4,7 +4,7 @@
 1. [GET, POST 방식의 차이점]()👈
     - [Rest and RestAPI]()
 2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
-    - [SSL, 공개키/대칭키](SSL.md)
+    - [SSL, 공개키/비공개키](SSL.md)
 
 3. [TCP 3-way-handshake]()
     - [TCP 와 UDP 의 차이점 + (QUIC)]()
