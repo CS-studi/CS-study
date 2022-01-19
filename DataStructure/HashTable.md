@@ -17,6 +17,8 @@ hash table은 array로 이루어져있고 array 각각의 주소를 `bucket` 이
 
 ![Untitled](img/HashTable/Untitled.png)
 
+<br/>
+
 # Hash Function
 
 hash function은 hash table이라고 불리는 array에 저장될 데이터의 위치(index)를 구하는 함수이다. 
@@ -39,6 +41,8 @@ String, POJO와 같이 객체가 나타내는 값의 개수(key의 전체집합)
 > Java의 HashMap에서 완전 해시 함수를 사용할 수 없다
 
 HashMap이 담을 수 있는 객체가 나타내는 값의 개수는 int 의 표현범위에 벗어나기 때문이다. 만약 int 표현범위를 벗어나지 않더라도 랜덤 접근시 시간복잡도 O(1)을 보장하기 위해서 `2^32` 길이의 배열을 가지고 있어야 한다. 이는 메모리 낭비를 야기한다.
+
+<br/>
 
 # Hash Collision
 
@@ -100,6 +104,9 @@ hash function의 표현범위를 m으로 좁힘으로써 서로 다른 hashCode�
 
 해시 충돌이 발생해도 `Open Addressing`, `Seperate Chaining` 방식을 통해 key-value 구조의 데이터를 저장, 조회할 수 있다. 
 
+<br/>
+
+
 ## #️⃣Open Addressing (개방 주소법)
 
 데이터를 삽입하려는 hash bucket이 이미 사용중이라면 비어있는 bucket을 찾아 데이터를 삽입하는 방식이다.
@@ -107,6 +114,8 @@ hash function의 표현범위를 m으로 좁힘으로써 서로 다른 hashCode�
 - Worst Case의 경우 비어있는 bucket을 찾지 못하고 탐색을 시작한 위치로 되돌아올 수 있다.
     - 데이터가 존재하는 bucket이 모여있으면 Worse Case 발생 빈도가 높아진다.
 - 비어있는 bucket을 탐색하는 방식에는 `Linear Probing`, `Quadratic Probing`, `Double Hashing Probing` 이 있다.
+
+<br/>
 
 ### 1. Linear Probing (선형 탐색)
 
@@ -136,6 +145,8 @@ while(Node != null){  // 탐색 노드가 비어있다면 searchKey가 아직 �
 
 ![Untitled](img/HashTable/Untitled%203.png)
 
+<br/>
+
 ### 2. Quadratic Probing (제곱 탐색)
 
 해시 충돌이 발생한 현재 bucket index부터 `n^2` 만큼 이동하면서 비어있는 bucket을 찾아 데이터를 저장하는 방식으로 Linear Probing 방식의 Primary Clustering 발생 가능성을 줄일 수 있다.
@@ -153,6 +164,8 @@ while(Node != null){  // 탐색 노드가 비어있다면 searchKey가 아직 �
 
 ![Untitled](img/HashTable/Untitled%205.png)
 
+<br/>
+
 ### 3. Double Hashing Probing (이중 해싱 탐색)
 
 hash값을 다른 hash function으로 한번 더 해싱하여 hash의 규칙성을 없애는 방식으로 Secondary Clustering 발생 가능성을 줄일 수 있다.
@@ -162,6 +175,8 @@ hash값을 다른 hash function으로 한번 더 해싱하여 hash의 규칙성�
 > Double Hashing Probing 예시
 
 ![Untitled](img/HashTable/Untitled%206.png)
+
+<br/>
 
 ### Open Addressing의 데이터 탐색 및 삭제
 
@@ -180,6 +195,8 @@ target 데이터를 찾거나 empty bucket에 도달하기 전까지 탐색(prob
 > 데이터 삭제의 문제 해결방법
 
 삭제한 데이터의 bucket에 `dummy node` 를 넣거나 `flag` (Occupied, Empty, Deleted) 를 활용하여 탐색이 올바르게 진행되도록 할 수 있다. 
+
+<br/>
 
 ## #️⃣Seperate Chaining (분리 연결법)
 
@@ -222,6 +239,9 @@ public class LinkedHashMap<K,V> extends HashMap<K,V> implements Map<K,V> {
 }
 ```
 
+<br/>
+
+
 ## Open Addressing vs Separate Chaining
 
 |  | Open Addressing | Seperate Chaining |
@@ -230,6 +250,8 @@ public class LinkedHashMap<K,V> extends HashMap<K,V> implements Map<K,V> {
 | 캐시 효율 | 좋다 (연속된 공간에 데이터를 저장하기 때문이다) | Open Addressing 보다 좋지 않다 (해시 충돌시 LinkedList에 데이터를 저장하기 때문이다) |
 | 공간 효율 | 좋다 (해시 충돌이 발생한 경우에도 probing을 통해 빈 bucket에 저장되기 때문이다) | Open Addressing 보다 좋지 않다 (해시 충돌이 발생하면 LinkedList에 추가되기 때문에 사용되지 않는 bucket이 존재한다) |
 | Resizing 빈도 | 높다 (bucket 사용률이 높아 load factor의 임계점에 쉽게 도달하기 때문이다) | Open Addressing 보다 낮다 (bucket 사용률이 낮기 때문이다) |
+
+<br/>
 
 # Dynamic Resizing
 
@@ -248,6 +270,8 @@ load factor는 hash table에 데이터가 차있는 비율을 나타낸다.
 - load factor가 1에 가까우면 hash table의 성능이 저하되고, 너무 작은 값을 가지면 비효율적이다. 그러므로 hash table resizing을 통해 load factor 를 조절해야한다.
 - `0.6 ≤ load factor ≤ 0.75` 가 바람직하다.
 
+<br/>
+
 # Java의 HashTable과 HashMap
 
 | HashTable | HashMap |
@@ -258,8 +282,9 @@ load factor는 hash table에 데이터가 차있는 비율을 나타낸다.
 | 다중 스레드 환경에서 Thread safe 하다 | 다중 스레드 환경에서 Thread safe 하지 않다 |
 | key값에 null을 저장할 수 없다 | key값에 null을 저장할 수 있다 |
 
+<br/>
 
-## 참고
+# 참고
 
 [wikipedia](https://en.wikipedia.org/wiki/Hash_table)
 
@@ -280,3 +305,27 @@ load factor는 hash table에 데이터가 차있는 비율을 나타낸다.
 [HashMap 파헤치기 1 (Linked List + Red Black Tree)](https://lordofkangs.tistory.com/78)
 
 [Open Addressing vs Seperate Chaining](https://www.geeksforgeeks.org/hashing-set-3-open-addressing/)
+
+<br/>
+
+# 면접 예상 질문
+
+<details>
+<summary>해시 테이블에 데이터를 저장하는 과정을 설명해보세요</summary>
+</details>
+
+<details>
+<summary>해시 충돌과 이를 해결하기 위한 방안에 대해 설명해보세요</summary>
+</details>
+
+<details>
+<summary>데이터 삭제시 발생할 수 있는 Open Addressing의 문제점에 대해 설명해보세요</summary>
+</details>
+
+<details>
+<summary>Seperate Chaining에 대해 설명하세요</summary>
+</details>
+
+<details>
+<summary>LinkedList와 Red-Black Tree로 Seperate Chaining을 구현할 때 얻을 수 있는 이점에 대해 각각 설명해보세요</summary>
+</details>
