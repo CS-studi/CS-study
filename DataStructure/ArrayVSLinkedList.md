@@ -162,13 +162,69 @@ struct LinkedList {
 - 특정 위치 데이터 검색할때 느리다.
 - 메모리를 추가적으로 사용해야한다.
 
+## 데이터 추가
+### 시작부분에 추가
+![insertFirst](img/ArrayVSLinkedList/linkedlist-3.png)
+
+1. 새로운 노드를 생성한다.
+`Vertex temp = new Vertex(input)`
+2. 새로운 노드의 다음 노드로 첫번째 노드를 가리킨다.
+`temp.next = head`
+3. 새로 만들어진 노드가 첫번째 노드가 되도록 head의 값을 변경한다.
+`head = temp`
+
+### 중간에 추가
+- 3번째 자리(인덱스 2)에 90을 추가하기
+![insert](img/ArrayVSLinkedList/linkedlist-5.png)
+![insertMiddle](img/ArrayVSLinkedList/linkedlist-4.png)
+
+1. 우선 3번째 자리를 찾아야 한다.
+2. head를 참조해서 첫번째 노드를 찾는다.
+`Vertext temp1 = head`
+3. 23자리에 새로운 노드를 위치시키기위해서는 6을 알고있어야한다. 6을 temp1으로 지정하기 위한 반복문이다.
+```js
+//현재 k의 값은 2
+while (--k != 0)
+  temp1 = temp1.next
+```
+4. 6의 next를 이용해서 23을 찾아서 temp2로 지정한다.
+`Vertext temp2 = temp1.next`
+5. 값이 90인 새로운 노드를 생성한다.
+`Vertext newVertex = new Vertex(input)`
+6. 6의 다음 노드로 새로운 노드를 지정한다.
+`temp1.next = newVertex`
+7. 새로운 노드의 다음 노드로 23번을 지정한다.
+`newVertex.next = temp2`
+
+## 데이터 삭제
+- 세번째 노드(인덱스 2)를 제거하기
+
+![](img/ArrayVSLinkedList/linkedlist-5.png)
+![](img/ArrayVSLinkedList/linkedlist-6.png)
+
+1. head를 이용해서 첫번째 노드를 찾는다.
+`Vertex cur = head`
+2. 두번째 노드로 이동한다.
+```js
+//k = 2
+while(--k!=0)
+  cur = cur.next
+```
+3. 세번째 노드 찾는다.
+`Vertex tobedeleted = cur.next`
+4. 두번째 노드의 next를 23으로 변경한다. 
+`cur.next = cur.next.next`
+5. 90을 삭제해서 메모리에서 제거한다.
+`delete tobedeleted`
+
 ## LinkedList 연산들과 시간 복잡도
 
 - 데이터 탐색: 순차 접근 방식을 사용하기 때문에 어떤 한 데이터를 찾기 위해서는 처음부터 순차적으로 탐색해야 한다.: `O(n)`
-- 추가하려는 데이터의 위치가 맨앞인 경우: `O(1)`
-- 추가하려는 데이터의 위치가 맨 앞 이후인 경우: `O(n)`
-- 삭제하려는 데이터의 위치가 맨 앞인 경우: `O(1)`
-- 삭제하려는 데이터의 위치가 맨 앞 이후인 경우: `O(n)`
+- 삽입/삭제: `O(1)`
+- 원하는 노드에 접근 + 삽입/삭제: `O(n+1)`
+- 가장 앞에 접근 + 삽입/삭제: `O(1)`
+- 가장 뒤에 접근 + 삽입: `O(1+1)`(tail 노드 따로 지정한 경우)
+- 뒤에서 두번째 노드(tail 노드 전 노드)접근 + 삭제: `O(n+1)`
 
 ---
 
@@ -177,6 +233,7 @@ struct LinkedList {
 [Array](https://blog.encrypted.gg/927?category=773649)
 [Array](https://kim-mj.tistory.com/236)
 [ArrayVSList](https://wayhome25.github.io/cs/2017/04/17/cs-18-1/)
+[LinkedList](https://opentutorials.org/module/1335/8821)
 [LinkedList](https://sycho-lego.tistory.com/17)
 [LinkedList](https://opentutorials.org/module/1335/8821)
 
@@ -200,4 +257,26 @@ Array는 Random Access를 지원한다. 요소들을 인덱스를 통해 직접 
 
 배열은 Stack 섹션에 메모리 할당이 이루어진다. 반면 Linkedlist는 Heap 섹션에 메모리 할당이 이루어진다.
 
+</details>
+
+<details>
+<summary>Array(List)의 가장 큰 특징과 그로 인해 발생하는 장점과 단점에 대해 설명하세요. </summary>
+Array의 가장 큰 특징은 순차적으로 데이터를 저장한다는 점입니다.
+
+이렇게 데이터에 순서가 있기 때문에 0부터 시작하는 index가 존재하며, index를 사용해 특정 요소를 찾고 조작이 가능하다는 것이 Array의 장점입니다.
+
+반면에 이에 따른 단점도 존재하는데, 순차적으로 존재하는 데이터의 중간에 요소가 삽입되거나 삭제되는 경우 그 뒤의 모든 요소들을 한 칸씩 뒤로 밀거나 당겨줘야 하는 단점이 있습니다.
+
+이러한 경우 메모리 상에서 이루어지는 작업이 다른 자료구조에 비해 커지기 때문에 Array는 정보가 자주 삭제되거나 추가되는 데이터를 담기에는 적절치 않습니다.
+</details>
+
+<details>
+<summary>Array를 적용시키면 좋을 데이터의 예를 구체적으로 들어주세요. (ex. 주식 차트) 구체적 예시와 함께 Array를 적용하면 좋은 이유, 그리고 Array를 사용하지 않으면 어떻게 되는지 함께 서술해주세요. </summary>
+Array를 적용시키면 좋은 예로 주식 차트가 있습니다.
+
+주식 차트에 대한 데이터는 요소가 중간에 새롭게 추가되거나 삭제되는 정보가 아니며, 날짜별로 주식 가격이 차례대로 저장되어야 하는 데이터입니다.
+
+즉, 순서가 굉장히 중요한 데이터 이므로 Array 같이 순서를 보존해주는 자료구조를 사용하는 것이 좋습니다.
+
+이와 같은 데이터에 Array를 사용하지 않는 경우, 즉 순서가 없는 자료 구조를 사용하는 경우에는 날짜별 주식 가격을 확인하기 어려우며 매번 전체 자료를 읽어 들이고 비교해야 하는 번거로움이 발생합니다.
 </details>
