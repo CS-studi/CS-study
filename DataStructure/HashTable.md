@@ -21,10 +21,11 @@ hash table은 array로 이루어져있고 array 각각의 주소를 `bucket` 이
 
 # Hash Function
 
-hash function은 hash table이라고 불리는 array에 저장될 데이터의 위치(index)를 구하는 함수이다. 
+해시 함수는 임의 크기의 데이터를 고정 크기의 값으로 매핑하는데 사용되는 함수이다.
 
-- index를 구할 때, 보통 `mod` 연산을 사용한다.
-- hash function을 통해 index를 구하는 과정을 `hashing` 이라고 한다.
+- hash function로 hash table이라고 불리는 array에 저장될 데이터의 위치(index)를 구할 수 있다.
+    - index를 구할 때, 보통 `mod` 연산을 사용한다.
+    - hash function을 통해 index를 구하는 과정을 `hashing` 이라고 한다.
 
 > 완전 해시 함수
 
@@ -113,7 +114,7 @@ hash function의 표현범위를 m으로 좁힘으로써 서로 다른 hashCode�
 
 - Worst Case의 경우 비어있는 bucket을 찾지 못하고 탐색을 시작한 위치로 되돌아올 수 있다.
     - 데이터가 존재하는 bucket이 모여있으면 Worse Case 발생 빈도가 높아진다.
-- 비어있는 bucket을 탐색하는 방식에는 `Linear Probing`, `Quadratic Probing`, `Double Hashing Probing` 이 있다.
+- 비어있는 bucket을 탐색하는 방식에는 `Linear Probing`, `Quadratic Probing`, `Double Hashing` 이 있다.
 
 <br/>
 
@@ -166,7 +167,7 @@ while(Node != null){  // 탐색 노드가 비어있다면 searchKey가 아직 �
 
 <br/>
 
-### 3. Double Hashing Probing (이중 해싱 탐색)
+### 3. Double Hashing (이중 해싱)
 
 hash값을 다른 hash function으로 한번 더 해싱하여 hash의 규칙성을 없애는 방식으로 Secondary Clustering 발생 가능성을 줄일 수 있다.
 
