@@ -551,9 +551,8 @@ public class DequeWithArray {
 ```
 </details>
 <br>
-<br>
 
-## 참고
+# 참고
 
 [Stack and Queue](https://devuna.tistory.com/22)
 
@@ -568,19 +567,25 @@ public class DequeWithArray {
 [Deque](https://power-overwhelming.tistory.com/30)
 
 [Deque using Array](https://www.includehelp.com/ds/implementation-of-deque-using-array.aspx)
-<br>
+      
 <br>
 
-## Q&A
 
----
+# 면접 예상 질문
+
 <details>
 <summary>Stack, Queue, LinkedList의 차이점을 설명하세요</summary>
-Stack은 먼저 들어간 데이터가 가장 늦게 나오는 LIFO 구조입니다.  
-Queue는 먼저 들어간 데이터가 먼저 나오는 FIFO 구조입니다.  
-LinkedList는 각각의 데이터가 그 다음 데이터를 가리키는 하나의 참조만 갖는 구조입니다.
 </details>
     
 <details>
-<summary>Stack과 Queue의 활용 예시를 들어보세요</summary>
+<summary>Stack에 대해 설명하세요</summary>
 </details>    
+
+<details>
+<summary>Stack Overflow에 대해 설명해보세요</summary>
+</details>  
+    
+<details>
+<summary>Queue에 대해 설명하세요</summary>
+</details>
+
