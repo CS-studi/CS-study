@@ -36,9 +36,9 @@
 - **UDP**
 IP가 제공하는 정도의 수준만을 제공하는 간단한 IP 상위 계층 프로토콜이다. TCP와는 다르게 에러가 날수도 있고 재전송이나 순서가 뒤바뀔수도 있어서 이경우 어플리케이션에서 처리하는 번거로움이 존재한다. 
 
-📍 TCP와 UDP에 대해 자세히 알아보자!
+**TCP와 UDP에 대해 자세히 알아보자!**
 
-## TCP(Transmission Control Protocol) 
+## 📌 TCP(Transmission Control Protocol) 
 **전송 제어 프로토콜**
 TCP는 전송 계층에서 사용하는 프로토콜로서, 장치들 사이에 논리적인 접속을 성립하기 위하여 연결을 설정하여 **신뢰성을 보장하는 연결형 서비스**이다. 
 
@@ -51,24 +51,24 @@ TCP는 네트워크에 연결된 컴퓨터에서 실행되는 프로그램 간�
 4. overload: 수신자가 overload되는 문제
 
 ### TCP의 특징
-1. 연결형 서비스로 가상  회선 방식을 제공한다.
+1. **연결형 서비스**로 **가상  회선 방식**을 제공한다.
     - 3-way handshaking 과정을 통해 연결을 설정한다.
     - 4-way handshaking 과정을 통해 연결을 해제한다. 
 
-2. 흐름 제어
+2. **흐름 제어**
     - 송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 기법
     - Flow Control은 수신자가 패킷을 지나치게 많이 받지 않도록 조절하는 것
     - 기본 개념은 수신자가 송신자에게 현재 자신의 상태를 feedback 한다는 것
 
-3. 혼잡 제어
+3. **혼잡 제어*8
     - 송신측의 데이터 전달과 네트워크의 데이터 처리 속도 차이를 해결하기 위한 기법
 
-4. 신뢰성이 높은 전송
+4. **신뢰성이 높은 전송**
 - 송신 측에서 보낸 패킷을 수신 측에서 받지 못하면 재전송한다. 
 - Dup ACK-based retransmission: 송신 측에서 여러 개의 세그먼트를 전송했는데, 수신된 세그먼트의 순서가 틀렸을 경우 수신 단말이 다시 보내달라는 의미로 ACK를 보낸다. 송신 측에서 동일한 ACK를 3개 이상 받았을 경우 해당 패킷은 손실됏따고 판단해 재전송을 요청한다.
 - Timeout-based retransmission: 송신자는 일정 시간동안 수신자로부터 ACK를 받지 못하면 손실됐다고 판단해 재전송을 요청한다. 
    
-5. 점이중, 점대점 방식
+5. **점이중, 점대점 방식**
     - 점이중(Full-Duplex): 데이터 전송 흐름 방향이 항상 양 방향으로 동시에 전송할 수 있다.
     - 점대점(Point to Point): 각 연결이 정확히 2개의 종단점을 가지고 있다. 
 
@@ -157,6 +157,7 @@ AIMD 방식은 처음에 패킷을 하나씩 보내고 문제 없이 도착하�
 ### 2. Slow Start (느린 시작)
 
 ![slowstart](img/TCP_UDP_QUIC/slowstart.png)
+
 AIMD 방식은 윈도우 크기를 선형적으로 증가시키기 때문에, 제대로된 속도가 나오기까지 시간이 오래걸린다.
 
 반면 Slow Start는 윈도우의 크기를 1,2,4,8...과 같이 지수적으로 증가시키다가 혼잡이 감지되면 윈도우 크기를 1로 줄이는 방식이다. 
@@ -198,23 +199,24 @@ TCP에는 `Tahoe`, `Reno`, `New Reno`, `Cubic`, `Ealstic-TCP`까지 다양한 �
 Tahoe와 Reno는 기본적으로 처음에는 **Slow Start** 방식을 사용하다가 네트워크가 혼잡하다고 느꼈을 때는 **AIMD** 방식으로 전환하는 방법을 사용하는 정책이다. 
 
 ![TahoeandReno](img/TCP_UDP_QUIC/RenoAndTahoe.png)
+
 위 그래프의 Y축은 혼잡 윈도우, X축은 시간으로 하여 Tahoe와 Reno의 작동 방식을 설명하고 있다. 
 
 그래프를 이해하기 전에 그래프가 꺾여 있는 지점인 `3 ACK duplicate`, `Timeout`용어와 그래프 상승 폭이 변하고 있는 지점인 `Threshold` 용어를 알아보자
 
 **용어 정리**
-> 1. Timeout
+> **Timeout**
 
 말 그대로 여러 가지 요인으로 인해 송신측이 보낸 데이터 자체가 유실되었거나, 수신측이 응답으로 보낸 ACK가 유실되는 경우를 의미한다. 
 
-> 2. 3 ACK Duplicate
+> **3-ACK Duplicate**
 
 ![3ack](img/TCP_UDP_QUIC/3ACK.png)
 
 패킷을 받는 수신자 입장에서는 세그먼트로 분할된 내용들이 순서대로 도착하지 않는 경우가 생길 수 있다. 이런 상황이 발생했을 때 수신 측에서는 순서대로 잘 도착한 마지막 패킷의 다음 순번을 ACK 패킷에 실어서 보낸다. 그리고 이런 중복 ACK 3개를 받으면 문제가 있다고 판단하여 해당 패킷을 송신측이 재전송한다. 
 
-### TCP Tahoe
-처음에는 Slow Start를 사용하여 자신의 윈도우 크기를 지수적으로 빠르게 증가시키다가 ssthresh를 만난 이후부터는 AIMD을 사용하여 선형적으로 윈도우 크기를 증가시킨다. 그러다가 ACK Duplicated나 Timeout이 발생하면 네트워크에 혼잡이 발생했다고 판단하고, ssthresh와 자신의 윈도우 크기를 수정하게 된다. 
+### 1. TCP Tahoe
+처음에는 `Slow Start`를 사용하여 자신의 윈도우 크기를 지수적으로 빠르게 증가시키다가 `ssthresh`를 만난 이후부터는 `AIMD`을 사용하여 선형적으로 윈도우 크기를 증가시킨다. 그러다가 ACK Duplicated나 Timeout이 발생하면 `네트워크에 혼잡`이 발생했다고 판단하고, `ssthresh`와 자신의 `윈도우 크기`를 `수정`하게 된다. 
 
 ![tahoe](img/TCP_UDP_QUIC/tahoe.png)
 
@@ -225,8 +227,8 @@ Tahoe와 Reno는 기본적으로 처음에는 **Slow Start** 방식을 사용하
 
 - 이 상황에서 3 ACK Duplicated나 Timeout과 같은 혼잡 상황을 만나면?? 처음 혼잡 상황이 발생한 상태의 혼잡 윈도우 크기는 6이며, 그에 따라 ssthresh를 3으로 변경하고, 자신의 혼잡 윈도우 크기를 1로 줄였다. 이후 다시 slow start로 시작하여 임계점에 도달하면 AIMD를 시작한다. 
 
-### TCP Reno
-TCP Reno는 TCP Tahoe 이후에 나온 정책으로, Tahoe와 마찬가지로 Slow Start로 시작하여 임계점을 넘어서면 AIMD를 사용한다. 다만, Tahoe와는 다르게 3 ACK Duplicated와 Timeout 혼잡 상황을 구분한다.
+### 2. TCP Reno
+TCP Reno는 TCP Tahoe 이후에 나온 정책으로, Tahoe와 마찬가지로 `Slow Start`로 시작하여 `임계점`을 넘어서면 `AIMD`를 사용한다. 다만, Tahoe와는 다르게 3 ACK Duplicated와 Timeout `혼잡 상황`을 `구분`한다.
 
 ![reno](img/TCP_UDP_QUIC/reno.png)
 
@@ -245,7 +247,8 @@ Reno는 3개의 중복 ACK가 발생했을 때 윈도우 크기를 1로 줄이�
 - 1:1 통신만 가능하다.
 - 고정된 통신 선로가 최단선로(네트워크 길이)가 아닐경우 상대적으로 UDP보다 데이터 전송속도가 느리다.
 
-## UDP(User Datagram protocol)
+## 📌 UDP(User Datagram protocol)
+
 UDP는 전송계층의 **비 연결 지향적 프로토콜**이다. 
 
 > 비 연결 지향적: 데이터를 주고 받을때 연결 절차를 거치지 않고 발신자가 일방적으로 데이터를 발신하는 방식 
@@ -290,6 +293,7 @@ UDP는 흐름제어, 오류제어 또는 손상된 세그먼트의 수신에 대
 
 ## TCP vs UDP
 ![](img/TCP_UDP_QUIC/tcpvsudp.png)
+
 - TCP는 연속성보다 신뢰성 있는 전송이 중요할 때 사용하고
 - UDP는 TCP보다 속도가 빠르고 네트워크 부하가 적지만 신뢰성있는 데이터 전송을 보장하지 않는다. 그렇기 때문에 신뢰성보다 연속성이 중요한 실시간 서비스에 주로 사용된다. 
 
@@ -339,15 +343,9 @@ QUIC에서 사용하는 전송 보안은 TLS 1.3(RFC 8446)이며 암호화하지
  ## 참고
  [TCP 혼잡제어/흐름제어](https://github.com/alstjgg/cs-study/blob/main/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/TCP%20IP%20%ED%9D%90%EB%A6%84%20%EC%A0%9C%EC%96%B4%20%26%20%ED%98%BC%EC%9E%A1%20%EC%A0%9C%EC%96%B4.md)
 
- <br/>
- 
 [TCP 혼잡제어](https://eunhyee.tistory.com/249)
 
-<br/>
-
 [UDP](https://gyoogle.dev/blog/computer-science/network/UDP.html)
-
-<br/>
 
  [왜 QUIC 인가](https://http3-explained.haxx.se/ko/why-quic)
 
