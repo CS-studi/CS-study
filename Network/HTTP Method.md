@@ -36,7 +36,7 @@ __단점__
 
 Client가 브라우저를 통해 URI을 통해 특정 요청(Request)을 보내면, Server는 해당 요청(Request)을 받아 처리를 하여 Client에게 응답(Response)을 하는 형태
 
-![](HTTP_METHOD/2.png)
+![](img/HTTP_METHOD/2.png)
 
 <br>
 
@@ -78,7 +78,7 @@ HTTP 메소드의 속성에는 안전(Safe Methods), 멱등(Idempotent Methods),
 2. 멱등(Idempotent Methods): 메소드를 계속 호출해도 결과가 똑같다.
 3. 캐시가능(Cacheable Methods): 캐싱을 해서 데이터를 효율적으로 가져올 수 있다.
 
-![](HTTP_METHOD/1.png)
+![](img/HTTP_METHOD/1.png)
 
 
 <br>
