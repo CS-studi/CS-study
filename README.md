@@ -30,13 +30,13 @@
 
 ---
 
-### 🏔 Data Structure [Link](DataStructure)
+### 🏔 Data Structure [Link](CS/DataStructure)
 
-### 🏔 Network [Link](Network)
+### 🏔 Network [Link](CS/Network)
 
-### 🏔 Database [Link](Database)
+### 🏔 Database [Link](CS/Database)
 
-### 🏔 OS [Link](OS)
+### 🏔 OS [Link](CS/OS)
 
 ---
 
