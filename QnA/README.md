@@ -4,6 +4,6 @@
 - 과목별로 mark down으로 작성하여 올려주세요.(ex. DatastructureQuestions.md, OsQuestions.md) 🙂
 
 ### [🕋 Datastructure](datastructure.md)
-### [Network]()
+### [Network](network.md)
 ### [OS]()
 ### [Database]()
