@@ -82,7 +82,96 @@ HTTPS로 웹서비스를 제공하려는 사람은 자신의 공개키와 개인
 
 실제 데이터 전송을 위해 웹 브라우저가 지원하는 암호화 방식과 서버가 지원하는 암호화하는 방식들 중 둘 다 지원하는 암호화 방식을 선택하는 등의 많은 작업이 있고, 키 교환도 다른 방식이 있을 수 있다.
 
-> 내일 이어서 정리
+## SSL handshake
+앞서 언급한 것과 같이 대칭키를 공유할 때 외부로의 노출이 발생하게 된다. 만약 이 키를 중간에서 가로채는 일이 발생하게 되면 안되기 때문에, 우리는 대칭키 대신에 비대칭키로 암호화 통신을 하면 되지 않을 것인가 생각한다. 하지만 너무 느리고 비효율적이다. 그래서 처음에 대칭키를 교환할 때만 비대칭키 암호를 사용하는데, TLS가 바로 그렇게 동작한다.
+### TLS에서 제공하는 보안 서비스
+1. 기밀성
+    - 대칭키 암호를 사용하게 되면 기밀성을 제공할 수 있다. 남들이 데이터를 훔쳐가도 볼 수 없는 비밀을 제공한다.
+2. 무결성
+    - 메시지 인증코드(MAC: Message Authentication Code)를 통해서 메시지 인증을 제공한다. 변조 여부 확인 가능.
+3. 인증
+    - 연결 초기 설정에서 주고 받는 인증서를 통해서 신회할 수 있는 개체인지 인증할 수 있다.
+
+TLS는 전송 계층 위에서 TLS 계층을 따로 두어 동작하게 된다. TLS를 사용하는 어플리케이션 프로토콜은 끝에 s가 붙게되는 TLS기반 HTTP -> HTTPS, TLS기반 FTP -> FTPS.
+> ![layer](img/SSL/layer.png)
+
+### TLS의 세부 프로토콜
+
+|프로토콜|내용|
+|-------|----|
+|Handshake|양쪽 간에 연결을 설정할 때 보안 협상을 위한 프로토콜이다.|
+|Change cipher spec|보안 파라미터를 변경하거나 적용할 때 사용한다. 예를 들어 대칭키 알고리즘을 변경할 때 이프로토콜이 사용된다.|
+|Alert|오류를 전송할 때 사용되는 프로토콜이다.|
+|Application Data|실제 데이터가 전송될 때 사용되는 프로토콜이다.|
+|Record|협상된 보안 파라미터를 이용하여 암, 복호화, 무결성 검증등을 수행하는 프로토콜이다.|
+
+### 상태 유지(stateful) 프로토콜
+TLS는 세션과 연결별로 상태정보를 유지한다. TLS는 full handshake를 통해서 세션을 생성하고 이 세션 정보를 공유하는 여러 연결을 abbreviation handshake를 통해서 성립한다.
+Full hanshoke는 아래 그림과 같이 설명한다. Abbreviation handshake는 세션이 이미 존재할 때 사용하는 handshoing 방식이다.
+- 연결
+    - 서버와 클라이언트 간 통신의 단위
+- 세션 
+    - 연결의 다수로 이루어지고 세션은 한번 성립되면 다음 연결을 위해서 상태 유지를 할 수 있다.
+> ![tlshand](img/SSL/tlsHandshake.png)
+
+
+
+1. client -> server/ `client hello`
+
+Client가 서버에 접속할 때 
+- random 
+    - 클라이언트는 32바이트 난수값을 전달, 이 랜덤값은 비밀 데이터를 위해서 사용한다. 비밀 데이터 = master secret
+- session ID
+    - 세션을 처음 생성할 때는 빈 값, 이미 생성된 세션이 있다고면 그 세션 ID를 전달한다.
+- cipher suite
+    - 클라이언트가 지원 가능한 키 교환 알고리즘, 대칭키 암호 알고리즘, 해시 알고리즘 등을 알려준다. 이중 최적의 방식을 선택
+
+
+2. server -> client/ `server hello`
+
+사용할 TLS버전, 클라이언트, 서버 공통으로 지원 가능한 최적의 cipher suite, 압축방식 등을 client에게 전달. 
+- random
+    - 역시 server도 32바이트 난수 생성해서 client에게 전달. master secret = 비밀값 생성할 때 사용하는 것.
+- session ID
+    - 세션 정보
+
+3. server -> client/ `Server certificate`
+
+아까 TLS가 인증(기밀성, 무결성, 인증) 서비스를 제공한다고 했는데, 이 인증서를 통해서 서버가 믿을만한 서버인지 확인한다.
+
+4. server -> client/ `Server Key exchange`
+
+키 교환에 필요한 정볼르 제공한다. 만약 필요없다면 생력가능하다. 하지만 diffie-hellman을 키교환 알고리즘으로 이용한다면 소수, 원시근 등이 필요하기 때문에 이런 데이터 전송 용도.
+
+5. server -> client/ 
+`Certificate request`
+
+서버 역시 클라이언트를 인증해야할 때 인증서를 요구할 수 있다. 요청하지 않을수도 있다.
+
+6. server -> client/ `Server hello done`
+
+서버의 인사 마무리.
+
+7. client -> server/ `Certificate`
+
+방금 전 서버가 요청했던 인증서를 줄 수 있다. 요청하지 않았다면 필요없는 과정이다.
+
+8. client -> server/ `Client key exchange`
+
+키교환에 필요한 정보를 서버에 제공. 이정보를 pre-master secret이라고 하는데 이게 대칭키에 사용되는 것으로 노출되면 안된다. pre-master secret은 이전에 서버로부터 받은 랜덤값을 조합하여 서버에게 전송한다. 암호화하여 보내야하기 때문에 이전에 받은 인증서 내부의 공개키로 암호화하여 전송한다. 클라이언트는 자기가 생성했으니 이미 가지고 있고, 서버가 무사히 암호화된 pre-master secret을 받았다면 자신의 개인키로 복호화할 수 있다. 이제 서로가 pre-master secret을 공유하고 있고 이 과정을 거쳐 client/server는 master secret으로 만들게 된다.
+client/server는 master secret으로 세션에 사용될 키를 생성하는데, 이 키가 바로 대칭키이다.
+9. client -> server/ `Certificate Verify`
+클라이언트에 대한 certificate request를 받았다면 보낸 인증서에 대한 개인키를 가지고 있다는 것을 증명한다. handshake과정에서 주고 받은 메시지 + master secret을 조합한 hash값에 개인티로 디지털 서명하여 전송한다.
+10. client -> server/ `Change cipher spec`
+협상된 보안 파라미터를 적용하거나 변경할 때 서버에게 알린다.
+11. client -> server/ `Finished`
+클라이언트 끝.
+12. server -> client/ `Change cupher spec`
+클라이언트에게 보안 파라미터 변경을 알린다.
+13. server -> client/ `Finished`
+서버 끝.
+
+14. server <-> client/ `통신`
 
 ### 참고
 [SSL동작 방식](https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=leejongcheol2018&logNo=221449123851)
