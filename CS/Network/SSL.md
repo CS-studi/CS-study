@@ -173,6 +173,8 @@ client/server는 master secret으로 세션에 사용될 키를 생성하는데,
 
 14. server <-> client/ `통신`
 
+<br><br><br>
+
 ### 참고
 [SSL동작 방식](https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=leejongcheol2018&logNo=221449123851)
 <br>
@@ -187,6 +189,12 @@ client/server는 master secret으로 세션에 사용될 키를 생성하는데,
 ***
 
 ## 🍉 Summary
+### SSL과 TLS
+### 공개키, 비공개키
+### SSL 동작방식
+### SSL handshake
+
+<br><br>
 
 ## ⁉️ 면접 예상 질문
 > 1. SSL과 TLS에 대해서 설명하시오.
@@ -194,4 +202,6 @@ client/server는 master secret으로 세션에 사용될 키를 생성하는데,
 > 2. 공개키 암호화 알고리즘에 대해서 설명하시오.
 
 > 3. SSL 동작 방식은 어떻게 되나요?
+
+> 4. SSL handshake에 대해서 설명하세요.
 
