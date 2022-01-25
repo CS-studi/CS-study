@@ -8,11 +8,13 @@
 
 ## REST(Representational State Transfer)
 
-REST(Representational State Transfer)는 효율적, 안정적이며 확장가능한 분산시스템을 가져올 수 있는 소프트웨어 아키텍처 디자인 제약의 모음을 나타냅니다. 그리고 그 제약들을 준수했을 때 그 시스템은 RESTful하다고 일컬어집니다.
+자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다. -> 자원(resource)의 표현(representation) 에 의한 상태 전달
+
+REST(Representational State Transfer)는 월드 와이드 웹(www)과 같은 분산 하이퍼미디어 시스템을 위한 소프트웨어 개발 아키텍처의 한 형식.
 
 - HTTP 프로토콜을 그대로 활용하기 때문에 웹의 장점을 활용할 수 있는 아키텍쳐 스타일이다.
 
-- 자원을 이름으로 구분하여 해당 자원의 상태를 주고, 받는 모든 것
+- REST는 네트워크 상에서 Client와 Server 사이의 통신 방식 중 하나이다.
 
 <br>
 
