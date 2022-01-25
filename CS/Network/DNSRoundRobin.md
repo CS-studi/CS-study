@@ -1,8 +1,10 @@
 # DNS Round Robin
 
 > Round Robin
-DNS Round Robin
-DNS Round Robin 문제점
+> 
+> DNS Round Robin
+> 
+> DNS Round Robin 문제점
 > 
 
 # *Round Robin*

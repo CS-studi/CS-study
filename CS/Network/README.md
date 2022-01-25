@@ -6,8 +6,8 @@
 2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
     - [SSL, 공개키/비공개키](SSL.md)
 
-3. [TCP 3-way-handshake]()
-    - [TCP 와 UDP 의 차이점 + (QUIC)]()
+3. [TCP 3-way-handshake](TCP_3way_handshake.md)
+    - [TCP 와 UDP 의 차이점 + (QUIC)](TCP_UDP_QUIC.md)
 
 4. [DNS round robin 방식]()
     - [웹 통신의 큰 흐름]()
