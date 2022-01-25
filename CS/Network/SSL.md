@@ -107,7 +107,7 @@ TLS는 전송 계층 위에서 TLS 계층을 따로 두어 동작하게 된다. 
 
 ### 상태 유지(stateful) 프로토콜
 TLS는 세션과 연결별로 상태정보를 유지한다. TLS는 full handshake를 통해서 세션을 생성하고 이 세션 정보를 공유하는 여러 연결을 abbreviation handshake를 통해서 성립한다.
-Full hanshoke는 아래 그림과 같이 설명한다. Abbreviation handshake는 세션이 이미 존재할 때 사용하는 handshoing 방식이다.
+Full hanshoke는 아래 그림과 같이 설명한다. Abbreviation handshake는 세션이 이미 존재할 때 사용하는 handshaking 방식이다.
 - 연결
     - 서버와 클라이언트 간 통신의 단위
 - 세션 
@@ -122,7 +122,7 @@ Client가 서버에 접속할 때
 - random 
     - 클라이언트는 32바이트 난수값을 전달, 이 랜덤값은 비밀 데이터를 위해서 사용한다. 비밀 데이터 = master secret
 - session ID
-    - 세션을 처음 생성할 때는 빈 값, 이미 생성된 세션이 있다고면 그 세션 ID를 전달한다.
+    - 세션을 처음 생성할 때는 빈 값, 이미 생성된 세션이 있다면 그 세션 ID를 전달한다.
 - cipher suite
     - 클라이언트가 지원 가능한 키 교환 알고리즘, 대칭키 암호 알고리즘, 해시 알고리즘 등을 알려준다. 이중 최적의 방식을 선택
 
@@ -141,10 +141,9 @@ Client가 서버에 접속할 때
 
 4. server -> client/ `Server Key exchange`
 
-키 교환에 필요한 정볼르 제공한다. 만약 필요없다면 생력가능하다. 하지만 diffie-hellman을 키교환 알고리즘으로 이용한다면 소수, 원시근 등이 필요하기 때문에 이런 데이터 전송 용도.
+키 교환에 필요한 정보를 제공한다. 만약 필요없다면 생략가능하다. 하지만 diffie-hellman을 키교환 알고리즘으로 이용한다면 소수, 원시근 등이 필요하기 때문에 이런 데이터 전송 용도.
 
-5. server -> client/ 
-`Certificate request`
+5. server -> client/ `Certificate request`
 
 서버 역시 클라이언트를 인증해야할 때 인증서를 요구할 수 있다. 요청하지 않을수도 있다.
 
@@ -158,17 +157,27 @@ Client가 서버에 접속할 때
 
 8. client -> server/ `Client key exchange`
 
-키교환에 필요한 정보를 서버에 제공. 이정보를 pre-master secret이라고 하는데 이게 대칭키에 사용되는 것으로 노출되면 안된다. pre-master secret은 이전에 서버로부터 받은 랜덤값을 조합하여 서버에게 전송한다. 암호화하여 보내야하기 때문에 이전에 받은 인증서 내부의 공개키로 암호화하여 전송한다. 클라이언트는 자기가 생성했으니 이미 가지고 있고, 서버가 무사히 암호화된 pre-master secret을 받았다면 자신의 개인키로 복호화할 수 있다. 이제 서로가 pre-master secret을 공유하고 있고 이 과정을 거쳐 client/server는 master secret으로 만들게 된다.
+키교환에 필요한 정보를 서버에 제공. 이 정보를 pre-master secret이라고 하는데 이게 대칭키에 사용되는 것으로 노출되면 안된다. pre-master secret은 이전에 서버로부터 받은 랜덤값을 조합하여 서버에게 전송한다. 암호화하여 보내야하기 때문에 이전에 받은 인증서 내부의 공개키로 암호화하여 전송한다. 클라이언트는 자기가 생성했으니 이미 가지고 있고, 서버가 무사히 암호화된 pre-master secret을 받았다면 자신의 개인키로 복호화할 수 있다. 이제 서로가 pre-master secret을 공유하고 있고 이 과정을 거쳐 client/server는 master secret으로 만들게 된다.
 client/server는 master secret으로 세션에 사용될 키를 생성하는데, 이 키가 바로 대칭키이다.
+
 9. client -> server/ `Certificate Verify`
+
 클라이언트에 대한 certificate request를 받았다면 보낸 인증서에 대한 개인키를 가지고 있다는 것을 증명한다. handshake과정에서 주고 받은 메시지 + master secret을 조합한 hash값에 개인티로 디지털 서명하여 전송한다.
+
 10. client -> server/ `Change cipher spec`
+
 협상된 보안 파라미터를 적용하거나 변경할 때 서버에게 알린다.
+
 11. client -> server/ `Finished`
+
 클라이언트 끝.
+
 12. server -> client/ `Change cupher spec`
+
 클라이언트에게 보안 파라미터 변경을 알린다.
+
 13. server -> client/ `Finished`
+
 서버 끝.
 
 14. server <-> client/ `통신`
