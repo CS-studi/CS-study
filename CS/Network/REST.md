@@ -64,10 +64,13 @@ __자원, 조작, 표현__
     - URI로 지정한 리소스를 Http Method를 통해서 표현하고 구분한다.
     - Self-Descriptiveness(자체표현 구조)
         - REST API 메시지만 보고도 이를 쉽게 이해할 수 있는 자체 표현 구조로 되어있다.
-    - HATEOS(Hypermedia As The Engine Of Application State)
+    - HATEOAS(Hypermedia As The Engine Of Application State)
+        - 링크에 사용 가능한 URL을 리소스로 전달하여 client가 참고하여 사용할 수 있도록 하는 것 
         - RESTful API를 사용하는 클라이언트가 전적으로 서버에 의해 동적으로 상호작용을 할 수 있다. 쉽게 말하면 클라이언트가 서버에 요청시 서버는 요청에 의존되는 URI를 Response에 포함시켜 반환한다. 
-        -  동적인 API를 제공할 수 있게됩니다.(모든 관련된 동작을 URI를 통해 알려줍니다.) 즉, 클라이언트가 API의 변화에 일일이 대응하지 않아도 된다는 장점을 가져옵니다.
-        - Hypermedia (링크)를 통해서 애플리케이션의 상태 전이가 가능해야 한다. (Hypermedia (링크)에 자기 자신에 대해한 정보가 담겨야 한다.)
+        - 동적인 API를 제공할 수 있게됩니다.(모든 관련된 동작을 URI를 통해 알려줍니다.) 즉, 클라이언트가 API의 변화에 일일이 대응하지 않아도 된다는 장점을 가져온다.
+        - Hypermedia (링크)를 통해서 애플리케이션의 상태 전이가 가능해야 한다. (Hypermedia (링크)에 자기 자신에 대한 정보가 담겨야 한다.)
+        - 클라이언트를 개발하는 사람들이 특정 메소드로부터 올 수 있는 결과 동작에 대해 예측하는 것이 가능해지고, API가 변경되더라도 키가 바뀌지 않는 한 URI로 주어진 링크(link)만 유지하면 되므로 별도의 대응이 요구되지 않게 된다.
+
 
 6. Code-On-Demand
     - 클라이언트의 요청에 따라 서버에서 클라이언트로 실행 가능한 소프트웨어를 전달합니다.
@@ -181,6 +184,10 @@ __REST가 필요한 이유__
 [REST 3](https://wonit.tistory.com/454)
 
 [REST API](https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md) 
+
+[REST 특징](https://wonit.tistory.com/454)
+
+[HATEOAS](https://wallees.wordpress.com/2018/04/19/rest-api-hateoas/)
 
 <br>
 
