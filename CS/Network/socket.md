@@ -32,8 +32,8 @@ Http 통신은 클라이언트에서 서버로 요청을 보내고 서버가 응
 
 ```json
 {
-    method : post
-    user_id : "john"
+    method : post,
+    user_id : "john",
     message_payload :{
         "hey mary!"
     }
