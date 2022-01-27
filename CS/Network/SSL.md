@@ -190,7 +190,7 @@ client/server는 master secret으로 세션에 사용될 키를 생성하는데,
 14. server <-> client/ `통신`
 
 ### 더 보기 좋은 handshake
-> ![sslhandshake](CS/Network/img/SSL/clientServerCom.png)
+> ![sslhandshake](img/SSL/clientServerCom.png)
 
 <br><br><br>
 
