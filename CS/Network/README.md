@@ -1,19 +1,15 @@
-# Network
-
-### 🌌 Network Curriculum
-1. [GET, POST 방식의 차이점]() 👈
-    - [Rest and RestAPI]()
-2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
-    - [SSL, 공개키/비공개키](SSL.md)
-
-3. [TCP 3-way-handshake](TCP_3way_handshake.md)
-    - [TCP 와 UDP 의 차이점 + (QUIC)](TCP_UDP_QUIC.md)
-
-4. [DNS round robin 방식]()
-    - [웹 통신의 큰 흐름]()
-- 네트워크 시스템의 Layer and Architecture 👈
-- 쿠키, 세션, jwt 토큰
-- 프록시
+# 🌌  Network
+- [GET, POST 방식의 차이점](HTTPMethod.md) 👈
+- [Rest and RestAPI](Rest.md)
+- [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
+- [SSL, 공개키/비공개키](SSL.md)
+- [TCP 3-way-handshake]()
+- [TCP 와 UDP 의 차이점 + (QUIC)](TCP_UDP_QUIC.md)
+- [DNS round robin 방식](DNSRoundRobin.md)
+- [웹 통신의 큰 흐름](웹통신의큰흐름.md)
+- [네트워크 시스템의 Layer and Architecture]() 👈
+- [쿠키, 세션, jwt 토큰](CookieSessionJWT.md)
+- [프록시]() 
 - [소켓 통신](socket.md)
-- CORS (Cross Origin Resource Sharing)
-- OAuth
+- [CORS (Cross Origin Resource Sharing)]()
+- [OAuth]()

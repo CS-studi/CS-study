@@ -30,18 +30,16 @@
 ---
 
 # 🌌 Network 
-1. [GET, POST 방식의 차이점](Network/HTTPMethod.md) 👈
-    - [Rest and RestAPI](Network/Rest.md)
-2. [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](Network/HttpHttps.md)
-    - [SSL, 공개키/비공개키](Network/SSL.md)
-
-3. [TCP 3-way-handshake]()
-    - [TCP 와 UDP 의 차이점 + (QUIC)](Network/TCP_UDP_QUIC.md)
-
-4. [DNS round robin 방식](Network/DNSRoundRobin.md)
-    - [웹 통신의 큰 흐름](Network/웹통신의큰흐름.md)
+- [GET, POST 방식의 차이점](Network/HTTPMethod.md) 👈
+- [Rest and RestAPI](Network/Rest.md)
+- [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](Network/HttpHttps.md)
+- [SSL, 공개키/비공개키](Network/SSL.md)
+- [TCP 3-way-handshake]()
+- [TCP 와 UDP 의 차이점 + (QUIC)](Network/TCP_UDP_QUIC.md)
+- [DNS round robin 방식](Network/DNSRoundRobin.md)
+- [웹 통신의 큰 흐름](Network/웹통신의큰흐름.md)
 - [네트워크 시스템의 Layer and Architecture]() 👈
-- [쿠키, 세션, jwt 토큰]()
+- [쿠키, 세션, jwt 토큰](Network/CookieSessionJWT.md)
 - [프록시]() 
 - [소켓 통신](Network/socket.md)
 - [CORS (Cross Origin Resource Sharing)]()
