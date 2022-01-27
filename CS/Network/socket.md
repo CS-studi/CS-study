@@ -65,5 +65,7 @@ websocket 통신은 초기에 연결이 성립됐다는 것을 client가 서버�
 <br><br>
 
 ### ⁉️ QnA
+
 > 1. http통신과 socket 통신의 차이점을 설명하시오.
+
 > 2. RestAPI과 Websocket을 사용하는 상황을 예시를 통해서 설명하시오.
