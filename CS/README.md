@@ -43,7 +43,7 @@
 - [네트워크 시스템의 Layer and Architecture]() 👈
 - [쿠키, 세션, jwt 토큰]()
 - [프록시]() 
-- [소켓 통신]()
+- [소켓 통신](Network/socket.md)
 - [CORS (Cross Origin Resource Sharing)]()
 - [OAuth]()
 
