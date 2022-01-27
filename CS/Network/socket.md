@@ -49,16 +49,21 @@ short polling은 메리의 앱이나 존의 앱이 get 방식을 통해서 새�
 
 짧게 말해서 restAPI는 http 방식으로 동작하기(단방향 통신) 때문에 server에서 request를 보낼 수 없기 때문에 메시지가 새로 들어와도 client에게 알릴 방법은 없고 client가 get 요청을 server에게 지속적으로 보내서 확인하는 수밖에 없다.
 
-### Socket
+### Websocket
 > ![socket](img/socket/websocket.png)
 
 websocket 통신은 초기에 연결이 성립됐다는 것을 client가 서버에게 알린다. 만약 존이 메리에게 메시지를 보내게되면 메리 측에서는 지속적으로 request를 보낼 필요가 없이 server에 메리에게 송신된 메시지가 있으면 즉시 메시지를 메리에게 전달하게된다. 즉 양방향 통신이 가능한 것이다.
 이처럼 websocket 통신을 이용하면 end to end가 연결된 통신을 하게되어 서버의 부하를 줄임과 동시에 http를 통해 송수신 할때보다 원할하게 통신할 수 있다.
 
-
+<br><br><br>
 
 ### 📚 참고
 [http통신과 socket통신](https://kotlinworld.com/75)
 
 [RestApiVs.Socket youtube](https://www.youtube.com/watch?v=fG4dkrlaZAA)
 
+<br><br>
+
+### ⁉️ QnA
+> 1. http통신과 socket 통신의 차이점을 설명하시오.
+> 2. RestAPI과 Websocket을 사용하는 상황을 예시를 통해서 설명하시오.
