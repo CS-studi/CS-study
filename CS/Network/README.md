@@ -11,9 +11,9 @@
 
 4. [DNS round robin 방식]()
     - [웹 통신의 큰 흐름]()
-- [네트워크 시스템의 Layer and Architecture]() 👈
-- [쿠키, 세션, jwt 토큰]()
-- [프록시]() 
-- [소켓 통신]()
-- [CORS (Cross Origin Resource Sharing)]()
-- [OAuth]()
+- 네트워크 시스템의 Layer and Architecture 👈
+- 쿠키, 세션, jwt 토큰
+- 프록시
+- [소켓 통신](socket.md)
+- CORS (Cross Origin Resource Sharing)
+- OAuth
