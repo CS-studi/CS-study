@@ -85,14 +85,12 @@
 **여러 대의 서버가 분산 처리**할 수 있도록 요청을 나누어주는 서비스 
 
 **Load Balancer 종류**
+- **L2** :`Data link 계층` **Mac 주소** 기반 부하 분산
+- **L3**: `Network 계층` **IP 주소** 기반 부하 분산
+- **L4**: `Transport 계층` **Port** 기반 부하 분산/ TCP UDP
+- **L7**: `Application 계층` **요청(URL)** 기반 부하 분산 / HTTP, HTTPS
 
-|:---:|:---:|:---:|
-|L2|`Data link 계층` Mac 주소 기반 부하 분산| |
-|L3|`Network 계층` IP 주소 기반 부하 분산| |
-|L4|`Transport 계층` Port 기반 부하 분산| TCP UDP|
-|L7|`Application 계층` 요청(URL)기반 부하 분산| HTTP, HTTPS| 
-
-![L4L7](img/Prox/L4.png)
+![L4L7](img/Proxy/L4.png)
 
 ### 4. 필터링
 웹 서버 앞단에서 악의적인 요청을 필터링하는 것이 가능하다.
