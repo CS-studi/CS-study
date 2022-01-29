@@ -151,23 +151,25 @@ HTTP는 서버가 다수의 클라이언트와 연결을 계속 유지하지 않
 <br/>    
 
 > 쿠키의 대안
-> 
-- 쿠키의 대안 : Web Storage API
-    
-    `Web Storage API`는 기존 쿠키의 문제점을 극복하기 위해 **웹 브라우저가 직접 데이터를 저장할 수 있도록 해준다**. (기존에는 서버가 만든 쿠키를 브라우저가 저장하는 방식이였다)
-    
-    - Web Storage는 최소 5MB 이상의 공간을 가지고 있고, 이 정보는 서버로 전송되지 않는다.
-    - Origin 마다 Web Storage가 하나씩만 존재한다. 그리고 하나의 Origin에 속하는 모든 웹 페이지는 같은 데이터를 저장하고, 같은 데이터에 접근할 수 있다.
-        - Origin : 도메인과 프로토콜의 한쌍으로 이루어진 식별자이다.
-            - 도메인(domain): naver.com
-            - 오리진(origin): https://www.naver.com:port
-    
-    Web Storage API는 사용자가 데이터를 저장할 수 있도록 두 가지 객체를 제공한다.
-    
-    - sessionStorage 객체 : 하나의 세션(session)만을 위한 데이터를 저장하는 객체
-    - localStorage 객체 : 보관 기한이 없는 데이터를 저장할 수 있는 객체
-    
 
+<details>
+<summary>쿠키의 대안 : Web Storage API</summary>
+    
+`Web Storage API`는 기존 쿠키의 문제점을 극복하기 위해 **웹 브라우저가 직접 데이터를 저장할 수 있도록 해준다**. (기존에는 서버가 만든 쿠키를 브라우저가 저장하는 방식이였다)
+
+- Web Storage는 최소 5MB 이상의 공간을 가지고 있고, 이 정보는 서버로 전송되지 않는다.
+- Origin 마다 Web Storage가 하나씩만 존재한다. 그리고 하나의 Origin에 속하는 모든 웹 페이지는 같은 데이터를 저장하고, 같은 데이터에 접근할 수 있다.
+    - Origin : 도메인과 프로토콜의 한쌍으로 이루어진 식별자이다.
+        - 도메인(domain): naver.com
+        - 오리진(origin): https://www.naver.com:port
+
+Web Storage API는 사용자가 데이터를 저장할 수 있도록 두 가지 객체를 제공한다.
+
+- sessionStorage 객체 : 하나의 세션(session)만을 위한 데이터를 저장하는 객체
+- localStorage 객체 : 보관 기한이 없는 데이터를 저장할 수 있는 객체
+    
+</details>
+    
 <br/>
 
 ## ## *세션이란*
