@@ -260,3 +260,309 @@ AIMD, Slow Start, 혼잡 회피, 빠른 재전송, 빠른 회복 기법이 있�
 즉 `Reno`는 ACK 중복보다 Timeout이 더 큰 혼잡 상황이라고 가정한다는 점에서 혼잡 상황의 우선 순위를 둔 정책이라고 할 수 있습니다.
 </div>
 </details>
+
+
+<details> 
+<summary>DNS Round Robin 원리에 대해 설명해주세요</summary>
+<div markdown="2">
+하나의 웹 서비스를 제공하는 웹 서버가 여러대 있을 때, 클라이언트의 요청을 균등하게 분산시켜 트래픽을 분산하는 기법이다.
+클라이언트가 URL에 도메인을 입력하면 DNS 서버는 도메인에 해당하는 IP 주소를 찾습니다. 만약 웹 서비스를 제공하는 웹 서버가 여러대 있다면, 하나의 도메인에 해당되는 IP주소 또한 여러개가 존재합니다.
+여러 IP 주소들을 라운드 로빈 방식으로 선택하여 트래픽을 분산하는 방식입니다.
+이는 웹 뿐만아니라 FTP, SMTP처럼 도메인을 사용하는 모든 서비스에서 사용이 가능한 기법입니다. 또한 이 기법을 사용하면 트래픽을 분산시키기 때문에 로드 밸런서가 필요 없게 됩니다.
+</div>
+</details>
+
+<details> 
+<summary>DNS Round Robin의 문제점에 대해 설명해주세요</summary>
+<div markdown="2">
+DNS Round Robin은 클라이언트의 요청을 여러 웹 서버에 분산시키는 기법으로 트래픽을 분산하는데 이점이 있습니다.
+하지만 웹 브라우저는 DNS response 를 캐싱하기 때문에, DNS Round Robin의 분산을 거치지 않고, 이전에 접속했던 웹 서버로 접속하게 됩니다. 이는 트래픽을 균등하게 분산시키지 못하게 합니다.
+그리고 모바일에서는 웹서버에 접속하기 위해 프록시 서버를 경유합니다. 프록시 서버는 DNS response를 일정동안 캐시합니다. 그렇기 때문에 여러 모바일 클라이언트가 같은 프록시 서버를 경유하게 되면, 항상 같은 서버로 접속됩니다. 이 또한 트래픽을 균등하게 분산시키지 못하게 합니다.
+DNS response를 캐시에 저장하는 시간이 TTL값을 짧게 설정하면 DNS 캐시로 인한 불균등 분산 문제를 어느정도 해결할 수 있지만 완벽한 방법이 아닙니다.
+</div>
+</details>
+
+<details> 
+<summary>사용자 인증 방식의 종류를 말해보세요</summary>
+<div markdown="2">
+사용자 인증 방식에는 HTTP 기본 인증방식, 서버 기반 인증 방식, 토큰 기반 인증 방식이 있습니다.
+</div>
+</details>
+
+
+<details> 
+<summary>서버 기반 인증에 대해 설명해보세요</summary>
+<div markdown="2">
+서버 기반 인증방식은 쿠키와 세션을 통해 이루어집니다.
+1. 서버에서 사용자 상태 정보를 세션에 저장합니다.
+2. 그리고 고유한 세션 ID를 쿠키로 클라이언트에게 전달하면 클라이언트는 이를 로컬에 저장합니다.
+3. 이후 클라이언트에서 매 요청시 해당 쿠키를 헤더에 담아 요청을 합니다.
+4. 서버는 클라이언트로부터 받은 쿠키속 세션 ID의 유효성을 세션 저장소를 통해 확인한 뒤 응답합니다. (세션 저장소는 WAS의 세션, RDB, In-memory DB가 될 수 있습니다)
+
+</div>
+</details>
+
+<details> 
+<summary>토큰 기반 인증에 대해 설명해보세요</summary>
+<div markdown="2">
+
+토큰 기반 인증 과정은 다음과 같습니다.
+5. 클라이언트가 로그인 정보를 서버에게 전달하면
+6. 서버는 로그인 정보를 검증하고, 정확할 경우 사용자 식별 정보를 기반으로 토큰을 발급합니다. 토큰은 response 헤더에 담아 전달합니다.
+7. 클라이언트는 서버로부터 받은 토큰을 로컬에 저장하고, 매 요청시마다 Authorization 헤더에 담아 전달합니다.
+8. 서버는 클라이언트로부터 받은 토큰의 유효성 검사를 한 뒤, 응답을 보냅니다.
+토큰 기반 인증 방식은 다음과 같은 이점이 있습니다.
+9. 서버가 아닌 클라이언트에 토큰을 저장하기 때문에 stateless합니다.
+stateless한 서버 구조를 가지면 scale out으로 서버 확장시 사용자 정보로 인한 제약이 없습니다.
+10. 여러 플랫폼과 도메인에서 사용이 가능한 인증 방식입니다.
+토큰으로는 주로 사용자에 대한 정보를 저장하는 Claim 기반의 웹 토큰인 JWT 를 사용합니다.
+JWT는 헤더 + 페이로드 + 서명으로 구성되어있습니다.
+• 헤더에는 JWT 토큰 타입과 사용되는 해시 알고리즘 정보가 들어있습니다
+• 페이로드에는 클라이언트에 대한 정보가 들어있습니다. 디코딩할 수 있기 때문에 페이로드에 민감한 정보를 넣으면 안됩니다.
+• 서명은 헤더와 페이로드를 더한뒤 서버의 secret key로 해싱하여 생성합니다. 서버의 secret key로만 복호화할 수 있으므로 서명을 통해 해당 JWT 토큰의 유효성을 확인할 수 있습니다.
+
+</div>
+</details>
+
+<details> 
+<summary>서버 기반 인증의 단점과 JWT를 이용한 토큰 기반 인증의 장단점을 설명해보세요</summary>
+<div markdown="2">
+서버 기반 인증의 단점은 다음과 같습니다.
+11. 사용자 수가 많아질 수록 서버에 저장할 사용자 정보가 많아집니다
+만약 세션 정보를 메모리나 데이터베이스에 저장하면 메모리 부하 또는 디스크 부하를 일으킵니다.
+12. 사용자 정보를 서버 측에 저장하기 때문에 stateless하지 않는 구조입니다
+이말은 곧 서버 확장이 자유롭지 못하다는 의미입니다. 웹 서버를 증설할 때마다 세션 정보를 증설된 서버에 옮기는 과정이 필요하기 때문입니다.
+13. CORS 방식을 사용한다면 서버 기반 인증 방식이 바람직하지 않습니다
+웹 브라우저에서 사용되는 쿠키는 단일 도메인, 서브 도메인에서만 사용할 수 있습니다. 따라서 쿠키를 여러 도메인에서 관리하기 번거롭고 이는 결국 세션을 관리하기 어렵게 만듭니다.
+• JWT를 이용한 토큰 기반 인증 방식에서 Refresh Token의 용도가 무엇인가요?
+JWT을 사용하면 토큰에 유효기간을 설정합니다. 만약 유효기간안에 토큰이 탈취된다면 보안상 위험하기 때문에 유효기간을 짧게 설정하는 방식으로 이를 대처합니다. 하지만 이 방법은 사용자가 로그인을 자주 해야한다는 불편함이 존재합니다.
+따라서 서버는 Refresh Token을 사용하여 이를 해결합니다. 클라이언트에게 유효기간이 짧은 Access Token과 유효기간이 긴 Refresh Token을 함께 발급하고, Access Token이 만료될 경우 클라이언트는 자신의 Refresh Token을 통해 재로그인 없이 새로운 Access Token을 발급받습니다.
+Refresh Token을 사용하므로써 Access Token의 탈취 위험성으로부터 벗어날 수 있고, 자주 로그인해야한다는 불편함을 없앨 수 있습니다. 하지만 Refresh Token을 서버 측에 저장해야하기 때문에 stateless하지 않는다는 단점이 있습니다.
+</div>
+</details>
+
+
+<details> 
+<summary>TCP 3 way handshake란?</summary>
+<div markdown="2">
+TCP가 통신하기 앞서 논리적인 접속을 성립하기 위해 3 way handshake를 진행합니다
+</div>
+</details>
+
+
+<details> 
+<summary>3 way handshake 동작방식</summary>
+<div markdown="2">
+먼저 클라이언트가 서버에게 연결 요청을 보내기 위해 SYN 플래그 비트를 1로 설정한 세그먼트를 전송합니다. 또한 sequence number를 랜덤 숫자로 지정하여 함께 보냅니다. 이때 서버는 Listen 상태로 포트 서비스가 가능한 상태여야 합니다.
+접속 요청을 받은 서버는 요청을 수락하고 클라이언트 포트도 열어달라는 의미로 SYN와 ACK 플래그 비트를 1로 설정한 세그먼트를 전송합니다. 이때 acknowledgement number를 클라이언트에게 받은 sequence number+ 1로 지정하고 위와 동일하게 sequence number를 지정해서 보냅니다.
+
+마지막으로 클라이언트가 수락 확인을 보내 연결을 맺기위해 ACK 플래그 비트를 1로 설정한 세그먼트를 전송합니다. acknoweldgement number를 서버에게 받은 sequence number + 1로 지정하여 함께 보냅니다. 
+포트의 상태를 둘다 established 상태가 되고 연결이 이루어지고 데이터가 오갈 수 있습니다.
+
+</div>
+</details>
+
+
+<details> 
+<summary>4 way handshake란?</summary>
+<div markdown="2">
+연결 성립 후 모든 통신이 끝났다면 4 way handshake를 통해 해제합니다.
+
+4 way handshake 동작방식
+먼저 클라이언트가 연결을 종료하겠단 의미로 FIN 플래그 비트를 1로 설정한 세그먼트를 전송합니다
+서버가 FIN 플래그로 응답하기 전까지 연결을 유지하며 FIN_WAIT 상태가 됩니다
+
+서버는 FIN 플래그를 받고 ACK플래그로 확인 메세지를 보냅니다. ( acknoweldgement number를 sequence number +1로 자정해서 함께 보냅니다) 
+전송할 데이터가 남아있다면 이어서 전송하며 자신의 통신이 끝날 때까지 기다립니다. 서버는 CLOSED_WAIT 상태가 됩니다. 
+
+서버가 통신이 끝났다면 FIN 플래그 비트를 1로 설정한 세그먼트를 보냅니다. 
+
+마지막으로 클라이언트가 해지 준비가 되었다는 메세지를 확인했다는 의미로 ACK 플래그를 보냅니다. 
+클라이언트의 ACK 메세지를 받은 서버는 소켓 연결을 close 합니다. 클라이언트는 아직 서버로부터 받지 못한 데이터가 있을 것을 대비해 일정 시간동안 세션을 남겨놓고 잉여 패킷을 기다립니다. 이때 포트 상태는 클라이언트는TIME_WAIT으로 변경됩니다. 
+일정시간이 지난후 클라이언트의 소켓 연결도 close하고 둘다 CLOSED 상태가 됩니다.
+
+</div>
+</details>
+
+
+<details> 
+<summary>SSL과 TLS에 대해서 설명하시오.</summary>
+<div markdown="2">
+
+SSL과 TLS는 같은 것이라고 할 수 있습니다. SSL은 TCP/IP 암호화 통신에 사용되는 규약으로 SSL 이후 버전을 TLS로 규정하고 있습니다.
+
+HTTP통신에 암호화를 더해 HTTPS 통신을 할 때 SSL은 HTTP를 대신해서 TCP와 통신합니다.
+</div>
+</details>
+
+<details> 
+<summary>공개키 암호화 알고리즘에 대해서 설명하시오.</summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+<details> 
+<summary>SSL 동작 방식은 어떻게 되나요?</summary>
+<div markdown="2">
+
+공개키 암호화 알고리즘은 비대칭키 암호화 알고리즘으로 쉽게 말해서 암호화와 복호화를 할 때의 키가 대칭적이지 않은 암호화 방식입니다. 암호화를 할 때 공개키를 사용한다면 복호화 시에는 비밀키를 사용합니다. 공개키 암호화 알고리즘은 SSL handshake 과정 중에 키 교환 시에 사용됩니다.
+</div>
+</details>
+
+<details> 
+<summary>SSL 동작 방식은 어떻게 되나요?</summary>
+<div markdown="2">
+1.웹 서버는 CA를 통해서 인증서를 만든다.
+
+1-1. 웹 서버를 운영하는 쪽에서 HTTPS 적용을 위해 공개키와 개인키를 만든다.
+
+1-2. 신뢰할 수 있는 CA에 인증서 생성을 요청.
+
+1-3. CA는 웹 서버의 공개키, 암호화 방법, 서버의 정보를 담은 인증서를 만들고 CA의 개인키로 암호화하여 서버에게 인증서를 반환
+
+- 클라이언트가 SSL로 암호화된 웹 사이트를 요청 시 서버는 인증서를 웹 브라우저(클라이언트)에게 전송
+
+2.클라이언트 서버 통신 흐름 과정
+
+2-1. 클라이언트가 SSL로 암호화된 페이지 요청
+
+2-2. 서버는 클라이언트에게 인증서 전송
+
+2-3. 클라이언트는 인증서가 신뢰가는 CA로부터 서명된 것인지 판단. 브라우저는 자신의 컴퓨터내에 CA 리스트와 해당 CA를 공개키를 가지고 있기 때문에 공개킬르 활용하여 인증서가 복호화하여 서버의 공개키를 획득한다.
+
+2-4. 클라이언트는 서버(웹사이트)의 공개키를 이용하여 랜덤 대칭 암호화키, 데이터 등을 암호화하여 서버에게 전송하고
+
+2-5. 웹 브라우저(클라이언트)의 대칭키를 얻은 서버는 클라이언트와 대칭키를 이용하여 통신한다.
+
+</div>
+</details>
+
+
+<details> 
+<summary>http통신과 socket 통신의 차이점을 설명하시오.</summary>
+<div markdown="2">
+http 통신은 단방향 통신으로 클라이언트는 서버에 요청, 서버는 클라이언트에 응답하는 방식으로 동작한다. json, xml, image, html 등등 파일을 전송한다. 응답을 받으면 connection이 끊어지지만 keep alive 옵션으로 일정 시간동안 연결을 유지할 수 있다.
+
+반면에 socket 통신은 두 프로그램이 서로 데이터를 주고 받을 수 있도록 양쪽에 생성되는 통신 단자입니다. 소켓 통신은 서버와 클라이언트 양방향 연결이 이루어진다.
+
+</div>
+</details>
+
+
+<details> 
+<summary>RestAPI와 Websocket을 사용하는 상황을 예시를 통해서 설명하시오.</summary>
+<div markdown="2">
+채팅을 한다고 가정했을때 우리는 RestAPI로 통신을 한다면 송신자측은 post method로 데이터를 보내주게되고 수신자 측은 지속적으로 get method를 보내서 자신에게 새로운 메시지가 오는지 확인하는 방법 밖에 없었다. 이렇게 지속적으로 request를 보내면 서버에 부하가 걸리고 동시간대에 요청을 하는 사용자가 많을 때 특히 문제가 발생한다. 그것을 해결하기 위해서 short polling과 long polling 방식이 있다. short polling은 타이머를 두고 일정 시간마다 server로 요청하는 방식이다. long polling은 매 x초마다 검사를 하는 것이 아니고 delay를 두어 새로 수신된 메시지가 생길 때마다 request를 하는 방식이다. 결론적으로 http로 통신을 하게되면 수신측에서 request를 보내서 확인을 해야한다.
+
+반면에 socket 통신은 양쪽이 연결이 되어있기 때문에 메시지가 수신되면 server가 바로 클라이언트로 응답을 할수 있고, end to end로 연결된 통신을 하게되어 서버의 부하를 줄일 수 있다.
+
+</div>
+</details>
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
+
+
+<details> 
+<summary></summary>
+<div markdown="2">
+
+
+</div>
+</details>
