@@ -28,7 +28,7 @@ Authentication/인증
 Authorization/인가
 - 유저에 대한 정보 권한을 허락하는 것
 
-<br>
+<br><br><br>
 
 ## OAuth 1.0과 2.0 차이점
 |항목|OAuth 1.0|OAuth 2.0|
@@ -37,6 +37,8 @@ Authorization/인가
 |토큰|Request Token<br>Access Token|Access Token<br>Refresh Token|
 |open API 호출 및 보안|서명|HTTPS 기본<br>서명:Resource Server가 별도로 서명을 요구하는 경우|
 |유효기간|Access Token 유효기간 없음|Access Token 유효기간 부여 [Refresh Token](CookieSessionJWT.md)에서 배운 내용 떠올리시면 될 것 같습니다.|
+
+<br><br><br>
 
 ## 🔑 OAuth 1.0
 ### OAuth1.0 대표 용어
@@ -88,7 +90,7 @@ Host: nid.naver.com
 호출하는 URL의 예시는
 `http://openapi.naver.com/특정항목/getMenuList.xml` -->
 
-
+<br><br><br>
 
 ## 🔑 OAuth 2.0
 ### OAuth 2.0 대표 용어
@@ -168,7 +170,8 @@ Oauth 2.0의 권한 부여 방식 중 가장 간단한 방식으로 클라이언
 
 
 
-<br><br><br><br>
+<br><br><br>
+
 ### 📚 참고
 
 [ouath 개념](https://tecoble.techcourse.co.kr/post/2021-07-10-understanding-oauth/)
@@ -180,3 +183,16 @@ Oauth 2.0의 권한 부여 방식 중 가장 간단한 방식으로 클라이언
 [oauth-간단한정리](https://velog.io/@undefcat/OAuth-2.0-%EA%B0%84%EB%8B%A8%EC%A0%95%EB%A6%AC)
 
 [OAuth2.0/1.0](https://doqtqu.tistory.com/295)
+
+<br><br>
+
+### ⁉️ 면접질문
+> OAuth 1.0과 OAuth 2.0의 차이점을 설명하시오.
+
+> OAuth란 무엇인가요?
+
+> OAuth 1.0의 진행 절차를 설명하시오.
+
+> OAuth 2.0의 종류에 대해서 설명하시오.
+
+> OAuth 2.0 인증 방식 중 1가지의 절차를 설명하시오.
