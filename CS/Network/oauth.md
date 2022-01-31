@@ -1,4 +1,4 @@
-# 🔑 OAUTH
+# 🔑 OAuth
 
 ### 📚 table of Contents
 > OAuth 란?
