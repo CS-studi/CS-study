@@ -2,7 +2,7 @@
 
 
 ### 💿 Database curriculum
-- 데이터베이스 👈
+- [데이터베이스](Database.md)👈
     - 데이터베이스를 사용하는 이유
     - 데이터베이스 성능
 - RDBMS vs. NoSQL
