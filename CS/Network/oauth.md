@@ -55,12 +55,26 @@ Authorization/인가
 
 > Oauth 1.0a
 > ![Oauth1a](img/oauth/oauthToken.png)
-1. Consumer가 Servcie Provider에게 Request Token을 요청한다.
-2. Service Provider는 Request Token을 넘겨 준다.
-3. Consumer는 User를 redirect 시켜서 Service Provider에서 인증을하게 한다. (로그인을 하는 과정)
-4. Consumer는 Service Provider로 부터 Access Token을 요청한다.
-5. Service Provider는 Access Token을 발급한다.
-6. Consumer는 이제 User의 제 3자 사이트에 권한을 가지고 인증을 진행 할 수 있다.
+
+> ![oauth1a](img/oauth/oauth1a.png)
+
+1. User가 Consumer에 글을 쓰고 ‘Service Provider에도 남기기’ 버튼을 누른다.
+
+2. Consumer는 자신의 등록 정보를 바탕으로 Signature를 만들고 Service Provider에게 Signature를 보내서 사용자로부터 권한 부여 요청을 받았음을 Service Provider에게 알리고, Service Provider는 권한 부여 요청을 확인했다는 임시 증표(Request Token)를 저장하고 Request Token을 Consumer에게 발급한다. (1)
+
+3. Consumer는 권한 부여 요청 확인 증표(Request Token)와 함께 User의 요청을 Service Provider의 인가(권한 부여) 화면으로 리다이렉트한다.
+
+4. User가 Service Provider에 로그인 한 상태가 아니라면 로그인 한다. (2)
+
+5. 인가 화면에는 ‘Consumer에게 권한 부여’ 버튼이 표시된다.
+
+6. User가 ‘Consumer에게 권한 부여’ 버튼을 클릭하면, Service Provider는 User가 (Request Token을 확인하고) Consumer에게 권한을 부여했음을 확인하고, 확인 코드(Verifier 또는 Authorization_code)를 저장 및 User에게 반환하고 Consumer가 제공하는 callback 화면으로 리다이렉트한다. (3)
+
+7. 리다이렉트를 통해 권한 부여 확인 코드를 전달 받은 Consumer는 Consumer Key, Request Token, Verifier 등을 대상으로 Consumer Secret, Request Token Secret를 이용해서 Signature를 만들고 Service Provider에게 Signature를 보낸다.
+
+8. Service Provider는 Consumer가 보낸 Signature를 확인하고 User만 접근할 수 있었던 보호 자원에 대한 접근 증표(Access Token)를 Consumer에게 발급한다.
+
+9. 이후 Consumer는 Access Token를 Service Provider에게 보여주면서 User를 대신해서 보호 자원에 접근한다.
 
 
 
