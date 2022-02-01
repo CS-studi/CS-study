@@ -174,14 +174,17 @@ Client : 모르는 사람이 만든 사이트
 
 ### Resource Owner Password Credentials Grant
 
-간단하게 username, pwdfh access token을 받는 방식이다. refresh token 사용 가능하다. 중요한 점은 서버, 리소스 서버, 클라이언트가 모두 같은 시스템에 속해 있을 때 사용되어야 하는 방식이다.
+간단하게 username, pwd와 access token을 받는 방식이다. refresh token 사용 가능하다. 중요한 점은 서버, 리소스 서버, 클라이언트가 모두 같은 시스템에 속해 있을 때 사용되어야 하는 방식이다.
 > ![](img/oauth/ResourceOwnerPasswordCredentials.png)
 
 ```
 1. Resource Owner는 인증정보를 client에게 직접 전달한다.
 2. Client는 앞서 받은 인증 정보를 Authorization Server로 전송하여 Access token을 발급받는다.
-3. 획득한 Access token으로 Resource Server에 API 요청을 보낸다. 이방식은 Resource Owner의 id, pwd가 client에게 그대로 노출되므로 client와 service provider가 같은 도메인, 솔류션 내에 존재하여 서로 신뢰할 수 있는 경우 사용한다.
+3. 획득한 Access token으로 Resource Server에 API 요청을 보낸다. 
 ```
+
+이방식은 Resource Owner의 id, pwd가 client에게 그대로 노출되므로 client와 service provider가 같은 도메인, 솔류션 내에 존재하여 서로 신뢰할 수 있는 경우 사용한다.
+
 
 ### Client Credentials Grant
 
