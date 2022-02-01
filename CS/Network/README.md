@@ -11,5 +11,5 @@
 - [쿠키, 세션, jwt 토큰](CookieSessionJWT.md)
 - [프록시](Proxy.md) 
 - [소켓 통신](socket.md)
-- [CORS (Cross Origin Resource Sharing)]()
-- [OAuth]()
+- [CORS (Cross Origin Resource Sharing)]() 👈
+- [OAuth](oauth.md)
