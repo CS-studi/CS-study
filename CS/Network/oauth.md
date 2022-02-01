@@ -53,8 +53,14 @@ Authorization/인가
 
 ## 🔑 OAuth 1.0 진행 과정
 
-> Oauth 1.0a
 > ![Oauth1a](img/oauth/oauthToken.png)
+
+1. Consumer가 Servcie Provider에게 Request Token을 요청한다.
+2. Service Provider는 Request Token을 넘겨 준다.
+3. Consumer는 User를 redirect 시켜서 Service Provider에서 인증을하게 한다. (로그인을 하는 과정)
+4. Consumer는 Service Provider로 부터 Access Token을 요청한다.
+5. Service Provider는 Access Token을 발급한다.
+6. Consumer는 이제 User의 제 3자 사이트에 권한을 가지고 인증을 진행 할 수 있다.
 
 > ![oauth1a](img/oauth/oauth1a.png)
 
