@@ -15,7 +15,7 @@ CORS는 '교차 출처 리소스 공유'라는 이름으로, HTTP 헤더를 사�
 
 ### URL 구조
 
-![IMAGES](/img/CORS/1.png)
+![IMAGES](img/CORS/1.png)
 
 <br>
 
@@ -53,7 +53,7 @@ Postman으로 API를 테스트하거나, 다른 서버에서 API를 호출할 �
 
 **1) Simple Request**
 
-![IMAGES](/img/CORS/2.png)
+![IMAGES](img/CORS/2.png)
 
 Simple Request는 서버에게 바로 요청을 보내는 방법이다. 클라이언트가 서버에게 바로 요청을 하면 서버는 Access-Control-Allow-Origin 헤더를 포함한 응답을 브라우저에 보낸다. 브라우저는 Access-Control-Allow-Origin 헤더를 확인해서 CORS 동작을 수행할지 판단한다.
 
@@ -66,17 +66,17 @@ Simple Request는 서버에게 바로 요청을 보내는 방법이다. 클라�
 3) Content-Type 헤더는 application/x-www-form-urlencoded, multipart/form-data, text/plain 중 하나를 사용해야 합니다. 우리가 많이 사용하고있는 application/json은 포함되지 않는다.
 
 
-![IMAGES](/img/CORS/3.png)
+![IMAGES](img/CORS/3.png)
 
 **2) Preflight Request**
 
-![IMAGES](/img/CORS/4.png)
+![IMAGES](img/CORS/4.png)
 
 서버에 예비 요청을 보내서 안전한지 판단한 후 본 요청을 보내는 방법이다. 본 요청에 앞서, OPTIONS 메서드로 요청이 보내지고, 해당 메서드를 통해 실제 요청을 전송할지 판단한다. 서버는 OPTIONS의 요청에 대한 응답으로 Access-Control-Allow-Origin 헤더를 포함한 응답을 브라우저에 보내고, 브라우저는 위 Simple Request와 동일하게 Access-Control-Allow-Origin 헤더를 확인해서 CORS 동작을 수행할지 판단한다.
 
 * POST요청이지만 Content-Type이 application/x-www-form-urlencoded, multipart/form-data, text/plain이 아닌 경우도 여기에 해당한다.
 
-![IMAGES](/img/CORS/5.png)
+![IMAGES](img/CORS/5.png)
 
 **3) Credentialed Request**
 
