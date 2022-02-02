@@ -7,9 +7,9 @@
 - [TCP 와 UDP 의 차이점 + (QUIC)](TCP_UDP_QUIC.md)
 - [DNS round robin 방식](DNSRoundRobin.md)
 - [웹 통신의 큰 흐름](웹통신의큰흐름.md)
-- [네트워크 시스템의 Layer and Architecture]() 👈
+- [네트워크 시스템의 Layer and Architecture](Network_Layer_Architecture%20.md) 👈
 - [쿠키, 세션, jwt 토큰](CookieSessionJWT.md)
 - [프록시](Proxy.md) 
 - [소켓 통신](socket.md)
-- [CORS (Cross Origin Resource Sharing)]() 👈
+- [CORS (Cross Origin Resource Sharing)](CORS.md) 👈
 - [OAuth](oauth.md)
