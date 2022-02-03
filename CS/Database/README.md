@@ -12,7 +12,7 @@
     - SQL
     - JOIN
     - SQL Injection
-- DB 클러스터링, 리플리케이션
+- [DB 클러스터링, 리플리케이션](ClusteringReplicationShardingPartitioning.md)
 - Transaction 👈
     - Transaction을 사용하는 이유
     - ACID
