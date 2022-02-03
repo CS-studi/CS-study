@@ -137,7 +137,7 @@ Redis 는 Single Threaded 이다. 따라서 레디스가 동시에 처리할 수
 
 <br>
 
-![IMAGES](img/Redis/2.png)
+![IMAGES](img/Redis/4.png)
 
 <br>
 
