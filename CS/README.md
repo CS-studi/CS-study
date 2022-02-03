@@ -54,7 +54,7 @@
 - RDBMS vs. NoSQL
 - ElasticSearch 👈
 - Redis
-- SQL
+- [SQL](Database/SQL.md)
     - SQL
     - JOIN
     - SQL Injection

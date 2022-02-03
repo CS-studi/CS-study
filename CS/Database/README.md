@@ -8,7 +8,7 @@
 - RDBMS vs. NoSQL
 - ElasticSearch 👈
 - Redis
-- SQL
+- [SQL](SQL.md)
     - SQL
     - JOIN
     - SQL Injection
