@@ -150,7 +150,7 @@ Replica가 많으면 Replication Lag 시간이 길어진다. 결국 시간차에
 > Synchronous Replication & Asynchronous Replication
 > 
 
-[B04079_01_01.webp](img/ClusteringReplicationShardingPartitioning/B04079_01_01.webp)
+![Untitled](img/ClusteringReplicationShardingPartitioning/Untitled9.png)
 
 1. `Synchronous Replication`
     
