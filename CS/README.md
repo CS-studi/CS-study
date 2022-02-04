@@ -34,13 +34,13 @@
 - [Rest and RestAPI](Network/Rest.md)
 - [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](Network/HttpHttps.md)
 - [SSL, 공개키/비공개키](Network/SSL.md)
-- [TCP 3-way-handshake]()
+- [TCP 3-way-handshake](Network/TCP_3way_handshake.md)
 - [TCP 와 UDP 의 차이점 + (QUIC)](Network/TCP_UDP_QUIC.md)
 - [DNS round robin 방식](Network/DNSRoundRobin.md)
 - [웹 통신의 큰 흐름](Network/웹통신의큰흐름.md)
 - [네트워크 시스템의 Layer and Architecture](Network/Network_Layer_Architecture%20.md) 👈
 - [쿠키, 세션, jwt 토큰](Network/CookieSessionJWT.md)
-- [프록시]() 
+- [프록시](Network/Proxy.md) 
 - [소켓 통신](Network/socket.md)
 - [CORS (Cross Origin Resource Sharing)](Network/CORS.md)
 - [OAuth](Network/oauth.md)
@@ -51,8 +51,8 @@
 - 데이터베이스 👈
     - 데이터베이스를 사용하는 이유
     - 데이터베이스 성능
-- RDBMS vs. NoSQL
-- ElasticSearch 👈
+- [RDBMS vs. NoSQL](Database/RDBMSvsNOSQL.md)
+- [ElasticSearch](Database/ElasticSearch.md) 👈
 - Redis
 - [SQL](Database/SQL.md)
     - SQL

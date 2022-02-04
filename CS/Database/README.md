@@ -5,8 +5,8 @@
 - [데이터베이스](Database.md)👈
     - 데이터베이스를 사용하는 이유
     - 데이터베이스 성능
-- RDBMS vs. NoSQL
-- ElasticSearch 👈
+- [RDBMS vs. NoSQL](RDBMSvsNOSQL.md)
+- [ElasticSearch](ElasticSearch.md) 👈
 - Redis
 - [SQL](SQL.md)
     - SQL
