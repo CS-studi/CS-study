@@ -119,7 +119,7 @@ Elasticsearch에서 가장 큰 시스템 단위를 의미하며, 최소 하나 �
 
 노드는 역할에 따라 `Master-eligible`, `Data, Ingest`, `Tribe` `Coordination Only Node` 노드로 구분할 수 있다.
 
-**Master-eligible Node**
+**📌 Master-eligible Node**
 
 클러스터를 제어하는 마스터로 선택할 수 있는 노드이다.
  마스터 노드가 하는 역할을 다음과 같다.
@@ -128,7 +128,7 @@ Elasticsearch에서 가장 큰 시스템 단위를 의미하며, 최소 하나 �
 - 클러스터 노드의 추적, 관리
 - 데이터 입력 시 할당할 샤드 선택
 
-**Data Node**
+**📌 Data Node**
 
 데이터(Document)가 저장되는 노드이며, 데이터가 분산 저장되는 물리적 공간인 샤드가 배치되는 노드이다. 
 
@@ -155,11 +155,11 @@ Elasticsearch 버전이 업그레이드 되면서 Data Node에도 좀 더 다양
     - Frozen Data 노드는 shared_cache 옵션으로만 마운트 된 검색 가능한 스냅샷을 저장한다.
     - 즉 스냅샷 데이터를 해당 노드에 저장하고 데이터를 검색 가능하도록 하는 노드이다.
 
-**Ingest Node**
+**📌 Ingest Node**
 
 데이터를 변환하는 등 사전 처리 파이프라인을 실행하는 역할을 한다.
 
-**Coordination Only Node**
+**📌 Coordination Only Node**
 
 사용자의 요청을 받고 라운드 로빈 방식으로 분산을 하는 노드이다. 
 
@@ -201,6 +201,8 @@ RDBMS에서 데이터베이스와 대응하는 개념이다.
 디스크에 쓰여지는 작업 역시 일정 시간이 지나면 commit을 통해서 물리적인 디스크에 세그먼트를 저장해 주고, 저장된 세그먼트는 시간이 지날수록 하나로 `병합하는 과정`을 수행한다. 병합을 통해 세그먼트를 하나로 줄여 주면, 검색할 세그먼트의 개수가 줄어들기 때문에 검색 성능이 향상된다.
 
 `세그먼트 병합` 시에는 새로운 세그먼트를 만들 공간이 있어야 하기 때문에 디스크가 꽉 찬 상태에서는 수행할 수 없으며 세그먼트 병합은 시스템 자원을 많이 쓰는 부담스러운 작업이므로 시스템 자원이 여유로울 때 진행한다.
+
+![segement](img/ElasticSearch/segement.png)
 
 ## ElasticSearch의 장단점
 ### 장점
