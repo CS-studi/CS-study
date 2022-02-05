@@ -29,6 +29,31 @@ Authentication/인증
 Authorization/인가
 - 유저에 대한 정보 권한을 허락하는 것
 
+<br>
+---
+<br>
+
+## *Oauth 2.0 is not an authentication protocol
+
+=> OAuth는 authentication protocol의 내부에 사용되는 것이다.
+실제로 OAuth는 애플리케이션에게 authentication에 관해서는 아무것도 수행하지 않는다. 실제로 user의 authentication 증명되면 id_token이 발급되고 id_token과 발급 받은 id_token을 이용하여 access_token 발급 요청을 진행한다.
+
+### ID Token은 무엇인가.
+ID_token은 user가 authenticate됐다는 것을 증명한다. ID 토큰은 인터넷에서 id 주장을 공유하는 데 사용하도록 설계된 openID Connect(OIDC, OIDC는 JWT toekn을 이용한다.)의 표준화된 기능이다.
+
+사용자를 인증하고 id 토큰을 얻기 위해 가장 일반적으로 사용되는 접근 방식을 '서버'흐름과 '암시적'흐름이라고 한다.
+
+더 깊게 들어가면 더 많은 내용이 있지만 결론은 openID Connect는 OAuth2.0의 간단한 신원 확인 최상위 레이어의 프로토콜이다.
+
+흐름은 아래에서 배울 
+- Authorization code : code
+- Implicit : id_token, id_token token
+- Hybrid  code id_token, code token, code id_token token
+방식을 사용한다.
+
+## OpenId Vs. OAuth2.0
+OAuth 2.0이 자원의 접근과 공유에 관한 것이라면, OIDC는 인증에 관한 것이다. OIDC의 목적은 한 번의 로그인으로 여러 사이트에 로그인 하는 것이다. OIDC를 사용하는 웹사이트에 로그인할 때마다, 사용자는 OIDC 사이트(구글, 페이스북, 카카오 등등)의 로그인화면으로 전환되고 로그인 후에 사용하려던 웹이나 앱으로 돌아오게 된다. 예를 들면 만약에 내가 구글계정을 이용하여 OAuth2.0에 로그인 하면 그 때 OIDC를 사용하게 된다. 사용자가 성공적으로 구글에 인증이 성공하고 OAuth에 나의 정보에 권한을 위임하면 구글은 다시 OAuth에게 사용자의 정보를 보내고 인가가 승인된다. 이 정보는 JWT를 이용해서 리턴되고 Client는 엑세스 토큰과 요청했다면 id_token을 리턴받게된다.
+
 <br><br><br>
 
 ## OAuth 1.0과 2.0 차이점
@@ -97,19 +122,6 @@ Authorization/인가
 
 `Access Token-방문증`
 
-<!-- ### Request Token
-OAuth에서 Consumer가 Request Token 발급을 요청하고 Service Provider가 Request Token을 발급하는 과정은 `1번. 나방문씨가 안네데스크에 김목적씨 만나러 왔다고 말하는` 절차이다. Request Token의 Request 절차는 아래와 같다.
-```
-GET /naver.oauth?mode=req_req_token&oauth_callback=http://example.com/OAuthRequestToken.do&oauth_consumer_key=WEhGuJZWUasHg&oauth_nonce=zSs4RFI7lakpADpSsv&oauth_signature=wz9+ZO5OLUnTors7HlyaKat1Mo0=&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1330442419&oauth_version=1.0 HTTP/1.1  
-Accept-Encoding: gzip, deflate  
-Connection: Keep-Alive  
-Host: nid.naver.com  
-```
-### Access Token 사용하기
-이제 방문증이 발급되면 출입문을 통과하는 일만 남았다. 방문증을 가지고 출입문을 통과한다는 것은 User의 권한으로 Service Provider의 기능을 사용하는 것과 비슷하다. 다시 말해, 권한이 필요한 오픈 API를 호출할 수 있게 되는 것이다. 
-
-호출하는 URL의 예시는
-`http://openapi.naver.com/특정항목/getMenuList.xml` -->
 
 <br><br><br>
 
