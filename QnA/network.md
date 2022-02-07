@@ -569,50 +569,71 @@ http 통신은 단방향 통신으로 클라이언트는 서버에 요청, 서�
 리버스 프록시 뒤에 여러 대의 애플이케이션 서버를 둠으로써 사용자 요청을 분산할 수 있습니다. end-point마다 호출 서버를 설정할 수 있어 서버의 트래픽을 분산할 수도 있습니다.
 </details>
 
-<!-- <details> 
-<summary></summary>
+<details> 
+<summary>OAuth란 무엇인가요?</summary>
 <div markdown="2">
 
+OAuth란 인터넷 사용자들이 비밀번호를 제공하지 않고 다른 웹사이트 상의 자신들의 정보에 대해 웹사이트나 애플리케이션의 접근 권한을 부여할 수 있는 공통적인 수단으로서 사용되는 접근 위임을 위한 개방형 표준이다.
+
+쉽게 말해서 다른 서비스의 회원 정보를 안전하게 사용하기 위한 방법이다. OAuth는 Authentication, Authorization(인증, 인가) 둘 다 포함하고 있다.
 
 </div>
 </details>
 
 <details> 
-<summary></summary>
+<summary>OAuth 1.0과 OAuth 2.0의 차이점을 설명하시오.</summary>
 <div markdown="2">
 
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
+우선 각각의 역할과 토큰, openAPI, 유효 기간이 다릅니다. 1.0 버전의 경우 User, consumer, service provider가 존재하고 토큰으로는 request, access token을 가지고 있습니다. OpenAPI 호출 및 보안으로 전자서명을 사용하고 Access token의 유효기간은 없습니다. 하지만 OAuth2.0의 경우 Resource owner, client, Resource server, Authorization server가 있고, Access token과 refresh token을 가집니다. 보안의 경우 https를 기본으로 사용하고 access token의 유효기간은 refresh token이 존재하기 때문에 짧습니다.
 
 </div>
 </details>
 
 
 <details> 
-<summary></summary>
+<summary>OAuth 1.0의 진행 절차를 설명하시오.</summary>
 <div markdown="2">
 
+첫 번째로 consumer가 service provider에게 request token을 request 합니다. 그 다음 service provider는 consumer에게 request Token을 수여하면 consumer는 user를 redirect시켜 service provider에서 본인 인증을 하게됩니다. 이후 user가 인증을 하면 consumer는 service provider에게 access token을 요청합니다. service provider는 access token을 consumer에게 수여하게되고 consumer는 이제 access token으로 user의 제3자 앱의 권한을 가지고 user를 인증하게 됩니다.
 
 </div>
 </details>
 
 
 <details> 
-<summary></summary>
+<summary>OAuth 2.0의 종류에 대해서 설명하시오.</summary>
 <div markdown="2">
 
+OAuth 2.0의 종류로 *Authorization code grant, Implicit grant, Resource Ownser password credentials grant, client credentials grant* 방식이 있습니다.
+
+Authorization code grant 방식은 client가 사용자 대신 특정 리소스에 접근을 요청할 때 사용하고 resource 접근을 위해 authorization server에서 받은 권한 코드로 리소스에 대한 액세스 토큰을 받는 방식입니다. 다른 절차에 비해 보안성이 높고 자주 사용됩니다.
+
+Implicit grant는 autorization code grant와 다르게 권한 코드 교환 단계가 있고, access token을 즉시 반환 받아 이를 인증에 이용하는 방식입니다.
+
+Resource owner password credentials는 client가 암호를 사용하여 액세스 토큰에 대한 사용자의 자격 증명을 교환하는 방식이고 resource owner에서 id, pwd를 전달받아 resource server에 인증하는 방식으로 신뢰할 수 있는 client에서만 가능합니다.
+
+마지막으로 client credentials grant는 client가 컨텍스트 외부에서 access token을 얻어 특정 리소스에 접근을 요청할 때 사용하는 방식입니다.
+
+컨텍스트 외부 ⇒ ./src/user/ , ./img/
 
 </div>
 </details>
 
 
+<details> 
+<summary>OAuth 2.0 인증 방식 중 1 가지의 절차를 설명하시오.</summary>
+<div markdown="2">
+
+Authorization Code grant 방식은 client에서 authorization server로 권한 부여 요청을 보내고 로그인 팝업창이 전달되면 user는 로그인을 합니다. 로그인 정보가 맞다면 권한 부여 승인 코드를 client에게 전달하고 client는 authorization code를 통해 access token 발급을 요청합니다. authorization server는 자기가 가지고 있는 client id, client secret, authorization code를 전달 받은 정보와 비교하여 동일할 때 access token을 전달합니다. client는 resource server에게 인증을 위한 access token을 전달하면서 필요한 자원을 요청하고 resource server는 access token이 유효하면 해당 자원을 client에게 제공합니다.
+<br>
+Implicit code grant는 Client가 인증서버에게 사용자 로그인 및 권한 동의 웹페이지를 요청합니다. 로그인 팝업창이 전달되면 사용자는 로그인을하고 로그인 정보가 맞다면 redirect url로 authorization code가 아니라 access token을 전달합니다. 획득한 access token으로 resource server에 api 요청을 보냅니다.
+<br>
+Resource owner password credentials grant는 resource owner의 인증정보를 client에게 직접 전달합니다. client는 앞서 받은 인증 정보를 authorization server로 전송하여 access token을 발급받습니다. 이후 획득한 access token으로 resource server에 api 요청을 보냅니다.
+
+</div>
+</details>
+
+<!-- 
 <details> 
 <summary></summary>
 <div markdown="2">
