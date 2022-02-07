@@ -32,8 +32,7 @@
 
 <br>
 
-**레디스는 관계형 데이터베이스가 아닙니다.** 레디스는 RDS와 달리 데이터타입(VARCHAR, INT, DATETIME)등을 지원하지 않습니다. 오직 몇 가지 로우 레벨의 데이터 타입을 지원합니다.
-
+**레디스는 관계형 데이터베이스가 아닙니다.** 
 레디스는 기본적으로 String, Bitmap, Hash, List, Set, Sorted Set 를 제공했고, 버전이 올라가면서 현재는 Geospatial Index, Hyperloglog, Stream 등의 자료형도 지원하고 있습니다.
 
 그렇다면 이렇게 다양한 자료구조를 제공하는게 왜 중요할까요?
