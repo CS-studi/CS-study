@@ -48,12 +48,12 @@
 
 ---
 # 💿 Database 
-- 데이터베이스 👈
+- [데이터베이스](Database/Database.md) 👈
     - 데이터베이스를 사용하는 이유
     - 데이터베이스 성능
 - [RDBMS vs. NoSQL](Database/RDBMSvsNOSQL.md)
 - [ElasticSearch](Database/ElasticSearch.md) 👈
-- Redis
+- [Redis](Database/Redis.md)
 - [SQL](Database/SQL.md)
     - SQL
     - JOIN

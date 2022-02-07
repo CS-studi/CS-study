@@ -7,7 +7,7 @@
     - 데이터베이스 성능
 - [RDBMS vs. NoSQL](RDBMSvsNOSQL.md)
 - [ElasticSearch](ElasticSearch.md) 👈
-- Redis
+- [Redis](Redis.md)
 - [SQL](SQL.md)
     - SQL
     - JOIN
