@@ -54,9 +54,6 @@
 
 </details>
 
-# 면접 예상 질문
-
-
 <details>
 <summary>Clustering이 무엇인가요?</summary>
 
