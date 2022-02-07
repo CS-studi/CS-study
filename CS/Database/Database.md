@@ -253,19 +253,39 @@ key란 검색이나 정렬시에 Tuple을 구분할 수 있는 기준이 되는 
 
 <br/>
 
-
 > 순차 I/O & 랜덤 I/O
 > 
 
 `순차 IO`란 시작 위치로 이동하여 물리적으로 인접한 페이지를 차례대로 읽는 방법이다.
 
+- 큰 처리량(Throughtput)을 갖는 방식이다.
 - 순차 IO로 원하는 데이터를 찾기 위해선 `Full Scan` 방식을 이용해야한다.
-- Full Table Scan에 사용되는 방법이다
+    - Full Table Scan에 사용되는 방법이다
 
-`랜덤 IO`란 임의로 접근하여 물리적으로 떨어진 페이지를 읽는 방법이다.
+`랜덤 IO`란 디스크의 여러 부분에 흩어져 있는 데이터를 읽는 방식이다.
 
+- 인접하지 않은 데이터가 읽히므로 디스크 헤드를 무작위(Random)로 움직인다. 이는 성능 저하를 야기한다.
 - Index Range Scan에 사용되는 방법이다.
-- 대부분의 IO 작업이 랜덤 IO로 이뤄진다
+
+
+<br/>
+
+> ***대부분의 IO 작업이 랜덤 IO로 이뤄진다***
+> 
+
+서버 기반 환경에서 모든 I/O를 순차I/O로 수행하는 것은 불가능하다. 따라서 유일한 해결책은 랜덤 엑세스가 최소화되도록 여러 디스크에 데이터를 매핑하는 것이다. (하나의 디스크에 여러 데이터가 아니라 여러 디스크에 적은 데이터를 매핑)
+
+
+<br/>
+
+> 데이터베이스 저장소 설계방법 : 순차 I/O & 랜덤 I/O
+> 
+
+순차 I/O 및 랜덤 I/O의 주요 특성을 고려하여 최대 순차 I/O가 수행될 수 있는 방식으로 데이터베이스 Disk 저장소를 설계하는 것이 중요하다.
+
+SQL Server에서 트랜잭션 로그는 순차 I/O의 주요한 예시이다. 많이 사용한 로그 파일을 하나의 디스크에 저장하고, 기본 로그 파일을 하나만 사용하도록 권장된다. 왜냐하면 순차 I/O를 통해 큰 처리량을 갖기 위함이다.
+
+만약 여러 로그 파일을 하나의 디스크에 저장하면 엑세스 유형이 순차I/O에서 → 랜덤I/O로 변경된다.
 
 <br/>
 
@@ -308,6 +328,8 @@ key란 검색이나 정렬시에 Tuple을 구분할 수 있는 기준이 되는 
 [DB용어](https://github.com/WooVictory/Ready-For-Tech-Interview/blob/master/Database/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EB%B3%B8%20%EC%9A%A9%EC%96%B4.md) , [DB key](https://github.com/WooVictory/Ready-For-Tech-Interview/blob/master/Database/Key(%ED%82%A4).md), [클러스터링 인덱스, 유니크 인덱스, 외래 키.md](https://github.com/alstjgg/cs-study/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%2C%20%EC%9C%A0%EB%8B%88%ED%81%AC%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%2C%20%EC%99%B8%EB%9E%98%20%ED%82%A4.md#%EC%99%B8%EB%9E%98-%ED%82%A4)
 
 [순차 I/O 랜덤 I/O](https://velog.io/@keywookim/MySQL-Index-%EC%BF%BC%EB%A6%AC%ED%8A%9C%EB%8B%9D%EC%9D%98-%EA%B8%B0%EB%B3%B8-1#%EB%9E%9C%EB%8D%A4io%EC%99%80-%EC%88%9C%EC%B0%A8io)
+
+[순차 io 랜덤 io](https://blog.dbdigger.com/sequential-and-random-io-for-databases/#:~:text=Sequential%20I%2FO%20is%20operation,on%20various%20parts%20of%20disk.)
 
 # 면접 예상 질문
 
