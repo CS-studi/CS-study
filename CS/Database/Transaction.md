@@ -74,7 +74,7 @@ ATM으로 계좌 이체를 하는 상화으로 예시를 들어보면
 - REAPEATABLE READ(lv.2) (반복 가능한 읽기)
 - SERIALIZABLE(lv.3) (직렬화 가능)
 
-#### Read Uncommitted
+### Read Uncommitted
 - select 문장이 수행되는 동안 __해당 데이터에 shared lock__ 이 걸리지 않는 계층
 - 트랜잭션에 처리중이거나, 아직 commit되지 않은 데이터를 다른 트랜잭션이 읽는 것을 허용
 - 데이터베이스의 __일관성을 유지하는 것이 불가능함__
@@ -91,7 +91,7 @@ dirty read 발생
 5. 트랜잭션 1, 2가 종료된다.
 ```
 
-#### Read Committed
+### Read Committed
 - select 문장이 수행되는 동안 해당 데이터에 shared lock이 걸리는 계층
 - __트랜잭션이 수행되는 동안 다른 트랜잭션이 접근할 수 없어 대기한다.__
 - dirty read 방지
@@ -113,7 +113,7 @@ Non-repeatable read ex / 나이가 바뀌어서 출력이되면 안되는 상황
 7. 트랜잭션 2가 커밋을 하고 종료한다.
 ```
 
-#### Repeatable Read
+### Repeatable Read
 - 트랜잭션이 완료될 떄까지 __select 문장이 사용되는 모든 데이터에 shared lock이 걸리는 계층__ 
 - 트랜잭션이 범위 내에서 __조회한 데이터 내용이 항상 동일함을 보장__
 - `다른 사용자는 트랜잭션 영역에 해당되는 데이터에 대한 수정 불가능` -> 입력은 가능
@@ -133,7 +133,7 @@ Non-Repeatable Read
 7. 트랜잭션 1이 id=2인 데이터를 조회한다. 데이터가 정상적으로 확인된다.
 ```
 
-#### Serializable 
+### Serializable 
 - __트랜잭션이 완료될 때까지 select 문장이 사용되는 모든 데이터에 shared lock이 걸리는 계층__
 - 가장 엄격한 격리 수준으로 __완벽한 읽기 일관성 모드를 제공함__
 - `다른 사용자는 트랜잭션 영역에 해당되는 데이터에 대한 수정 및 입력 불가능`
