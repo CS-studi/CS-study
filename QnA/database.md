@@ -171,7 +171,7 @@ left join은 a, b 집합이 있을 때, 조인을 진행한후에 교집합을 �
 <details>
 <summary>SQL 문법 종류와 예시를 들어주세요</summary>
 DDL은 (data definition Language) 데이터 정의 언어입니다. 각 릴레이션을 정의하기 위해 존재합니다. alter, drop create table로 릴레이션을 삭제, 생성 및 릴레이션 전환을 합니다. DML은 데이터 조작 언어로 insert, select update가 있고 데이터를 관리하며 각 테이블을 조회 삽입, 갱신합니다. 마지막으로 DCL은 데이터 제어 언어로 사용자별로 데이터의 권한을 다루기 위한 언어로 revoke grant가 있습니다.
-
+</details>
 
 
 <details>
