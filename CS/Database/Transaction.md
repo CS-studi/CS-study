@@ -8,9 +8,9 @@
 
 > ACID
 
-[Transaction 격리 수준 & 격리 수준 설정 시 문제점](##Transaction 격리 수준 & 격리 수준 설정 시 문제점)
+> Transaction 격리 수준 & 격리 수준 설정 시 문제점
 
-[Transaction 관리를 위한 DBMS의 전략](## Transaction 관리를 위한 DBMS의 전략)
+> Transaction 관리를 위한 DBMS의 전략
 
 <br>
 
