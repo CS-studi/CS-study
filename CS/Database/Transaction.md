@@ -8,7 +8,9 @@
 
 > ACID
 
-> Transaction 격리 수준 & 격리 수준 설정 시 문제점
+[Transaction 격리 수준 & 격리 수준 설정 시 문제점](##Transaction 격리 수준 & 격리 수준 설정 시 문제점)
+
+[Transaction 관리를 위한 DBMS의 전략](## Transaction 관리를 위한 DBMS의 전략)
 
 <br>
 
@@ -179,6 +181,55 @@ ___동시성을 증가시키면 데이터의 무결성에 문제가 발생하고
     - 트랜잭션 도중 새로운 레코드를 삽입을 허용하기 때문에 나타남
 
 ![chrt](img/Transaction/chart.png)
+
+<br>
+
+## Transaction 관리를 위한 DBMS의 전략
+
+이해가 필요한 개념 
+
+> DBMS의 구조
+
+> Buffer 관리 정책
+
+
+### DBMS의 구조
+
+DBMS 구성요소 :Query Processor (질의 처리기), Storage System(저장 시스템)
+
+입출력 단위 :고정길이의 page 단위로 disk에 읽거나 씀
+
+저장 공간 : 비휘발성 저장 장치인 disk에 저장, 일부분을 main memory에 저장
+
+![dbms](img/Transaction/buffer.png)
+
+### Page Buffer Manager or Buffer manager
+
+> DBMS의 storage system에 속하는 모듈 중 하나로, main memory에 유지하는 페이지를 관리하는 모듈
+> 
+
+Buffer 관리 정책에 따라 undo 복구와 redo 복구가 요구되거나 그렇지 않게 되므로 transaction 관리에 매우 중요한 결정을 가져온다.
+
+#### Undo
+
+필요한 이유 : 수정된 page들이 **buffer 교체 알고리즘에 따라서 디스크에 출력**될 수 있음. Buffer 교체는 transaction과는 무관하게 buffer의 상태에 따라서 결정된다. 이로 인해서 정상적으로 종료되지 않은 transaction이 변경한 page들은 원상 복구 되어야 하는데, 이를 undo라고 한다.
+
+- steal : 수정된 페이지를 언제든지 디스크에 쓸 수 있는 정책
+    - 대부분의 dbms가 채택하는 buffer 관리 정책
+    - undo logging과 복구를 필요로 함.
+- not steal : 수정된 페이지들을 EOT (End Of Transaction)까지는 버퍼에 유지하는 정책
+    - undo 작업이 필요하지 않지만, 매우 큰 메모리 버퍼가 필요함
+
+#### Redo
+
+이미 commit한 transaction의 수정을 재반영하는 복구 작업
+
+buffer관리 정책에 영향을 받는다. → transaction이 종료되는 시점에 해당 transaction이 수정한 page를 디스크에 쓸 것인가 아닌가로 기준
+
+- FORCE : 수정했던 모든 페이지를 Transaction commit 시점에 disk에 반영
+    - transaction이 commit 되었을 때 수정된 페이지들이 disk 상에 반영되므로 redo 필요 없음
+- not FORCE :commit 시점에 반영하지 않는 정책
+    - transaction이 disk 상의 db에 반영되지 않을 수 있기에 redo 복구가 필요(대부분의 dbms정책)
 
 <br><br>
 
