@@ -68,6 +68,17 @@ ATM으로 계좌 이체를 하는 상화으로 예시를 들어보면
 ### Transaction 격리 수준
 > 트랜잭션 격리 수준에 따라 데이터 조회 결과가 달라질 수 있다. 격리 레벨에 따라서 읽기 일관성이 달라진다. 트랜잭션 격리 수준에 따라 데이터 조회 결과가 달라지게 하는 기술을 MVCC(Multi Version Concurrency Consistency) 라고 함.
 
+### DB lock 
+
+1. Shared Lock(Read Lock)
+
+공유 락은 데이터를 읽을 때 사용하는 lock이다. read lock 끼리는 데이터의 일관성과 무결성을 해치지 않기 때문에 동시에 접근이 가능하다. 즉 리소스를 다른 사용자가 동시에 읽을 수 있게 하지만 변경은 불가능하다. 만약 특정 데이터에 exclusive lock이 걸리면 shared lock을 걸 수 없지만 여러 shared lock은 동시에 적용될 수 있다.
+
+1. Exclusive lock(write lock)
+
+베타락은 데이터를 변경할 때 사용하는 lock이다. 하나의 트랜잭션이 완료될 때 까지 유효하며, 베타락이 끝날 때 까지 어떠한 접근도 허용되지 않는다. Exclusive lock이 걸리면 shared lock을 걸 수 없다. exclusive 상태의 데이터에 대해 다른 트랜잭션이 exclusive lock을 걸 수 없다.
+
+
 격리 수준 레벨
 - READ UNCOMMITTED(lv.0) (커밋되지 않은 읽기)
 - READ COMMITTED(lv.1) (커밋된 읽기)
