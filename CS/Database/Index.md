@@ -230,11 +230,15 @@ Clustered 인덱스의 구조이다. Data Page 의 데이터들이 순차적으�
 
 > id:4에 해당하는 가수 이름을 알고 싶다면 120번지로 이동하고, name을 확인하면 된다. 
 > clustered와의 차이는 순차적으로 index가 정렬되었지 않다는 점이다.
+> 논 클러스터링 인덱스는 클러스터링 인덱스에 비해서 검색 속도는 느린 반면에, CUD 속도는 빠르다.
+
 
 ### Non-Clustered Index 구조
 ![nonClustered](img/Index/nonClustered2.png)
 
-Non-Clustered 인덱스의 구조이다. Clustured 구조와는 다르게 Leaf Level과 Data Page가 구분된다. 그리고 Data Page의 데이터는 정렬 되어있지 않다.
+- B-Tree 의 리프 노드 처럼 노드 자체가 데이터가 아니고, 리프 노드에서는 데이터가 위치하는 주소를 가지고 있는 형태.
+
+- Clustured 구조와는 다르게 Leaf Level과 Data Page가 구분된다. 그리고 Data Page의 데이터는 정렬 되어있지 않다.
 
 ### 정리
 - Clustered 인덱스는 테이블당 오직 한개만 존재한다. 반면에 Non-Clustered 형은 테이블 당 여러개의 인덱스를 생성할 수 있다.
