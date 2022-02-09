@@ -94,6 +94,8 @@ Commit 연산은 한 개의 논리적 단위(트랜잭션)에 대한 작업이 �
   - 축소단계: Unlock은 가능하고 새로운 Lock은 불가능하다.
   - 직렬 가능성을 보장하지만 교착상태가 발생할 수 있다.
 
+![IMAGES](img/DB_DeadLock_ConcurrencyControl/4.png)
+
 - Timestamp(타임스탬프)
   - 시스템에서 생성하는 고유 번호인 타임스탬프를 트랜잭션에 부여함으로써 트랜잭션간의 접근 순서를 미리 정한다.
 
@@ -124,6 +126,10 @@ Commit 연산은 한 개의 논리적 단위(트랜잭션)에 대한 작업이 �
 # Dead Lock(교착 상태)
 
 ### 데이터베이스에서 교착 상태(Dead Lock)란 여러 개의 트랜잭션들이 실행을 하지 못하고 서로 무한정 기다리는 상태를 의미합니다.
+
+예를 들어 TRANSACTION A는 사원 테이블의 1번 사원에 대한 UPDATE를 하고, TRANSACTION B는 2번 사원에 대한 UPDATE 작업을 하고 있다고 가정하자.
+1번 사원의 row는 TRANSACTION A가, 2번 사원의 row는 TRANSACTION B가 LOCK을 하고 있는 상태이다.
+두 트랜잭션 모두 끝나지 않은 상태에서 TRANSACTION A가 2번 사원을 UPDATE 시도하고 TRANSACTION B가 1번 사원을 UPDATE하려고 하면 두개의 TRANSACTION 모두 WAITING에 들어가고 Dead Lock (교착상태) 에 빠지게 된다.
 
 ## 교착상태를 해결하는 방법
 
