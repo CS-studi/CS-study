@@ -18,7 +18,7 @@
 
 >> Monitor
 
-
+<br>
 
 ## 🫁 Intro
 
@@ -87,6 +87,7 @@ critical region은 시간이 지나면 종료되며, 어떤 프로세스가 임�
 2. Progress(진행) - 임계구역에 들어간 프로세스가 없다면 어느 프로세스가 들어갈 것인지 적절히 선택해줘야 한다.
 3. Bounded Waiting(한정 대기) - 기아상태를 방지하기 위해, 한 번 들어갔다 나온 프로세스는 다음에 들어 갈 때 제한을 준다.
 
+<br><br>
 
 ## 🫁 해결책
 임계문제를 해결하기 위한 방식은 많지만 크게 정리를 해보면 
@@ -100,6 +101,8 @@ critical region은 시간이 지나면 종료되며, 어떤 프로세스가 임�
 - Monitor 
 등등 많습니다.
 하지만 주로 다루는 것은 정해져 있기 때문에 궁금하신 분들은 개인적으로 찾아보시면 되고 제 생각에는 면접을 보기 위해서 꼭 알아야 하는 개념은 아래 세가지 정도인 거 같습니다.
+
+<br>
 
 ### Lock (test and set)
 > 소프트웨어적인 해결방법으로 공유락을 이용한다.
@@ -123,7 +126,7 @@ __문제 상황 예시__
 => A, B 동시에 critical region에 들어가고 조건 1에 위배
 ```
 
-### Semaphore
+<br>
 
 ### Semaphore
 
@@ -183,6 +186,7 @@ void consumer(){
 }
 ```
 
+<br>
 
 ### Mutex
 - 세마포어의 간소화된 버전, semaphore가 아니다.
@@ -202,6 +206,7 @@ mutex_unlock:
     MOVE MUTEX #0 | mutexfmf 0으로 바꾼다.
     RET
 ```
+<br><br>
 
 ## Toilet problem with Mutex&Semaphore (예제 느낌입니다잉)
 
@@ -236,6 +241,7 @@ mutex_unlock:
 
 > ![m5](img/processSynchronization/m5.png)
 
+<br>
 
 ### Semaphore
 
@@ -259,12 +265,18 @@ mutex_unlock:
 mutex <= 한 쓰레드, 프로세스에 의해 소유되는 키를 기반으로한 mutual exclusion 기법
 semaphore <= signaling mechanism으로 현재 공유자원에 접근할 수 있는 스레드 프로세스의 수를 나타내는 값을 두어 상호배제를 달성한다고 합니다.
 
+<br>
+
 ### Monitor
 - Mutex와 Condition Variables를 가지고 있는 synchronization 매커니즘이다.
 - Mutex와 monitor는 상호배제를 함으로써 임계구역에 하나의 프로세스만 들어갈 수 있다.(세마포어는 여러개의 프로세스 들어갈 수 있음.)
 
+<br>
+
 ### Semaphore vs. Mutex vs. Monitor
 > 아직 안끝났습니다... 아직 한발 남았습니다...
+
+<br><br>
 
 ### 📚 참고
 
