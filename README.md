@@ -51,7 +51,7 @@
 | 네트워크 , 데이터베이스     | 2022/02/02 | 5주차   |[CORS](CS/Network/CORS.md)<br>[OAuth](CS/Network/oauth.md)<br>[Database](CS/Database/Database.md)<br>[RDBMSvs.NoSQL](CS/Database/RDBMSvsNOSQL.md)|
 | 데이터베이스     | 2022/02/06 | 6주차   |[ElasticSearch](CS/Database/ElasticSearch.md)<br>[Redis](CS/Database/Redis.md)<br>[SQL](CS/Database/SQL.md)<br>[DB Clustering&replication](CS/Database/ClusteringReplicationShardingPartitioning.md)|
 |데이터베이스|2022/02/09|6주차|[Transaction](CS/Database/Transaction.md)<br>[DB 교착상태 & 동시성 제어](CS/Database/DB_DeadLock_ConcurrencyControl.md)<br>[Regularization(정규화)](CS/Database/Regularization.md)<br>Index & Hint|
-| 데이터베이스, 운영체제     | 2022/02/06 | 6주차   |Index & Hint<br>Process, Thread<br>Scheduler<br>Process_Synchronization|
+| 데이터베이스, 운영체제     | 2022/02/06 | 6주차   |Index & Hint<br>Process, Thread<br>Scheduler<br>[Process_Synchronization](CS/OS/processSynchronization.md)|
 <!-- | 운영체제      | 2022/01/01 | 4주차   ||
 | 데이터베이스  | 2022/01/01 | 5주차   ||  -->
 

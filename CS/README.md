@@ -83,13 +83,13 @@
     - 중기 스케줄러
 - CPU 스케줄러
 - 동기와 비동기의 차이
-- 프로세스 동기화 👈
+- [프로세스 동기화](OS/processSynchronization.md)
     - Critical Section
     - 해결책
         - Lock
         - Semaphores
         - 모니터
-- 메모리 관리 전략
+- 메모리 관리 전략 👈
     - 배경
     - paging
     - Segmentation
