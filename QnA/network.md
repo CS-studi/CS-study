@@ -503,6 +503,36 @@ HTTP통신에 암호화를 더해 HTTPS 통신을 할 때 SSL은 HTTP를 대신�
 </div>
 </details>
 
+<details>
+<summary>CORS에 대해서 설명하시오.</summary>
+브라우저에서는 보안적인 이유로 cross-origin HTTP 요청들을 제한합니다. 그래서 cross-origin 요청을 하려면 서버의 동의가 필요합니다. 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절합니다.
+
+이러한 허락을 구하고 거절하는 메커니즘을 HTTP-header를 이용해서 가능한데, 이를 CORS(Cross-Origin Resource Sharing)라고 부릅니다.
+
+그래서 브라우저에서 cross-origin 요청을 안전하게 할 수 있도록 하는 메커니즘입니다.
+</details>
+
+<details>
+<summary>CORS 에러 해결 방법은 뭔가요?
+</summary>
+1. Access-Control-Allow-Origin 설정
+"*"를 설정하게 된다면 모든 외부 출처에서 접속을 할 수 있게 됩니다. 이 방법은 당장은 편리하여 좋아보이지만 보안적인 이슈에 직면할 수 있기 때문에 이러한 방법은 지양해야합니다.
+그렇기에 외부에서 사용한다는 요청에 대한 심사를 거친 후 Access-Control-Allow-Origin에 외부 출처를 일일이 적용하는것이 좋습니다.
+
+2. 프록시 서버 설정
+외부 도메인서버에 접근하고자할 때 바로 외부 도메인 서버를 통하는 것이 아닌 자신의 서버를 매개로 하여 외부서버에 요청하는 방식입니다.
+서버에서 요청을 하게될 때에는 브라우저의 규약인 CORS 정책에 영향을 받지 않습니다.  그러한 이점을 이용하여 Proxy Server라는 출처를 통하기 때문에 CORS 정책을 위반하지 않게되어 우회 할 수 있게됩니다.
+</details>
+
+<details>
+<summary>CORS preflight는 무엇인가요?
+</summary>
+실제 요청을 보내는 것이 안전한지 확인하기 위해 먼저 OPTIONS 메서드를 사용하여 cross-origin HTTP 요청을 보냅니다. 이렇게 하는 이유는 사용자 데이터에 영향을 미칠 수 있는 요청이므로 사전에 확인 후 본 요청을 보냅니다.
+
+Origin헤더에 현재 요청하는 origin과, Access-Control-Request-Method헤더에 요청하는 HTTP method와 Access-Control-Request-Headers 요청 시 사용할 헤더를 OPTIONS 메서드로 서버로 요청합니다. 이때 내용물은 없이 헤더만 전송합니다.
+브라우저가 서버에서 응답한 헤더를 보고 유효한 요청인지 확인합니다. 만약 유효하지 않은 요청이라면 요청은 중단되고 에러가 발생합니다. 만약 유효한 요청이라면 원래 요청으로 보내려던 요청을 다시 요청하여 리소스를 응답받습니다.
+</details>
+
 
 <details> 
 <summary>http통신과 socket 통신의 차이점을 설명하시오.</summary>
