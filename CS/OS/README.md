@@ -9,7 +9,7 @@
     - 단기
     - 중기 스케줄러
 - 스케줄링 알고리즘 
-- 프로세스 동기화
+- [프로세스 동기화](processSynchronization.md)
     - Critical Section
     - 해결책
         - Lock
