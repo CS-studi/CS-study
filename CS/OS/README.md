@@ -1,7 +1,7 @@
 # OS
 
 ### 🫁 OS Curriculum
-- 프로세스와 스레드 & 멀티스레드👈
+- [Process, Thread](ProcessThread.md)👈
     - 프로세스의 개념, 프로세스의 상태(Process State)
     - Process Control Block(PCB), 문맥교환(Context Switch)
     - 프로세스를 스케줄링하기 위한 큐
