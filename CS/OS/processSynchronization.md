@@ -315,7 +315,7 @@ mutex_unlock:
 
 > Semaphore is signaling mechanism (“I am done, you can carry on” kind of signal). For example, if you are listening to songs (assume it as one task) on your mobile phone and at the same time, your friend calls you, an interrupt is triggered upon which an interrupt service routine (ISR) signals the call processing task to wakeup. 
 
-세마포어는 signaling 메커니즘이라고 합니다. 예를 들어서 제가 음악을 듣고 동시에 친구에게 전화를 하는 상황이라면 interrupt가 발생해 service routine을 유발해 음악을 멈추고 친구와 통화를 하고 전화를 끊으면 다시 음악 스트림을 wakeup 신호를 줘서 음악이 저절로 재생되는 것과 같습니다.
+세마포어는 signaling 메커니즘이라고 합니다. 예를 들어서 제가 음악을 듣고 동시에 친구에게 전화를 하는 상황이라면 interrupt가 발생해 service routine을 유발해 음악을 멈추고 친구와 통화를 하고 전화를 끊으면 다시 음악 스트리밍 프로그램에 wakeup 신호를 줘서 음악이 저절로 재생되는 것과 같습니다.
 
 ### mutex의 헷갈리는 질문
 #### Q1. Binary semaphore와 mutex는 같은가요?
@@ -325,6 +325,7 @@ mutex_unlock:
 -> 뮤텍스는 lock입니다. 단 하나의 상태(lock/unlock)과 연관되어 있습니다. 하지만 재귀적인 뮤텍스(POSIX)는 한 번 이상 잠길수 있습니다. 프로그래머가 반드시 mutex를 잠군 횟수만큼 unlock하도록 제어해야합니다.
 
 [출처](https://www.geeksforgeeks.org/mutex-vs-semaphore/)
+
 위 출처로 가셔서 한 번 정독하는 것도 나쁘지 않을 것 같습니다. :)
 수고하셨습니다.
 
@@ -346,10 +347,26 @@ mutex_unlock:
 
 ### ⁉️ 면접 예상 질문
 
-> 
+> 1. Process를 동기화 해야하는 이유가 무엇인가요?
 
->
+>> 1-1. 동기화를 하기 위해서 어떤 이슈를 해결해야하나요?
 
->
+> 2. Race Condition은 무엇인가요?
 
->
+>> 2-1. Race condition은 언제 발생하나요?
+
+> 3. Critical Region은 무엇인가요?
+
+>> 3-1. Critical region의 문제를 해결하기 위한 세 가지 조건을 말해주세요.
+
+>>3-2. 이 문제를 해결하기 위한 대표적인 방법에 무엇이 있나요?
+
+>>3-3. Semaphore, mutex, monitor이 무엇인가요? (내용 설명)
+
+> 4. Mutex vs. Semaphore vs. Monitor를 말해주세요
+
+>> 4-1. Mutex vs. semaphore
+
+>> 4-2. semaphore vs. monitor
+
+>> 4-3. monitor vs. mutex
