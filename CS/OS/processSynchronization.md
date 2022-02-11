@@ -40,6 +40,7 @@
 
 ![stateD](img/processSynchronization/state.png)
 
+<br>
 
 ## 🫁 Synchronization
 > 공유 데이터(Shared data)에 두 개 이상의 프로세스가 동시에 접근하면 data inconsistency(데이터 모순성)가 발생 할 수 있다.
@@ -51,6 +52,8 @@
     - 의존 관계가 존재할 때 어떻게 적절한 순서 부여를 할 것인가?
         - 만약 process A가 데이터 C 생산하고, B가 C를 출력하는 역할을 수행한다면, B는 A가 수행된 후 끝날 때까지 기다려야 한다.
 
+<br>
+
 ## 🫁 Race Conditions
 > Race condition(경쟁 상태)은 두 개 또는 이상의 프로세스가 shared data를 동시에 읽거나 쓰는 상황에서 마지막 결과는 정확히 어떤 프로세스가 언제 수행되었는지에 따라서 결정된다.
 
@@ -59,6 +62,7 @@
 2. 프로세스가 system call을 하여 커널 모드로 진입하여 작업을 수행하는 도중 context switch가 발생할 때
 3. 멀티 프로세서에서 공유 메모리 내의 커널 데이터에 접근할 때
 
+<br>
 
 ## 🫁 Critical Region(Critical section)
 
@@ -194,6 +198,10 @@ void consumer(){
 - 뮤텍스 객체를 두 스레드가 동시에 사용할 수 없다.
 - 일종의 locking 매커니즘으로 공유 자원에 대한 접근을 조율하기 위해 locking과 unlocking을 low level에서 관리한다.
 
+__아래 예제는 tsl instruction을 이용한 mutex 제어 입니다.__
+
+* TSL instruction은 하드웨어적 도움을 받는 메커니즘입니다.
+TSL(test set lock)은 mutual exclusion을 가능하게 하기 위해서 lock과 unlock을 하드웨어적으로 동작시키고 두개의 operation은 쪼갤 수 없습니다.즉, 한 프로세서가 메모리에서 값을 읽어오고 그 주소에 값을 저장하는 도중 다른 프로세서가 그 메모리에 접근하지 못하는 것을 하드웨어가 보장해 주는 것이다. TSL 명령을 실행할 때 메모리 버스를 잠궈서 다른 CPU가 메모리에 접근하지 못하는 방법을 사용하기도 한다.
 ```
 mutex_lock:
     TSL REGISTER, MUTEX | mutex를 레지스터 값으로 옮기고 mutex는 1로 바꾼다.
@@ -262,19 +270,63 @@ mutex_unlock:
 > ![s4](img/processSynchronization/s4.png)
 
 정리하면 
-mutex <= 한 쓰레드, 프로세스에 의해 소유되는 키를 기반으로한 mutual exclusion 기법
-semaphore <= signaling mechanism으로 현재 공유자원에 접근할 수 있는 스레드 프로세스의 수를 나타내는 값을 두어 상호배제를 달성한다고 합니다.
+<br>mutex <= 한 쓰레드, 프로세스에 의해 소유되는 키를 기반으로한 mutual exclusion 기법
+<br>semaphore <= signaling mechanism으로 현재 공유자원에 접근할 수 있는 스레드 프로세스의 수를 나타내는 값을 두어 상호배제를 달성한다고 합니다.
 
 <br>
 
 ### Monitor
 - Mutex와 Condition Variables를 가지고 있는 synchronization 매커니즘이다.
 - Mutex와 monitor는 상호배제를 함으로써 임계구역에 하나의 프로세스만 들어갈 수 있다.(세마포어는 여러개의 프로세스 들어갈 수 있음.)
+- 세마포어를 실제 프로그램을 구현한 것이다.
+- 상호 배제를 위한 데이터 및 프로그램 모듈, 운영체제 내부의 프로글매을 모니터라고 한다.
 
 <br>
 
 ### Semaphore vs. Mutex vs. Monitor
 > 아직 안끝났습니다... 아직 한발 남았습니다...
+
+#### mutex vs. monitor
+- 뮤텍스는 다른 프로세스나 스레드 간에 동기화를 위해 사용된다.
+- 모니터는 하나의 프로세스 내에서 다른 스레드 간에 동기화할 때 사용한다.
+- 뮤텍스는 운영체제 커널에 의해 제공된다.
+    - kernal에 접근하기 때문에 system call을 이용함. 그래서 느리다.
+- 모니터는 프레임워크나 라이브러리 그 자체에서 제공된다.
+    - 프로그램에서 제공하는 것으로 user level에서 제공가능, 그래서 빠름
+
+#### monitor vs. semaphore 
+- 자바에서는 모니터를 모든 객체에게 기본적으로 제공하지만 C에서는 사용할 수 없다.
+- 세마포어는 카운터라는 변수값으로 프로그래머가 상호배제나 정렬의 목적으로 사용 시 매번 값을 따로 지정해줘야하는 번거러움이 있다.
+- 반면에 모니터는 이러한 일들이 캡슐화 되어 있어서 개발자는 카운터 값을 0또는 1로 주어야 하는 고민을 할 필요가 없이 synchronized, wait(), notify() 등의 키워드를 이용해 좀 더 편하게 동기화할 수 있다.
+
+#### semaphore vs. mutex
+- 세마포어는 뮤텍스가 될 수 있지만 뮤텍스는 세마포어가 될 수 없다.
+- 세마포어는 소유할 수 없지만 뮤텍스는 소유할 수 있고 소유주가 그 책임을 진다.(?)
+- 뮤텍스의 경우 뮤텍스를 소유하고 있는 스레드가 이 뮤텍스를 해제할 수 있다. 하지만 세마포어는 소유하지 않고 있는 다른 스레드가 세마포어를 해제할 수 있다.
+- 뮤텍스는 동기화 대상이 1개 일 때 사용하지만 세마포어는 동기화 대상이 여러 개일 때 사용한다. (화장실 예제를 떠올리시면될 거 같아요~)
+
+## *Misconception about mutex and semaphore
+> There is an ambiguity between binary semaphore and mutex. We might have come across that a mutex is a binary semaphore. But it is not! The purpose of mutex and semaphore are different. Maybe, due to similarity in their implementation a mutex would be referred to as a binary semaphore. 
+
+뮤텍스와 세마포어에 대해서 많이 헷갈릴 수 있습니다. 특정 사이트에서는 "mutex가 binary semaphore이다"라는 설명이 있는데 geeks for geeks에서는 이게 잘못된 거라고 하네요. 뮤텍스와 세마포어는 아예 다른 것 입니다. 학교 운영체제 강의에서도 교수님이 다른거 라고 강조하셨던 기억이 납니다. 엄격히 말해서 
+> Strictly speaking, a mutex is a locking mechanism used to synchronize access to a resource. Only one task (can be a thread or process based on OS abstraction) can acquire the mutex. It means there is ownership associated with a mutex, and only the owner can release the lock (mutex). geeks for geeks 본문..
+
+엄격히 말해서 뮤텍스는 locking 메커니즘으로써 공유 자원 접근에 대한 동기화에 쓰입니다. 단 하나의 업무 즉 공유 자원 접근 동기화만 하는 것이라고 합니다. 뮤텍스는 소유권이 있다고 합니다. 그리고 그 소유자만이 lock을 걸고 풀 수 있습니다.
+
+> Semaphore is signaling mechanism (“I am done, you can carry on” kind of signal). For example, if you are listening to songs (assume it as one task) on your mobile phone and at the same time, your friend calls you, an interrupt is triggered upon which an interrupt service routine (ISR) signals the call processing task to wakeup. 
+
+세마포어는 signaling 메커니즘이라고 합니다. 예를 들어서 제가 음악을 듣고 동시에 친구에게 전화를 하는 상황이라면 interrupt가 발생해 service routine을 유발해 음악을 멈추고 친구와 통화를 하고 전화를 끊으면 다시 음악 스트림을 wakeup 신호를 줘서 음악이 저절로 재생되는 것과 같습니다.
+
+### mutex의 헷갈리는 질문
+#### Q1. Binary semaphore와 mutex는 같은가요?
+-> 아닙니다. 우리는 그것을 다른 것이라고 생각해야합니다. signaling 과 locking 메커니즘이라고 생각해요~.~
+
+#### Q2. mutex는 두 번 이상 lock될 수 있나요?
+-> 뮤텍스는 lock입니다. 단 하나의 상태(lock/unlock)과 연관되어 있습니다. 하지만 재귀적인 뮤텍스(POSIX)는 한 번 이상 잠길수 있습니다. 프로그래머가 반드시 mutex를 잠군 횟수만큼 unlock하도록 제어해야합니다.
+
+[출처](https://www.geeksforgeeks.org/mutex-vs-semaphore/)
+위 출처로 가셔서 한 번 정독하는 것도 나쁘지 않을 것 같습니다. :)
+수고하셨습니다.
 
 <br><br>
 
@@ -287,3 +339,17 @@ semaphore <= signaling mechanism으로 현재 공유자원에 접근할 수 있�
 [Mutex&semaphore](https://worthpreading.tistory.com/90)
 
 [Monitor,mutex,semaphore](https://worthpreading.tistory.com/90)
+
+[Mutex vs. semaphore](https://www.geeksforgeeks.org/mutex-vs-semaphore/)
+
+<br><br>
+
+### ⁉️ 면접 예상 질문
+
+> 
+
+>
+
+>
+
+>
