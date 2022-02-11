@@ -6,7 +6,7 @@
     - Process Control Block(PCB), 문맥교환(Context Switch)
     - 프로세스를 스케줄링하기 위한 큐
     - Single and Multithreaded Processes
-- CPU 스케줄러 & 스케쥴링 알고리즘
+- [CPU 스케줄러 & 스케쥴링 알고리즘](CPU_Scheduler_Algorithm.md)
     - 프로세스 생성
     - CPU Scheduler & Dispatcher
     - FCFS, SJF, Priority Scheduling, Round Robin
