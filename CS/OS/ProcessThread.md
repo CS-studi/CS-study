@@ -408,7 +408,7 @@ PCB는 운영체제가 각 프로세스를 관리하기 위해 프로세스당 �
 > 프로세스 간 협력 메커니즘 : IPC (Interprocess Communication)
 > 
 
-`Message Passing`
+📌 `Message Passing`
 
 ![Untitled](img/ProcessThread/Untitled%2018.png)
 
@@ -433,7 +433,7 @@ Message Passing 방식은 크게 두 가지가 있다
 
 <br/>
 
-`Shared Memory`
+📌 `Shared Memory`
 
 ![Untitled](img/ProcessThread/Untitled%2021.png)
 
