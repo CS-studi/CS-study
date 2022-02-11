@@ -343,6 +343,9 @@ mutex_unlock:
 
 [Mutex vs. semaphore](https://www.geeksforgeeks.org/mutex-vs-semaphore/)
 
+[mutex](http://www.qnx.com/developers/docs/qnxcar2/index.jsp?topic=%2Fcom.qnx.doc.neutrino.sys_arch%2Ftopic%2Fkernel_Mutexes.html)
+
+
 <br><br>
 
 ### ⁉️ 면접 예상 질문
