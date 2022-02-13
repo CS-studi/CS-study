@@ -80,7 +80,7 @@
     - 프로세스를 스케줄링하기 위한 큐
     - Single and Multithreaded Processes
     - 프로세스 생성
-- CPU 스케줄러 & 스케쥴링 알고리즘
+- [CPU 스케줄러 & 스케쥴링 알고리즘](OS/CPU_Scheduler_Algorithm.md)
     - CPU Scheduler & Dispatcher
     - FCFS, SJF, Priority Scheduling, Round Robin
 - [프로세스 동기화](https://github.com/CS-studi/CS-study/blob/master/CS/OS/processSynchronization.md)
