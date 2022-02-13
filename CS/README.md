@@ -66,7 +66,7 @@
     - 트랜잭션 격리 수준을 설정할 때 발생하는 문제점들
 - [DB 교착상태 & 동시성 제어](Database/DB_DeadLock_ConcurrencyControl.md)
 - [Regularization(정규화)](Database/Regularization.md)
-- Index & Hint
+- [Index & Hint](Database/Index.md)
     - 순차 I/O, 랜덤 I/O
     - B-Tree Index, Hash Index, InnoDB Adaptive Hash Index
     - 인덱스 레인지 스캔, 인덱스 풀 스캔
