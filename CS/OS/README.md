@@ -6,8 +6,8 @@
     - Process Control Block(PCB), 문맥교환(Context Switch)
     - 프로세스를 스케줄링하기 위한 큐
     - Single and Multithreaded Processes
-- [CPU 스케줄러 & 스케쥴링 알고리즘](CPU_Scheduler_Algorithm.md)
     - 프로세스 생성
+- [CPU 스케줄러 & 스케쥴링 알고리즘](CPU_Scheduler_Algorithm.md)
     - CPU Scheduler & Dispatcher
     - FCFS, SJF, Priority Scheduling, Round Robin
 - [프로세스 동기화](https://github.com/CS-studi/CS-study/blob/master/CS/OS/processSynchronization.md)
@@ -22,19 +22,21 @@
     - Deadlock의 처리 방법
     - Deadlock Avoidance
     - Banker's Algorithm
-- 메모리 관리 전략
+- 메모리 관리 전략(1)
     - 배경
     - paging
         - Dynamic Relocation
         - Multilevel Paging
         - Shared Page
+- 메모리 관리 전략(2)
     - Segmentation
         - Segmentation Architecture
         - Segmentation with Paging
-- Virtual Memory
+- Virtual Memory(1)
     - Demand Paging, Memory에 없는 Page의 Page Table, Page Fault
     - Page Replacement
-        - Page replacement Algorithm
+- Virtual Memory(2)
+    - Page replacement Algorithm
         - Optimal, FIFO , LRU, LFU
     - LRU와 LFU 알고리즘의 구현
 - 캐시의 지역성 👈
