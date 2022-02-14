@@ -198,11 +198,11 @@ CPU 스케줄러는 준비 상태에 있는 프로세스들 중 어떠한 프로
 **CPU 스케줄러가 필요한 경우**
 
 - Running → Blocked (ex. I/O 요청하는 시스템 콜)
-- Running → Running (ex. 할당 시간 만료로 인한 타이머 인터럽트)
+- Running → Ready (ex. 할당 시간 만료로 인한 타이머 인터럽트)
 - Blocked → Ready (ex. I/O 완료 후 인터럽트)
 - Terminated
 
-1, 4번째의 스케줄링은 강제로 빼앗지 않고 자진 반납하는 `nonpreemptive` 방식이고, 그 외의 스케줄링은 CPU를 강제로 빼앗는 `preemptive` 방식이다. 전자를 비선점형 스케줄링, 후자를 선점형 스케줄링이라고 부른다. 참고로 3번째 스케줄링은 Context Switch가 발생할 때만 해당한다.
+1, 4번째의 스케줄링은 강제로 빼앗지 않고 자진 반납하는 `nonpreemptive` 방식이고, 그 외의 스케줄링은 CPU를 강제로 빼앗는 `preemptive` 방식이다. 전자를 비선점형 스케줄링, 후자를 선점형 스케줄링이라고 부른다. 참고로 3번째 스케줄링은 I/O 작업이 완료된 프로세스가 인터럽트 당한 프로세스보다 우선순위가 높아, 인터럽트 처리 후 직전에 수행되던 프로세스에게 CPU를 다시 할당하는 것이 아니라 문맥교환을 통해 I/O가 완료된 프로세스에게 CPU를 할당하는 경우가 해당한다.
 
 ### Dispatcher
 
@@ -261,7 +261,7 @@ CPU를 누구한테 누구한테 줄 지 결정했으면 해당 프로세스에�
 
 - SJF는 CPU 버스트가 가장 짧은 프로세스에게 제일 먼저 CPU를 할당하는 방식
 - 평균 대기 시간을 가장 짧게 하는 최적 알고리즘
-- 두 가지 방식
+- 두 가지 방식으로 구현 가능
     - nonpreemptive (비선점형)
         - 일단 CPU를 잡으면 더 짧은 프로세스가 들어와도 CPU 버스트가 완료될 때까지 CPU를 선점당하지 않음.
     - preemptive (선점형)
@@ -391,83 +391,6 @@ CPU를 누구한테 누구한테 줄 지 결정했으면 해당 프로세스에�
 - 입력값은 가상으로 생성할 수도 있고 실제 시스템에서의 CPU 요청 내역을 추출해 사용할 수도 있다.
     - 실제 시스템에서 추출한 입력값을 트레이스 (trace)라고 부른다.
     - 트레이스는 몇 초에 어떤 프로세스가 도착하고, 각각 CPU  버스트 시간을 얼마로 하는지에 대한 정보를 시간 순서대로 적어 놓은 파일을 말한다.
-
-## 데이터 접근
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4457309e-3421-4058-90d0-a7a071630732%2FUntitled.png?table=block&id=b94b3ae3-3045-4230-8450-a038b4c90a7a&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
-컴퓨터 시스템에서 데이터 연산은 저장 공간과 실행 공간이 아래와 같은 흐름으로 동작하면서 이루어 진다.
-
-1. 저장 공간에 데이터가 있다.
-2. 연산할 데이터를 실행 공간으로 가져온다.
-3. 실행 공간에서 연산한다.
-4. 연산 결과를 저장 공간에 반영한다.
-
-저장 공간은 메모리나 해당 프로세스의 주소 공간, 디스크 등이 있고, 실행 공간은 CPU나 프로세스, 컴퓨터 내부 등이 있다.
-
-## Race Condition
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe638dedb-9994-4ddd-9b8d-ec97f2b89799%2FUntitled.png?table=block&id=a8e30354-fe5c-47de-a94e-38dd3be2c964&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
-저장 공간을 공유하는 실행 공간이 여러 개 있는 경우 Race Condition의 가능성이 있다. 예를 들어 메모리에 count 변수가 있고 서로 다른 CPU가 각각 증가 연산, 감소 연산을 한다고 가정해 보자.
-
-정상적인 동작을 한다면 CPU A가 count 변수를 가져와 1 증가하여 메모리에 반영하고, CPU B가 count 변수를 가져와 1 감소하고 다시 메모리에 반영하여 count 변수 값의 변화가 없을 것이다. 하지만 CPU A에서 증가 연산을 하는 동안 CPU B가 메모리에 있는 count 변수를 가져가서 연산한다면 결과는 `(count - 1)`이 저장될 것이다. 이처럼 공유하는 하나의 주체에 여러 주체가 마치 경쟁하듯 접근하려 하는 것을 경쟁 상태, 즉 race condition이라고 한다.
-
-- 운영 체제에서 race condition이 발생하는 상황
-    - 커널 수행 중 인터럽트 발생 시
-    - 프로세스가 시스템 콜을 호출하여 커널 모드로 수행 중인 가운데 context switch가 일어나는 경우
-    - 멀티 프로세서에서 공유 메모리 내의 커널 데이터
-
-## 운영 체제에서의 race condition
-
-### 인터럽트 핸들러 vs 커널
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5e3adc74-6156-41a1-aaf4-0f0ca306ce8a%2FUntitled.png?table=block&id=a2496ca7-c98d-4542-bb53-b831a4763f08&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
-커널 모드가 수행 중인 상태에서 인터럽트가 발생하여 인터럽트 처리 루틴이 실행되는 상황이다. 커널이 증감 연산을 할 때 메모리에서 count 변수를 load하고, count 변수를 증감하고 count 변수를 메모리에 store하는 3가지 연산이 발생한다. 
-
-만약 load 연산을 수행한 후 증감 연산을 수행하기 전에 인터럽트가 들어왔다고 가정하자. 그러면 인터럽트 핸들러를 통해 인터럽트를 수행할 것이다. 이때 하필 인터럽트가 공유 변수인 count를 1 감소하는 연산이었고, 인터럽트가 끝난 이후 커널은 이전 연산 과정인 load 이후부터 수행하므로 count는 감소하지 않은 상태이다. 결과적으로 count는 기존 값에서 1이 증가된 수치가 된다.
-
-이와 같이 중요한 변수의 값을 건드리는 동안에는 인터럽트가 발생해도 연산이 끝나고 수행될 수 있게끔 disable 처리를 해 준다.
-
-### 커널 내에서 실행 중인 프로세스를 선점하는 경우
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F008849e3-23e8-41d5-a8d9-1aa3ee4c9af6%2FUntitled.png?table=block&id=78f88c21-996e-4e03-87ca-0314cc9fbc4c&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
-프로세스 A가 count 변수를 load하고, 1 증가하기 위해 시스템 콜을 호출하여 커널 모드에서 작업을 처리하는 도중에 CPU 할당 시간이 끝나 context switch가 발생하였다. 이후 프로세스 B가 CPU를 할당 받아 A와 동일하게 시스템 콜을 호출했고, count 변수를 1 증가하였다. 그리고 다시 context switch가 발생하여 프로세스가 A가 CPU를 잡아 count 변수를 1 증가하였다. 
-
-count 변수 값이 2 증가해야 하는데 결과는 그렇지 않다. 프로세스 A는 프로세스 B가 증가 연산을 하기 전 count 값을 갖고 있었고, CPU를 다시 할당받았을 때 그 시점의 context를 가지고 값을 증가하였기 때문에 결과적으로 1만 증가하였다.
-
-이를 해결하기 위해 커널 모드에서 수행 중일 때는 CPU 할당 시간이 끝나도 선점하지 않고, 사용자 모드로 돌아갔을 때 선점한다.
-
-### 멀티 프로세서
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8a2a9043-b56b-4092-924b-26352f8aba2c%2FUntitled.png?table=block&id=87aa6590-a910-43a7-b337-aa3a4630c0f7&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
-CPU가 메모리에서 데이터를 가져 오기 전에 lock을 걸어 다른 CPU가 같은 데이터에 접근하는 것을 막아 준다. 연산이 끝난 후 데이터를 다시 메모리에 저장할 때 lock을 풀어 줌으로써 다른 CPU가 접근할 수 있게 해 준다.
-
-- 방법 1
-    - 한 번에 하나의 CPU만 커널에 들어갈 수 있게 하는 방법
-    - 커널 전체에 lock을 걸기 때문에 비효율적이다.
-- 방법 2
-    - 커널 내부에 있는 각 공유 데이터에 접근할 때마다 해당 데이터에 lock을 거는 방법
-
-## 프로세스 동기화 문제
-
-- 공유 데이터의 동시 접근은 데이터의 불일치 문제를 유발할 수 있다.
-- 일관성 유지를 위해서는 협력 프로세스 간의 실행 순서를 정해 주는 메커니즘이 필요하다.
-- Race condition
-    - 여러 프로세스들이 동시에 공유 데이터를 접근하는 상황
-    - 데이터의 최종 연산 결과는 마지막에 그 데이터를 다룬 프로세스에 따라 달라짐
-- race condition을 막기 위해서는 병행 (concurrent) process는 동기화되어야 한다.
-
-## 임계 구역 문제 (The Critical-Section Problem)
-
-- n 개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우 각 프로세스의 code segment에는 공유 데이터를 접근하는 코드인 임계 구역 (critical section)이 존재한다.
-- 하나의 프로세스가 임계 구역에 있을 때 다른 모든 프로세스는 임계 구역에 들어갈 수 없어야 한다.
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2cb3651d-b280-45a2-a052-d3a4c6fbb0c4%2FUntitled.png?table=block&id=e87ab55a-c6f2-42ef-93e0-2ae7e703aae3&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 
 
 
