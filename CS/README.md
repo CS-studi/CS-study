@@ -105,14 +105,14 @@
     - Segmentation
         - Segmentation Architecture
         - Segmentation with Paging
-- Virtual Memory(1)
+- Virtual Memory(1) 👈
     - Demand Paging, Memory에 없는 Page의 Page Table, Page Fault
     - Page Replacement
 - Virtual Memory(2)
     - Page replacement Algorithm
         - Optimal, FIFO , LRU, LFU
     - LRU와 LFU 알고리즘의 구현
-- 캐시의 지역성 👈
+- 캐시의 지역성 
     - Locality
     - Caching line
 - File system
