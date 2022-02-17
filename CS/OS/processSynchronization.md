@@ -108,7 +108,7 @@ critical region은 시간이 지나면 종료되며, 어떤 프로세스가 임�
 
 <br>
 
-### Lock
+### Mutex Lock(s/w)
 > 소프트웨어적인 해결방법으로 공유락을 이용한다.
 
 #### 동작 방식
@@ -192,7 +192,7 @@ void consumer(){
 
 <br>
 
-### Mutex
+### Mutex with TSL(Test and Set Lock with h/w)
 - 세마포어의 간소화된 버전, semaphore가 아니다.
 - Unlock :0, lock :1
 - 뮤텍스 객체를 두 스레드가 동시에 사용할 수 없다.
