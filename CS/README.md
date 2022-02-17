@@ -89,7 +89,7 @@
         - Lock
         - Semaphores
         - 모니터
-- 동기와 비동기 & 블록킹과 논블록킹 👈
+- [동기와 비동기 & 블로킹과 논블로킹](OS/SyncAsyncBlockNonblock.md) 👈
 - [Deadlock](OS/deadlock.md)
     - Deadlock 발생의 4가지 조건
     - Deadlock의 처리 방법
