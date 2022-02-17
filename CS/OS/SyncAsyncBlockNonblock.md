@@ -153,7 +153,7 @@
 
 📌`예시1`
 
-[sync-blocking.webp](img/SyncAsyncBlockNonblock/sync-blocking.webp)
+![sync-blocking.png](img/SyncAsyncBlockNonblock/sync-blocking.png)
 
 > 동기
 > 
@@ -193,7 +193,7 @@
 
 📌`예시1`
 
-[sync-non-blocking.webp](img/SyncAsyncBlockNonblock/sync-non-blocking.webp)
+![sync-non-blocking.png](img/SyncAsyncBlockNonblock/sync-non-blocking.png)
 
 > 동기
 > 
@@ -239,7 +239,7 @@
 
 📌`예시1`
 
-[async-blocking.webp](img/SyncAsyncBlockNonblock/async-blocking.webp)
+![async-blocking.png](img/SyncAsyncBlockNonblock/async-blocking.png)
 
 > 비동기
 > 
@@ -262,7 +262,7 @@
 
 📌`예시1`
 
-[async-non-blocking.webp](img/SyncAsyncBlockNonblock/async-non-blocking.webp)
+![async-non-blocking.png](img/SyncAsyncBlockNonblock/async-non-blocking.png)
 
 > 비동기
 > 
