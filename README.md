@@ -52,7 +52,7 @@
 | 데이터베이스     | 2022/02/06 | 5주차   |[ElasticSearch](CS/Database/ElasticSearch.md)<br>[Redis](CS/Database/Redis.md)<br>[SQL](CS/Database/SQL.md)<br>[DB Clustering&replication](CS/Database/ClusteringReplicationShardingPartitioning.md)|
 |데이터베이스|2022/02/09|6주차|[Transaction](CS/Database/Transaction.md)<br>[DB 교착상태 & 동시성 제어](CS/Database/DB_DeadLock_ConcurrencyControl.md)<br>[Regularization(정규화)](CS/Database/Regularization.md)<br>[Index & Hint](CS/Database/Index.md)|
 | 데이터베이스, 운영체제     | 2022/02/13,16 | 6주차,7주차   |[Index & Hint](CS/Database/Index.md)<br>[Process, Thread](CS/OS/ProcessThread.md)<br>[CPU 스케줄러 & 스케쥴링 알고리즘](CS/OS/CPU_Scheduler_Algorithm.md)<br>[Process_Synchronization](CS/OS/processSynchronization.md)|
-| 운영체제     | 2022/02/20 | 7주차   |[동기와 비동기 & 블로킹과 논블로킹](CS/OS/SyncAsyncBlockNonblock.md)<br>[Deadlock](CS/OS/deadlock.md)<br>Paging<br>Segmentation|
+| 운영체제     | 2022/02/20 | 7주차   |[동기와 비동기 & 블로킹과 논블로킹](CS/OS/SyncAsyncBlockNonblock.md)<br>[Deadlock](CS/OS/deadlock.md)<br>[Paging](CS/OS/Memory_Management_Paging.md)<br>Segmentation|
 
 <!-- | 운영체제      | 2022/01/01 | 4주차   ||
 | 데이터베이스  | 2022/01/01 | 5주차   ||  -->
