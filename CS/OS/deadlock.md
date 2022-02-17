@@ -119,17 +119,47 @@
 - safe state, 안전 상태
 - safe sequence, 안전 순서열
 
+#### Safe state
+
+#### Safe Sequence
+
+
 교착 상태 회피 알고리즘
 
 - 자원 할당 그래프 알고리즘
 - 은행원 알고리즘
 
+### Resource Allocation Graph Algorithm
+
+![resource](img/deadlock/RG.png)
+
+> 자원 할당 그래프는 교착 상태를 관리하기 위한 유향 그래프
+G = (V, E)
+```
+V : 정점(vertex의 집합)
+```
+
+
 ### 3-3. Deadlock detection and recovery, 교착 상태 탐지 및 회복
 
 > 자원 할당 그래프를 통해 교착 상태를 탐지할 수 있다.
-> 
+
 
 ### 3-4. Deadlock Ignorance, 교착 상태 무시
 
 > 교착 상태를 일으킨 프로세스를 종료하거나 할당된 자원을 해제함으로써 회복하는 것을 의미한다.
->
+
+
+
+
+
+
+## 📚 참고
+
+[deadlock](https://github.com/WooVictory/Ready-For-Tech-Interview/blob/master/Operating%20System/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C(DeadLock).md)
+
+[deadlock 해결 방법](https://github.com/pjy1368/operating-system-study/blob/main/%ED%95%99%EC%8A%B5%20%EB%82%B4%EC%9A%A9/%EC%A7%84%EC%98%81_Deadlock%201%20%26%202.md)
+
+[R-Allocation Graph](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=three_letter&logNo=220380867227)
+
+[반교수님 운체강의](http://www.kocw.net/home/search/kemView.do?kemId=1226304&ar=relateCourse)
