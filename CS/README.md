@@ -90,7 +90,7 @@
         - Semaphores
         - 모니터
 - 동기와 비동기 & 블록킹과 논블록킹 👈
-- Deadlock
+- [Deadlock](OS/deadlock.md)
     - Deadlock 발생의 4가지 조건
     - Deadlock의 처리 방법
     - Deadlock Avoidance
