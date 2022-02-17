@@ -22,7 +22,7 @@
     - Deadlock의 처리 방법
     - Deadlock Avoidance
     - Banker's Algorithm
-- 메모리 관리 전략(1)
+- [메모리 관리 전략(1)](Memory_Management_Paging.md)
     - 배경
     - paging
         - Dynamic Relocation
