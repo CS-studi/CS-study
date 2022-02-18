@@ -426,8 +426,8 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 
 <details>
 <summary>Critical region은 무엇인가요?</summary>
-- Criticla region 문제를 해결하기 위한 세 가지 조건을 말해주세요
-    
+
+- Criticla region 문제를 해결하기 위한 세 가지 조건을 말해주세요    
     mutual exclusion, progress, bound waiting입니다. mutual exclusion은 하나의 프로세스가 임계구역에 있을 때 다른 프로세스는 들어갈 수 없는 것이고, progress는 임계구역에 들어간 프로세스가 없다면 어느 프로세스가 들어갈 것인지 적절히 선택해줘야하는 것입니다. 마지막으로 bound waiting 는 그 어떤 프로세스도 임계구역에 들어가기 위해 영원히 기다려서는 안된다는 것입니다.
     
 
@@ -448,6 +448,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 
 <details>
 <summary>Mutex vs. Semaphore vs. Monitor를 말해주세요</summary>
+
 - Mutex vs. Semaphore
 
 세마포어는 뮤텍스가 될 수 있지만 무텍스는 세마포어가 될 수 없다. 또 세마포어는 소유할 수 없지만 뮤텍스는 소율할 수 있고 소유한 사람이 반드시 원상태로 돌려놓아야한다. 뮤텍스의 경우 뮤텍스를 소유하고 있는 스레드가 이 뮤텍스를 해제할 수 있다. 하지만 세마포어는 소유하지 않고 있는 다른 스레드가 세마포어를 해제할 수 있다. 뮤텍스는 동기화대상이 1개 세마포어는 동기화 대상이 여러 개일 때 사용한다.
