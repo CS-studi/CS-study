@@ -280,3 +280,21 @@ ___탐지는 위방식과 똑같이 함___
 [R-Allocation Graph](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=three_letter&logNo=220380867227)
 
 [반교수님 운체강의](http://www.kocw.net/home/search/kemView.do?kemId=1226304&ar=relateCourse)
+
+
+<br><br>
+
+## ⁉️ 면접 예상 질문
+
+> 1. Deadlock이란 무엇인가요?
+
+> 2. deadlock 발생 조건이 있나요? 있다면 조건을 말해주세요
+
+> 3. deadlock 처리 방법에는 무엇이 있나요?
+
+>> 3-1. deadlock prevention이 무엇인가요?
+
+>> 3-2. deadlock avoidance가 무엇인가요?
+
+>> 3-3. deadlock detection and recovery가 무엇인가요?
+
