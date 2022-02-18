@@ -1,6 +1,6 @@
 # 💾 Database 면접 예상 질문
 
-
+<br>
 <details>
 <summary>데이터베이스를 사용하는 이유가 무엇이나요?</summary>
 
@@ -14,6 +14,7 @@
 
 </details>
 
+<br>
 
 
 <details>
@@ -41,7 +42,7 @@
 
 </details>
 
-
+<br>
 
 <details>
 <summary>순차 I/O와 랜덤 I/O에 대해 설명해주세요</summary>
@@ -53,6 +54,8 @@
 서버 기반의 환경에서는 모든 io를 순차 io로 수행하는것이 불가능합니다. 따라서 하나의 디스크에 여러 데이터를 저장하는 것 보다 여러 디스크에 적은 데이터를 매핑하여 랜덤 엑세스가 최소화 되도록 하는 대응 방식이 있습니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>Clustering이 무엇인가요?</summary>
@@ -73,7 +76,7 @@
     
 
 </details>
-
+<br>
 
 <details>
 <summary>Replication이 무엇인가요?</summary>
@@ -98,6 +101,7 @@ replica가 많으면 replication lag 시간이 길어지기 때문에, 시간차
 
 </details>
 
+<br>
 
 <details>
 <summary>Partitioning이 무엇인가요?</summary>
@@ -119,6 +123,7 @@ replica가 많으면 replication lag 시간이 길어지기 때문에, 시간차
 
 </details>
 
+<br>
 
 <details>
 <summary>Sharding이 무엇인가요?</summary>
@@ -141,6 +146,8 @@ replica가 많으면 replication lag 시간이 길어지기 때문에, 시간차
 
 </details>
 
+<br>
+
 <details>
 <summary>SQL injection 공격 방식에는 무엇이 있나요?</summary>
 sql injection 공격 방식에는 두 가지가 존재합니다. 첫 번째는 인증 우회 두 번째는 데이터 노출이 있습니다.
@@ -151,6 +158,7 @@ sql injection 공격 방식에는 두 가지가 존재합니다. 첫 번째는 �
 
 </details>
 
+<br>
 
 <details>
 <summary>injection을 방어하기 위한 방법은 어떤게 있나요?</summary>
@@ -159,6 +167,7 @@ sql injection 공격 방식에는 두 가지가 존재합니다. 첫 번째는 �
 
 </details>
 
+<br>
 
 <details>
 <summary>Join에서 left join과 right join의 차이점은 무엇인가요?</summary>
@@ -166,13 +175,15 @@ left join은 a, b 집합이 있을 때, 조인을 진행한후에 교집합을 �
 
 </details>
 
-
+<br>
 
 <details>
 <summary>SQL 문법 종류와 예시를 들어주세요</summary>
 DDL은 (data definition Language) 데이터 정의 언어입니다. 각 릴레이션을 정의하기 위해 존재합니다. alter, drop create table로 릴레이션을 삭제, 생성 및 릴레이션 전환을 합니다. DML은 데이터 조작 언어로 insert, select update가 있고 데이터를 관리하며 각 테이블을 조회 삽입, 갱신합니다. 마지막으로 DCL은 데이터 제어 언어로 사용자별로 데이터의 권한을 다루기 위한 언어로 revoke grant가 있습니다.
 </details>
 
+
+<br>
 
 <details>
 <summary>NOSQL은 무엇이고 어떤 특징이 있나요?</summary>
@@ -181,6 +192,8 @@ NoSQL은 Not Only SQL의 약자로 관계형 데이터베이스와는 다르게 
 정해진 스키마가 없기때문에 보다 자유롭게 데이터를 저장할 수 있습니다. 
 그리고 여러대의 서버에 데이터를 분산하여 저장할 수 있어 대용량 데이터 처리가 가능하고 분산시 데이터를 상호복제하여 특정 서버에 장애가 생겼을 때에도 데이터 유실이나 무중단 서비스를 운영할 수 있습니다.
 </details>
+
+<br>
 
 <details>
 <summary>RDBMS와 NOSQL의 차이점은 무엇인가요?</summary>
@@ -202,6 +215,10 @@ NOSQL은 스키마가 없어 유연하게 데이터를 조정하고 추가할수
 그리고 유연성으로 인해 데이터 구조 결정을 미루게 될 수도 있습니다.
 
 </details>
+
+
+<br>
+
 
 <details>
 <summary>NOSQL의 데이터 저장 방식에는 무엇이 있나요?</summary>
@@ -232,6 +249,8 @@ mongoDB, couchDB에서 사용합니다.
 Neo4j, Giraph, IBM DB2에서 사용합니다. 
 </details>
 
+<br>
+
 
 <details>
 <summary>Elasticsearch란?</summary>
@@ -241,12 +260,16 @@ Elasticsearch를 통해 방대한 양의 데이터를 신속하게(거의 실시
 
 </details>
 
+<br>
+
 <details>
 <summary>Elasticsearch는 언제 사용하는가?</summary>
 
 Elasticsearch는 검색을 위해 단독으로 사용되기도 하며, ELK(Elasticsearch / Logstash / Kibana) 스택/ Elastic 스택 으로 사용되기도 합니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>ELK/Elastic Stack를 왜 사용하는가?</summary>
@@ -255,12 +278,16 @@ Elasticsearch는 검색을 위해 단독으로 사용되기도 하며, ELK(Elast
 
 </details>
 
+<br>
+
 <details>
 <summary>Elasticsearch의 구조를 설명하라.
 </summary>
 Elasticsearch는 클러스터로 구성되며, 클러스터 안에 노드, 노드 안에 인덱스, 인덱스 안에 샤드, 샤드 안에 세그먼트로 구성되어있습니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>Elasticsearch는 왜 검색 속도가 빠른가?</summary>
@@ -270,6 +297,8 @@ Inverted-index 자료 구조로 인해 빠릅니다.
 단어 기반으로 데이터를 저장하는 ElasticSearch는 특정 단어가 어디에 저장되어있는지 이미 알고 있어 모든 도큐먼트를 검색할 필요가 없습니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>Elasticsearch의 장/단점은?</summary>
@@ -307,6 +336,8 @@ ElasticSearch의
 
 </details>
 
+<br>
+
 <details>
 <summary>잠금기법(Locking)에 대해 설명하시오.</summary>
 잠금기법은 대표적인 동시성 제어 기법입니다. 
@@ -316,11 +347,15 @@ ElasticSearch의
 그에 반해 배타잠금을 설정한 트랜잭션은 데이터 항목에 대해서 읽기 연산과 쓰기 연산(write) 모두 가능하고 동시에 여러 개의 배타잠금은 불가능합니다. 그리고 하나의 데이터 항목에 대해서는 하나의 배타잠금만 가능합니다.
 </details>
 
+<br>
+
 <details>
 <summary>잠금기법의 문제점이 뭔가요?</summary>
 말씀드린 잠금으로는 직렬 가능한 스케줄이 항상 보장되지 않습니다. 그래서 2단계 잠금 규약(2-Phase Locking protocol)으로 이 부분을 해결할 수 있지만 해당 방법으로도 교착상태(Deadlock)는 발생할 수 있습니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>교착상태(DeadLock)란 무엇인가요?</summary>
@@ -343,11 +378,15 @@ ElasticSearch의
 
 </details>
 
+<br>
+
 <details>
 <summary>교착상태의 빈도를 낮추는 방법에는 무엇이 있나요?</summary> 
 교착 상태를 해결하는 방법은 먼저 각 트랜잭션이 실행되기 전에 필요한 데이터를 모두 Locking 해주는 것입니다. 하지만 이 방법에서는 데이터가 많이 필요하면 사실상 모든 데이터를 전부 Locking 해줘야 하므로 트랜잭션의 병행성을 보장하지 못합니다. 뿐만 아니라 몇몇 트랜잭션은 계속해서 처리를 못하게 되는 starvation 문제가 발생할 수 있습니다. 그래서 이러한 단점들 때문에 실제로 자원을 할당할 때 시간 스탬프를 사용하여 교착상태가 일어나지 않도록 회피하는 방법이 많이 사용됩니다.
 
 </details>
+
+<br>
 
 <details>
 <summary>트랜잭션 격리 수준은 무엇인가요? 격리 수준의 종류를 설명해주세요</summary>
@@ -362,6 +401,7 @@ read committed는 select 문장이 수행되는 동안 해당 데이터에 share
 repeatable read는 트랜잭션이 완료될 때까지 select 문장이 사용되는 모든 데이터에 shared lock이 걸리는 계층으로 데이터의 일관성이 보장됩니다. Non repeatble read 부정합이 발생하지 않지만 phantom read가 발생합니다.
 </details>
 
+<br>
 
 <details>
 <summary>격리 수준의 종류에 따른 오류를 말하고 오류를 설명하시오</summary>
@@ -376,6 +416,7 @@ phantom read는 한 트랜잭션 안에서 일정 범위의 레코드를 두 번
 마지막으로 serializable은 트랜잭션이 완료 될 때까지 select 문장이 상용되는 모든 데이터에 shared lock이 걸리는 계층으로 완벽한 읽기 일관성 모드를 제공하지만, 동시성은 제공되지 안씁니다. 트랜잭션 영역에 해당되는 데이터에 대한 수정과 입력 모두 불가능합니다.
 </details>
 
+<br>
 
 <details>
 <summary>Transaction이란 무엇인가요?</summary>
@@ -385,6 +426,7 @@ phantom read는 한 트랜잭션 안에서 일정 범위의 레코드를 두 번
 
 </details>
 
+<br>
 
 <details>
 <summary>Transaction에 특성이 있는데 각각을 설명해주세요</summary>
@@ -399,6 +441,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 
 
 
+<br>
 
 <details>
 <summary>프로세스를 동기화 해야하는 이유가 무엇인가요?</summary>
@@ -410,6 +453,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 첫 번째로 어떻게 한 프로세스가 다른 프로세스에게 정보를 넘길 것인지 정해야하고, 두 번쨰로 어떻게 두개 이상의 프로세스가 하나의 데이터에 동시에 접근하지 않도록 할 것인지와 의존 관계가 존재할 때 어떻게 적절한 순서를 부여할 것인지 정해야합니다.
 </details>
 
+<br>
 
 <details>
 <summary>Race condition은 무엇인가요?</summary>
@@ -422,7 +466,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 첫 번째는 커널 작업을 수행 중에 인터럽트가 발생할 때와 프로세스가 system call을 하여 커널모드로 진입하여 수행하는 도중 context switch가 발생할 때, 마지막으로 멀티 프로세서에서 공유 메모리 내의 커널 데이터에 접근할 때 입니다.
 </details>
 
-
+<br>
 
 <details>
 <summary>Critical region은 무엇인가요?</summary>
@@ -444,7 +488,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
     monitor는 mutex와 condition variable을 가지고 있는 동기화 메커니즘으로 상호배제를 함으로써 임계구역에 하나의 프로세스만 들어갈 수 있습니다. monitor는 실제 프로그램에서 세마포어를 구현한 것입니다. 상호 배제를 위한 데이터 및 프로그램 모듈, 운영체제 내부의 프로그램을 모니터라고 한다.
 </details>
 
-
+<br>
 
 <details>
 <summary>Mutex vs. Semaphore vs. Monitor를 말해주세요</summary>
@@ -462,7 +506,7 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 뮤텍스는 다른 프로세스나 스레드 간에 동기화를 위해 사용된다. 모니터는 하나의 프로세스 내에서 다른 스레드 간에 동기화할 때 사용한다. 반면에 모니터는 하나의 프로세스 내에서 다른 스레드 간에 동기화할 때 사용한다. 뮤텍스는 운영체제 커널에 의해서 제공되기 때문에 system call로 인하여 속도가 느리고 그에 반해 모니터는 프레임 워크나 라이브러리 그 자체에서 제공되기 때문에 속도가 빠르다.
 </details>
 
-
+<br>
 
 
 <details>
