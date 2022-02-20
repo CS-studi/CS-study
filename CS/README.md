@@ -101,7 +101,7 @@
         - Dynamic Relocation
         - Multilevel Paging
         - Shared Page
-- 메모리 관리 전략(2)
+- [메모리 관리 전략(2)](OS/Memory_Management_Segmentation.md)
     - Segmentation
         - Segmentation Architecture
         - Segmentation with Paging
