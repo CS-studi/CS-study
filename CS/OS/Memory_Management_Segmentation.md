@@ -8,16 +8,17 @@
 
 ## Segmentation
 프로그램은 의미 단위인 여러 개의 `segment`로 구성
-    - 작게는 프로그램을 구성하는 함수 하나하나를 세그먼트로 정의
-    - 크게는 프로그램 전체를 하나의 세그먼트로 정의
-    - 일반적으로는 `code`, `data`,`stack` 부분이 하나씩의 세그먼트로 정의됨
+- 작게는 프로그램을 구성하는 함수 하나하나를 세그먼트로 정의
+- 크게는 프로그램 전체를 하나의 세그먼트로 정의
+- 일반적으로는 `code`, `data`,`stack` 부분이 하나씩의 세그먼트로 정의됨
 
 `Segment`는 **논리적인 하나하나의 단위**이다.
-    - main()
-    - function
-    - global variables
-    - stack
-    - symbol table, arrays
+
+- main()
+- function
+- global variables
+- stack
+- symbol table, arrays
 
 > 돼지를 도축할 때, 페이징은 돼지를 같은 크기로 잘라서 보관하는 것이라면, 세그멘테이션은 부위별로 잘라서 보관하는 것이다
 
