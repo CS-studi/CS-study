@@ -5,7 +5,16 @@
 
 > File system Implementation
 
+>> Allocation of File Data in Disk
+
+>>> Contiguous Alloc
+
+>>> Linked Alloc
+
+>>> Indexed Alloc
+
 > Directory system Implementation
+
 
 <br><br>
 
