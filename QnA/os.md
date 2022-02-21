@@ -366,15 +366,7 @@ deadlock이 시스템이 책임지지 않는 것입니다. 현대 운영체제�
 </details>
 
 <br>
-
-
-<details>
-<summary></summary>
-
-</details>
-
-<br>
-
+<!-- 
 
 <details>
 <summary></summary>
@@ -396,3 +388,11 @@ deadlock이 시스템이 책임지지 않는 것입니다. 현대 운영체제�
 <summary></summary>
 
 </details>
+
+<br>
+
+
+<details>
+<summary></summary>
+
+</details> -->
