@@ -35,7 +35,7 @@
 - Virtual Memory(1) 👈
     - Demand Paging, Memory에 없는 Page의 Page Table, Page Fault
     - Page Replacement
-- Virtual Memory(2)
+- [Virtual Memory(2)](VirtualMemory2.md)
     - Page replacement Algorithm
         - Optimal, FIFO , LRU, LFU
     - LRU와 LFU 알고리즘의 구현
