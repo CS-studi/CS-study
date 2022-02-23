@@ -28,17 +28,20 @@
 > ✔️✔️ commit 시 message/ git commit -m “Docs:주차\_일자/작성자/주제”
 
 
----
+<br><br>
 
-### 🏔 Data Structure [Link](CS/DataStructure)
+## 🔗Links
+### 🏔Data Structure [Link](CS/DataStructure)
 
-### 🏔 Network [Link](CS/Network)
+### 🏔Network [Link](CS/Network)
 
-### 🏔 Database [Link](CS/Database)
+### 🏔Database [Link](CS/Database)
 
-### 🏔 OS [Link](CS/OS)
+### 🏔OS [Link](CS/OS)
 
----
+### 🏔Software Engineering [Link](CS/SoftwareEngineering)
+
+<br><br>
 
 ## 👊 Schedule/스터디 스케줄
 
