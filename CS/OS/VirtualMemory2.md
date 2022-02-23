@@ -309,7 +309,7 @@ CPU가 매순간마다 프로세스A의 명령어을 수행하기 위해 논리�
 
 reference bit가 0인 페이지를 swap out할 때, 만약 modified bit가 1이면 backing store(swap area)에 변경된 내용을 반영해야 하기 때문에 Disk IO가 동반된다.
 
-따라서 reference bit가 1이면서 modified bit가 0인 페이지를 우선적으로 swap out하는게 효율적이다.
+따라서 reference bit가 0이면서 modified bit가 0인 페이지를 우선적으로 swap out하는게 효율적이다.
 
 <br/>
 
