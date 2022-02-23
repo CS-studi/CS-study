@@ -12,12 +12,14 @@
 | <p align="center"><img src="img/imoz.png" height="120" width="120" align-item="center"></p> |                                                    | <p align="center"><img src="img/lhd.jpeg" height="120" width="120" align-item="center"></p> | <p align="center"><img src="img/hhj.jpg" height="120" width="120" align-item="center"></p> |
 | [@annie1004619](https://github.com/annie1004619)                                            | [@minseongkim97](https://github.com/minseongkim97) | [@LEEHYUNDONG](https://github.com/LEEHYUNDONG)                                              | [@guswns3371](https://github.com/guswns3371)                                               |
 
+<br>
 
 ### 📣 내용 구성
 
 - 앞으로의 이론정리는 다음과 같이 이루어집니다.
 ```본인이 맡은 주제에 해당하는 이론 정리(자세한 버전) + 면접에서 요구하는 이론 (위에서 정리한 이론 요약) + 예상 면접 질문(최소 3개)```
 
+<br>
 
 ### 👊 Rules
 
