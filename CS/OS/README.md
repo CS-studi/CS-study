@@ -39,7 +39,7 @@
     - Page replacement Algorithm
         - Optimal, FIFO , LRU, LFU
     - LRU와 LFU 알고리즘의 구현
-- 캐시의 지역성 
+- [캐시의 지역성](Cache.md) 
     - Locality
     - Caching line
 - [File system](fileSystem.md)
