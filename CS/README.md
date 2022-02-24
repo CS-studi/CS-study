@@ -27,7 +27,7 @@
     - [Minimum Spanning Tree](DataStructure/MinimumSpanningTree.md) 👈
         - Kruskal algorithm
         - Prim algorithm
----
+<br>
 
 # 🌌 Network 
 - [GET, POST 방식의 차이점](Network/HTTPMethod.md) 👈
@@ -45,8 +45,8 @@
 - [CORS (Cross Origin Resource Sharing)](Network/CORS.md)
 - [OAuth](Network/oauth.md)
 
+<br>
 
----
 # 💿 Database 
 - [데이터베이스](Database/Database.md) 👈
     - 데이터베이스를 사용하는 이유
@@ -72,7 +72,8 @@
     - 인덱스 레인지 스캔, 인덱스 풀 스캔
     - 클러스터링 인덱스, 논 클러스터링 인덱스
     - Hint
----
+<br>
+
 # 🫁 OS 
 - [Process, Thread](OS/ProcessThread.md)👈
     - 프로세스의 개념, 프로세스의 상태(Process State)
@@ -120,5 +121,12 @@
     - UNIX 파일시스템의 구조
     - Page Cache and Buffer Cache
     
-    
+<br>
 
+# 🍦Software Engineering Curriculum
+- Agile, waterfall, CICD + devOps
+- TDD
+- Monolithic vs. MSA
+- MVVM, MVC 패턴
+- Docker & Kubernetes
+- AWS, cloudflare, GCP
