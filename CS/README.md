@@ -124,7 +124,7 @@
 <br>
 
 # 🍦Software Engineering Curriculum
-- Agile, waterfall, CICD + devOps
+- [Agile, waterfall, CICD + devOps](SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)
 - TDD
 - Monolithic vs. MSA
 - MVVM, MVC 패턴
