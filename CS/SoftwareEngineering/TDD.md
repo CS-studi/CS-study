@@ -233,3 +233,11 @@ TDD(Test-Driven Development, 테스트 주도 개발) 에서 얘기하는 테스
 [TDD 구현 예제](https://github.com/alstjgg/cs-study/blob/main/%EA%B0%9C%EB%B0%9C%20%EC%83%81%EC%8B%9D/TDD%20%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0%20%EC%96%B4%EB%96%A0%ED%95%9C%20%EC%9E%A5%EC%A0%90%EC%9D%B4%20%EC%9E%88%EB%8A%94%EA%B0%80.md)
 
 [단위 테스트](https://mangkyu.tistory.com/143)
+
+## 면접 질문
+
+> 1. TDD가 무엇인가요?
+
+> 2. TDD를 사용하면 장점이 무엇인가요?
+
+> 3. 단위 테스트의 법칙은 무엇이 있을까요?
