@@ -1,7 +1,7 @@
 # Microservice Architecture (MSA)
 
-> 모놀리식(Monolithic) 아키텍쳐
-마이크로서비스(Microservice) 아키텍쳐
+> 모놀리식(Monolithic) 아키텍쳐  
+마이크로서비스(Microservice) 아키텍쳐  
 모놀리식 vs 마이크로서비스
 > 
 
@@ -177,6 +177,8 @@ MSA를 도입하는데 있어서 분명한 ROI(Return Of Investment, 투자 대�
 
 # 면접 예상 질문
 
-- MSA가 무엇인가요?
-- 왜 MSA를 사용하나요?
-- 본인은 어떤 아키텍쳐로 프로젝트를 개발하였나요? 그 이유는?
+> MSA가 무엇인가요?
+
+> 왜 MSA를 사용하나요?
+
+> 본인은 어떤 아키텍쳐로 프로젝트를 개발하였나요? 그 이유는?
