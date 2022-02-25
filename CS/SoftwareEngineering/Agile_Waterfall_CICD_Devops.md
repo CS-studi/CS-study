@@ -98,7 +98,7 @@ Waterfall 방법론은 크게 __요구사항분석->설계->구현->테스트->�
 
 <br>
 
-정리하면 agile모델을 사용하게 된 이유는 waterfall 모델이 엉터리라는 것을 발견한 다음에 개선해보려는 시도이고 원래의 방법론이 잘못된 것이므로 agile도 한계점이 존재한다. 그에 대한 이유는 철학적인 방법론을 찾지 못해서가 아니라 당시의 개발 기술을 먼저 염두에 두고 개발 방법론을 구색을 갖춘것에 불과하다.(개발 기술 -> 개발 방법론)
+정리하면 agile모델을 사용하게 된 이유는 waterfall 모델이 엉터리라는 것을 발견한 다음에 개선해보려는 시도이고 원래의 방법론이 잘못된 것이므로 agile 또한 한계점이 존재한다. 그에 대한 이유는 철학적인 방법론을 찾지 못해서가 아니라 당시의 개발 기술을 먼저 염두에 두고 개발 방법론을 구색을 갖춘 것에 불과하다.(개발 기술 -> 개발 방법론)
 결론은 구현 기술을 근거로 개발 방법론을 만드는 것은 엉터리이다.
 
 ## 🔃 DevOps & CICD
@@ -107,7 +107,7 @@ Waterfall 방법론은 크게 __요구사항분석->설계->구현->테스트->�
 > Development + operations => DevOps
 
 소프트웨어 제품과 서비스를 빠른 시간에 개발 및 배포하는 것이다. 소프트웨어 제품이나 서비스를 알맞은 시기에 출시하기 위해 개발과 운영이 상호의존적으로 대응해야 한다는 의미로 많이 사용하고 있다.
-DevOps의 개념은 애자일 기법과 CICD 개념과 연관이 있다. 애자일 기법은 실질적인 코딩을 기반으로 일정한 주기에 따라 지속적으로 프로토타입을 형성하고, 필요한 요구사항을 파악하며 이에 따라 즉시 수정사항을 적용하여 결과적으로 하나의 큰 소프트웨어를 개발하는 방법이고 자속적 통합은 통합 작업을 초기부터 계속 수행해서 지속적으로 소프트웨어의 품질제어를 적용하는 것이다.
+DevOps의 개념은 애자일 기법과 CICD 개념과 연관이 있다. 애자일 기법은 실질적인 코딩을 기반으로 일정한 주기에 따라 지속적으로 프로토타입을 형성하고, 필요한 요구사항을 파악하며 이에 따라 즉시 수정사항을 적용하여 결과적으로 하나의 큰 소프트웨어를 개발하는 방법이고 지속적 통합은 통합 작업을 초기부터 계속 수행해서 지속적으로 소프트웨어의 품질제어를 적용하는 것이다.
 
 ![devops](img/agile/devo.png)
 
@@ -116,11 +116,11 @@ DevOps의 개념은 애자일 기법과 CICD 개념과 연관이 있다. 애자�
     - Version control - git, SVN
     - Automatic builder/packager to executavles - Maven, Ant, Gradle
 2. Continuous Testing - Selenium
-3. Continuous Deployment - 실행 파일을 특정 서버 (testing or production server)dp qovh
+3. Continuous Deployment - 실행 파일을 특정 서버 (testing or production server)에 배포
     - Containerization (vs. VM) - Docker + Docker Swarm
     - Configuration management - puppet, Ansible
 4. Continuous Monitoring - 네트워크 모니터링과 배포된 소프트웨어의 버그 및 사용자로부터의 feedback 수집 - Nagios
-5. Continuous Integration - 위 모든 SW lifcycle의 도구들을 연합하고 연속적이고 자동ㅈ거으로 각 작업이 수행되도록 함, 모든 위 도구들과 연동
+5. Continuous Integration - 위 모든 SW lifecycle의 도구들을 연합하고 연속적이고 자동적으로 각 작업이 수행되도록 함, 모든 위 도구들과 연동
     - Jenkins (300개 이상의 plug-in 존재)
     - Kubernetes - Docker container orchestration manager (vs. docker swarm)
 
@@ -133,12 +133,12 @@ DevOps의 개념은 애자일 기법과 CICD 개념과 연관이 있다. 애자�
 
 > ![devops](img/agile/devops.png)
 
-CI/CD는 기술이 아니다. 개발 팀 문화적인 것이며 CICD 파이프라인은 더 자주 더 신뢰성 높은 수정된 코드를 deploy할 수 있도록 DevOps 팀이 SW를 구현하는 방법론으로서 현재로서는 가장 추구되는 실제 개발 행위며 팀 문화이다. DevOps 도구를 사용하면 CI/CD를 수행하는 것과 같다.
+CI/CD는 기술이 아니다. 개발 팀 문화적인 것이며 CICD 파이프라인은 더 자주 더 신뢰성 높은 수정된 코드를 deploy할 수 있도록 DevOps 팀이 SW를 구현하는 방법론으로서 현재로서는 가장 추구되는 실제 개발 행위이며 팀 문화이다. DevOps 도구를 사용하면 CI/CD를 수행하는 것과 같다.
 
 #### CI, Continuous Integration 지속적인 통합
 > 현대적인 애플리케이션 개발에서는 여러 개발자들이 각기 다른 기능을 동시에 작업하기를 원한다. 특정한 날을 정해서 모든 소스코드를 병합하게 되면 결과적으로 시간 소모가 크며 독립적으로 작업하는 개발자가 애플리케이션 변경사항을 적용할 때 다른 개발자가 동시에 적용하는 변경사항과 충돌 가능성이 있다.
 
-#### CD, Continuous Deployment 지속적인 배포
+#### CD, Continuous Deployment & Continuous Delivery 지속적인 배포
 > 개발자들이 애플리케이션에 적용한 변경사항이 버그테스트를 거쳐 레포지토리(Github)에 실시간 자동 업로드 되는 것을 뜻하고 운영팀은 이 레포지토리에서 애플리케이션을 실시간 프로덕션 환경으로 배포할 수 있다.
 
 <br><br>
