@@ -126,7 +126,7 @@
 # 🍦Software Engineering Curriculum
 - [Agile, waterfall, CICD + devOps](SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)
 - [TDD](SoftwareEngineering/TDD.md)
-- Monolithic vs. MSA
+- [Monolithic vs. MSA](SoftwareEngineering/MicroserviceArchitecture.md)
 - MVVM, MVC 패턴
 - Docker & Kubernetes
 - AWS, cloudflare, GCP

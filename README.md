@@ -59,4 +59,4 @@
 | 데이터베이스, 운영체제     | 2022/02/13,16 | 6주차,7주차   |[Index & Hint](CS/Database/Index.md)<br>[Process, Thread](CS/OS/ProcessThread.md)<br>[CPU 스케줄러 & 스케쥴링 알고리즘](CS/OS/CPU_Scheduler_Algorithm.md)<br>[Process_Synchronization](CS/OS/processSynchronization.md)|
 | 운영체제     | 2022/02/20 | 7주차   |[동기와 비동기 & 블로킹과 논블로킹](CS/OS/SyncAsyncBlockNonblock.md)<br>[Deadlock](CS/OS/deadlock.md)<br>[Paging](CS/OS/Memory_Management_Paging.md)<br>Segmentation|
 | 운영체제     | 2022/02/23 | 8주차   |Virtual Memory1<br>[Virtual Memory2](CS/OS/VirtualMemory2.md)<br>[Cache_Locality](CS/OS/Cache.md)<br>[FileSystem](CS/OS/fileSystem.md)|
-| 소프트웨어공학     | 2022/02/27 | 8주차   |[Agile, waterfall, CICD + devOps](CS/SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)<br>TDD<br>Monolithic vs. MSA<br>MVVM, MVC 패턴|
+| 소프트웨어공학     | 2022/02/27 | 8주차   |[Agile, waterfall, CICD + devOps](CS/SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)<br>TDD<br>[Monolithic vs. MSA](CS/SoftwareEngineering/MicroserviceArchitecture.md)<br>MVVM, MVC 패턴|
