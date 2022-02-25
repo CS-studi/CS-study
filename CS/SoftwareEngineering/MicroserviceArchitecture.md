@@ -173,6 +173,8 @@ MSA를 도입하는데 있어서 분명한 ROI(Return Of Investment, 투자 대�
 
 **[[우아콘2020] 배달의민족 마이크로서비스 여행기](https://www.youtube.com/watch?v=BnS6343GTkY)**
 
+[devops microservices docker 개념](https://www.youtube.com/watch?v=I_T3xI7Jemk&t=400s)
+
 <br/>
 
 # 면접 예상 질문
