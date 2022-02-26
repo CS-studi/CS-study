@@ -127,6 +127,6 @@
 - [Agile, waterfall, CICD + devOps](SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)
 - [TDD](SoftwareEngineering/TDD.md)
 - [Monolithic vs. MSA](SoftwareEngineering/MicroserviceArchitecture.md)
-- MVVM, MVC 패턴
+- [MVVM, MVC 패턴](SoftwareEngineering/MVC_MVVM.md)
 - Docker & Kubernetes
 - AWS, cloudflare, GCP
