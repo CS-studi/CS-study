@@ -140,12 +140,14 @@
 
 
 # 참고
+
 [반효경 교수님 운영체제 강의](https://core.ewha.ac.kr/publicview/C0101020140509142939477563?vmode=f)
 
 [OS?Oh Yes!책]
 
 [페이징(Paging)과 세그멘테이션(Segmentation)](https://github.com/alstjgg/cs-study/blob/main/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/Paging%20%26%20Segmentation.md)
 
+[메모리 관리](http://mm.sookmyung.ac.kr/~bigrain/class/2011/mmso/StallingsOS6e-Chap07.pdf)
 
 # 면접 예상 질문
 
