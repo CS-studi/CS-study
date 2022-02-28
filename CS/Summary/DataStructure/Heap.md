@@ -42,10 +42,10 @@
 <summary>최대 힙의 삽입, 삭제 과정</summary>
 
 `삽입 과정`
-![삽입 과정](/CS-study/CS/DataStructure/img/Heap/3.png)
+![삽입 과정](../../DataStructure/img/Heap/3.png)
 
 `삭제 과정`
-![삭제 과정](/CS-study/CS/DataStructure/img/Heap/3.png)
+![삭제 과정](../../DataStructure/img/Heap/3.png)
 
 
 </details>
