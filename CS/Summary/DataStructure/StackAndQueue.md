@@ -1,6 +1,6 @@
 # Stack & Queue
 
-# Stack
+## Stack
 
 - LIFO(Last In First Out) 방식의 자료구조
 - top : 가장 최근에 들어온 데이터를 가리킴, pop/push 연산이 이루어지는 위치
@@ -155,7 +155,7 @@ public class StackLinked {
     
     
 
-# Queue
+## Queue
 
 - FIFO(First In First Out) 방식의 자료구조
 - front : 가장 첫 번째 원소를 가리킴, 삭제연산(dequeue)이 수행됨
@@ -361,7 +361,7 @@ public class QueueWithStack {
   
     
 
-# Deque
+## Deque
 
 - queue 두 개를 좌우로 뒤집어 붙인 자료구조
 - 양 쪽 끝(front, rear)에서 삽입, 삭제 연산을 모두 수행할 수 있음
