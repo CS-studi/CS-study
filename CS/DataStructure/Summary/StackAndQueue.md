@@ -236,82 +236,82 @@ public class QueueArray {
 <details>
 <summary>LinkedList로 구현한 Queue</summary>
 
-    ```java
-    public class QueueLinked {
-    
-        public static void main(String[] args) {
-            QueueLinked queue = new QueueLinked();
-            for (int i = 0; i < 10; i++) {
-                queue.enqueue(i);
-            }
-            queue.display(); // 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 -
-            for (int i = 0; i < 5; i++) {
-                queue.dequeue();
-            }
-            queue.display(); // 5 - 6 - 7 - 8 - 9 -
+```java
+public class QueueLinked {
+
+    public static void main(String[] args) {
+        QueueLinked queue = new QueueLinked();
+        for (int i = 0; i < 10; i++) {
+            queue.enqueue(i);
         }
-    
-        Node front, rear;
-    
-        public QueueLinked() {
-            front = rear = null;
+        queue.display(); // 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 -
+        for (int i = 0; i < 5; i++) {
+            queue.dequeue();
         }
-    
-        public boolean isEmpty() {
-            return front == null && rear == null;
-        }
-    
-        public void enqueue(int item) {
-            Node node = new Node(item);
-            if (isEmpty()) {
-                front = rear = node;
-            } else {
-                rear.next = node;
-                rear = node;
-            }
-        }
-    
-        public int dequeue() {
-            if (isEmpty()) {
-                System.out.println("queue is empty");
-                return -1;
-            }
-    
-            int data = front.item;
-            front = front.next;
-    
-            if (front == null) {
-                rear = null;
-            }
-    
-            return data;
-        }
-    
-        public void display() {
-            if (isEmpty()) {
-                System.out.println("queue is empty");
-                return;
-            }
-    
-            Node node = front;
-            while (node != null) {
-                System.out.print(node.item + " - ");
-                node = node.next;
-            }
-            System.out.println();
-        }
-    
-        public class Node {
-            private int item;
-            private Node next;
-    
-            public Node(int item) {
-                this.item = item;
-                next = null;
-            }
+        queue.display(); // 5 - 6 - 7 - 8 - 9 -
+    }
+
+    Node front, rear;
+
+    public QueueLinked() {
+        front = rear = null;
+    }
+
+    public boolean isEmpty() {
+        return front == null && rear == null;
+    }
+
+    public void enqueue(int item) {
+        Node node = new Node(item);
+        if (isEmpty()) {
+            front = rear = node;
+        } else {
+            rear.next = node;
+            rear = node;
         }
     }
-    ```
+
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("queue is empty");
+            return -1;
+        }
+
+        int data = front.item;
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+
+        return data;
+    }
+
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("queue is empty");
+            return;
+        }
+
+        Node node = front;
+        while (node != null) {
+            System.out.print(node.item + " - ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+
+    public class Node {
+        private int item;
+        private Node next;
+
+        public Node(int item) {
+            this.item = item;
+            next = null;
+        }
+    }
+}
+```
     
 
 
