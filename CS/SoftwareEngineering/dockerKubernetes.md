@@ -113,7 +113,7 @@ Docker란 Go 언어로 작성된 리눅스 컨테이너 기반으로하는 오�
     - Ip를 할당 받아 Load Balancer로 사용
 
 ### Ingress
-> [Ingress](img/dockerAndKubernetes/Ingress.png)
+> ![Ingress](img/dockerAndKubernetes/Ingress.png)
 - 다양한 웹 애플리케이션을 하나의 로드 밸런서로 서비스
 - 애플리케이션을 내부망에 설치하여 웹 애플리케이션을 배포하는 과정을 보면 외부에서 직접 접근할 수 없고, 외부에서 접근이 가능한 ALB, Nginx, Apache를 프록시 서버로 활용
 - 서버 ip 변경 시 설정 자동화
