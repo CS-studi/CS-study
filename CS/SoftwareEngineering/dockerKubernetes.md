@@ -120,6 +120,8 @@ Docker란 Go 언어로 작성된 리눅스 컨테이너 기반으로하는 오�
     - 프록시 서버는 도메인과 path 조건에 따라 등록된 서버로 요청을 전달하는데 서버가 바뀌거나 Ip 변경 시 매번 재설정해야한다. 
 - 하나의 클러스터에 여러 개의 ingress 설정 가능(일반접속, 관리자 접속 분리)
 
+<br><br><br>
+
 ## 📚 참고
 [docker&kubernetes](https://zzsza.github.io/development/2018/04/17/docker-kubernetes/)
 
