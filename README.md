@@ -33,13 +33,13 @@
 <br><br>
 
 ## 🔗Links
-### 🏔Data Structure [Link](CS/DataStructure)
+### 🏔Data Structure [Link](CS/DataStructure) [QnA](QnA/datastructure.md)
 
-### 🏔Network [Link](CS/Network)
+### 🏔Network [Link](CS/Network) [QnA](QnA/network.md)
 
-### 🏔Database [Link](CS/Database)
+### 🏔Database [Link](CS/Database) [QnA](QnA/database.md)
 
-### 🏔OS [Link](CS/OS)
+### 🏔OS [Link](CS/OS) [QnA](QnA/os.md)
 
 ### 🏔Software Engineering [Link](CS/SoftwareEngineering)
 
@@ -57,6 +57,7 @@
 | 데이터베이스     | 2022/02/06 | 5주차   |[ElasticSearch](CS/Database/ElasticSearch.md)<br>[Redis](CS/Database/Redis.md)<br>[SQL](CS/Database/SQL.md)<br>[DB Clustering&replication](CS/Database/ClusteringReplicationShardingPartitioning.md)|
 |데이터베이스|2022/02/09|6주차|[Transaction](CS/Database/Transaction.md)<br>[DB 교착상태 & 동시성 제어](CS/Database/DB_DeadLock_ConcurrencyControl.md)<br>[Regularization(정규화)](CS/Database/Regularization.md)<br>[Index & Hint](CS/Database/Index.md)|
 | 데이터베이스, 운영체제     | 2022/02/13,16 | 6주차,7주차   |[Index & Hint](CS/Database/Index.md)<br>[Process, Thread](CS/OS/ProcessThread.md)<br>[CPU 스케줄러 & 스케쥴링 알고리즘](CS/OS/CPU_Scheduler_Algorithm.md)<br>[Process_Synchronization](CS/OS/processSynchronization.md)|
-| 운영체제     | 2022/02/20 | 7주차   |[동기와 비동기 & 블로킹과 논블로킹](CS/OS/SyncAsyncBlockNonblock.md)<br>[Deadlock](CS/OS/deadlock.md)<br>[Paging](CS/OS/Memory_Management_Paging.md)<br>Segmentation|
-| 운영체제     | 2022/02/23 | 8주차   |Virtual Memory1<br>[Virtual Memory2](CS/OS/VirtualMemory2.md)<br>[Cache_Locality](CS/OS/Cache.md)<br>[FileSystem](CS/OS/fileSystem.md)|
-| 소프트웨어공학     | 2022/02/27 | 8주차   |[Agile, waterfall, CICD + devOps](CS/SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)<br>TDD<br>[Monolithic vs. MSA](CS/SoftwareEngineering/MicroserviceArchitecture.md)<br>MVVM, MVC 패턴|
+| 운영체제     | 2022/02/20 | 7주차   |[동기와 비동기 & 블로킹과 논블로킹](CS/OS/SyncAsyncBlockNonblock.md)<br>[Deadlock](CS/OS/deadlock.md)<br>[Paging](CS/OS/Memory_Management_Paging.md)<br>[Segmentation](CS/OS/Meomory_Management-Segmentation.md)|
+| 운영체제     | 2022/02/23 | 8주차   |[Virtual Memory1](CS/OS/Virtual_Memory1.md)<br>[Virtual Memory2](CS/OS/VirtualMemory2.md)<br>[Cache_Locality](CS/OS/Cache.md)<br>[FileSystem](CS/OS/fileSystem.md)|
+| 소프트웨어공학     | 2022/02/27 | 8주차   |[Agile, waterfall, CICD + devOps](CS/SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)<br>[TDD](CS/SoftwareEngineering/TDD.md)<br>[Monolithic vs. MSA](CS/SoftwareEngineering/MicroserviceArchitecture.md)<br>[MVVM, MVC 패턴](CS/SoftwareEngineering/MVC_MVVM.md)|
+|소프트웨어공학, 자료구조|2022/03/02|9주차|Docker & Kubernetes<br/>AWS, cloudflare, GCP<br/>[자료구조 요약1](CS/DataStructure/Summary/StackAndQueue.md), 요약2<br/>자료구조 요약3, 요약4|
