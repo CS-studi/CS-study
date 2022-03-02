@@ -42,26 +42,35 @@
 ## 순회
 <details>
 <summary>전위 순회 코드</summary>
+
+```python
 def preorder(self, node):
     print(node, end = '')
     if not node.left == None : self.preorder(node.left)
     if not node.right == None : self.preorder(node.right)
+```
 </details>
 
 <details>
 <summary>중위 순회 코드</summary>
+
+```python
 def inorder(self, node):
     if not node.left == None : self.preorder(node.left)
     print(node, end = '')
     if not node.right == None : self.preorder(node.right)
+```
 </details>
 
 <details>
 <summary>후위 순회 코드</summary>
+
+```python
 def preorder(self, node):
     if not node.left == None : self.preorder(node.left)
     if not node.right == None : self.preorder(node.right)
     print(node, end = '')
+```
 </details>
 
 ## 이진 탐색 트리(Binary Search Tree/BST)
