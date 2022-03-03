@@ -37,15 +37,15 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 
 1. Root property의 조건에 따라 루트 노드의 색깔은 검정을 줍니다.
 
-![](../../DataStructure/img/RBTree/rootNode1.png)
+![](../../img/RBTree/rootNode1.png)
 
 2. 루트 노드 외에 삽입되는 노드의 색깔은 Red라고 가정하고 시작합니다.
 
-![](../../DataStructure/img/RBTree/RBTree1.png)
+![](../../img/RBTree/RBTree1.png)
 
 3. 노드 3을 삽입하면 BST의 특징에 따라 노드 2의 오른쪽 자식으로 붙게 됩니다.
 
-![](../../DataStructure/img/RBTree/RBTree2.png)
+![](../../img/RBTree/RBTree2.png)
 
 이렇게 되면 Internal property 조건을 위반하게 됩니다. 이를 해결하기 위해 2가지 메커니즘이 존재합니다.
 
@@ -62,25 +62,27 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 
 - Restructuring: 부모의 형제 노드가 Black일 때
 
-![](../../DataStructure/img/RBTree/restructingAndRecoloring.png)
+![](../../img/RBTree/restructingAndRecoloring.png)
 
 ```
 1. 나(z)와 내 부모(v), 내 부모의 부모를 오름차순으로 정렬
 2. 무조건 가운데 있는 값을 부모로 만들고 나머지 둘을 자식으로 만든다.
 3. 가운데 있는 값(부모가 된 값)을 검정으로 만들고 그 두 자식들을 빨강으로 만든다.
 ```
-
+<img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170"> <img src = "../../img/RBTree/restructuring2.png" height="150" width="170"> <img src="../../img/RBTree/restructuring3.png" height="150" width="170"> <img src = "../../img/RBTree/restructuring4.png" height="150" width="170"> <img src = "../../img/RBTree/restructuring5.png" height="150" width="170">
 
 - Recoloring: 부모의 형제 노드가 Red일 때
 
-![](../../DataStructure/img/RBTree/recoloring.png)
+![](../../img/RBTree/recoloring.png)
 
 ```
 1. 현재 insert된 노드(z), 부모(v)와 부모의 형제(w)를 검정으로 하고 내 부모의 부모를 빨강으로 한다.
 2. 부모의 부모가 root node가 아니었을 때 double red(3번 조건)가 다시 발생 할 수 있다.
 ```
 
-<img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring2.png" height="150" width="170"> <img src="../../DataStructure/img/RBTree/restructuring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring5.png" height="150" width="170">
+
+<img src = "../../DataStructure/img/RBTree/recoloring1.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring2.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring5.png" height="150" width="170">
+
 
 <br>
 <br>
@@ -88,12 +90,23 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 # 시간복잡도
 
 - 검색의 시간복잡도: O(logn) -> balanced binary search tree이기 때문입니다.
-- 삽입의 시간복잡도: O(logn) -> 계속 재귀적으로 호출하면서 루트까지 올라갈 수 있기 때문입니다.
-- 삭제의 시간복잡도: O(logn) -> 계속 재귀적으로 호출하면서 루트까지 올라갈 수 있기 때문입니다.
+
+- 삽입의 시간복잡도: O(logn) -> 
+    - Restructuring: restructuring 자체 시간 복잡도는 O(1)이지만 순서 결정, 트리로 만드는 시간, 원래 노드의 구조로 바꿔주는 시간 모두 상수 시간이기 때문에 어떤 노드를 insert한 뒤 일어나므로 총 수행 시간은 O(logn)입니다. 
+    - Recoloring: insert해줄 위치를 찾는데 O(logn)에 recoloring을 해주는데 색깔만 바꿔주기 때문에 O(1)의 시간이 걸리고 root node까지 퍼져 나가면 O(logn)시간이 걸리게 됩니다
+
+- 삭제의 시간복잡도: O(logn) 
 
 <br>
 <br>
 
+# 
+
+- restructuring은 원큐에 끝난다. 다른 서브트리 영향 x
+- recoloring은 4가지 조건에 위배되면 계속 해서 다시 수행 uncle(부모의 형제 노드) 색깔을 보고 다시 구성해야되는데, 최악의 경우에 root node까지 쭉 올라가서 계속 연산해야할 수 있다.
+
+<br>
+<br>
 
 <details>
 <summary>AVL Tree와 Red-Black Tree 차이</summary>
@@ -109,6 +122,7 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 - Red Black Trees는 대부분의 언어의 map, multimap, multiset에서 사용하고 있습니다.
 
 - AVL tree는 조회에 속도가 중요한 Database에서 사용하고 있습니다.
+
 </details>
 
 
