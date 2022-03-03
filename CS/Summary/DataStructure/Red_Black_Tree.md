@@ -71,18 +71,23 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 ```
 <img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring2.png" height="150" width="170"> <img src="../../DataStructure/img/RBTree/restructuring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring5.png" height="150" width="170">
 
+- 다른 서브트리에 영향을 미치지 않기 때문에 double red를 해결하기 전과 후의 black node의 개수에 변화가 없다. -> Double Red 조건이 발생하지 않는다. -> restructuring은 원큐에 끝난다.
+
+<br>
+
 - Recoloring: 부모의 형제 노드가 Red일 때
 
 ![](../../DataStructure/img/RBTree/recoloring.png)
 
 ```
-1. 현재 insert된 노드(z), 부모(v)와 부모의 형제(w)를 검정으로 하고 내 부모의 부모를 빨강으로 한다.
-2. 부모의 부모가 root node가 아니었을 때 double red(3번 조건)가 다시 발생 할 수 있다.
+1. 현재 insert된 노드(z)의 부모(v)와 부모의 형제(w)를 검정으로 하고 내 부모의 부모를 빨강으로 한다.
+2. 부모의 부모가 root node가 아니었을 때 double red(3번 조건)가 다시 발생 할 수 있다. -> 최악의 경우에 root node까지 쭉 올라가서 계속 연산해야할 수 있다.
 ```
 
 
 <img src = "../../DataStructure/img/RBTree/recoloring1.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring2.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring5.png" height="150" width="170">
 
+- 부모와 부모의 형제를 검정으로 바꾸면 Depth Property 조건을 만족하나요? -> Black Depth는 일제히 1 증가하기 때문에 만족합니다.
 
 <br>
 <br>
@@ -92,18 +97,11 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 - 검색의 시간복잡도: O(logn) -> balanced binary search tree이기 때문입니다.
 
 - 삽입의 시간복잡도: O(logn) -> 
-    - Restructuring: restructuring 자체 시간 복잡도는 O(1)이지만 순서 결정, 트리로 만드는 시간, 원래 노드의 구조로 바꿔주는 시간 모두 상수 시간이기 때문에 어떤 노드를 insert한 뒤 일어나므로 총 수행 시간은 O(logn)입니다. 
+    - Restructuring: 순서 결정, 트리로 만드는 시간, 원래 노드의 구조로 바꿔주는 시간 모두 상수 시간이기 때문에 restructuring 자체 시간 복잡도는 O(1)이지만 어떤 노드를 insert한 뒤 일어나므로 총 수행 시간은 O(logn)입니다. 
     - Recoloring: insert해줄 위치를 찾는데 O(logn)에 recoloring을 해주는데 색깔만 바꿔주기 때문에 O(1)의 시간이 걸리고 root node까지 퍼져 나가면 O(logn)시간이 걸리게 됩니다
 
 - 삭제의 시간복잡도: O(logn) 
 
-<br>
-<br>
-
-# 
-
-- restructuring은 원큐에 끝난다. 다른 서브트리 영향 x
-- recoloring은 4가지 조건에 위배되면 계속 해서 다시 수행 uncle(부모의 형제 노드) 색깔을 보고 다시 구성해야되는데, 최악의 경우에 root node까지 쭉 올라가서 계속 연산해야할 수 있다.
 
 <br>
 <br>
