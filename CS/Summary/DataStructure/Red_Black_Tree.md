@@ -80,11 +80,7 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 2. 부모의 부모가 root node가 아니었을 때 double red(3번 조건)가 다시 발생 할 수 있다.
 ```
 
-<img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170">
-<img src = "../../DataStructure/img/RBTree/restructuring2.png" height="150" width="170">
-<img src="../../DataStructure/img/RBTree/restructuring3.png" height="150" width="170">
-<img src = "../../DataStructure/img/RBTree/restructuring4.png" height="150" width="170">
-<img src = "../../DataStructure/img/RBTree/restructuring5.png" height="150" width="170">
+<img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring2.png" height="150" width="170"> <img src="../../DataStructure/img/RBTree/restructuring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/restructuring5.png" height="150" width="170">
 
 <br>
 <br>
