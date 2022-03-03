@@ -37,15 +37,15 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 
 1. Root property의 조건에 따라 루트 노드의 색깔은 검정을 줍니다.
 
-![](../../img/RBTree/rootNode1.png)
+![](../../DataStructure/img/RBTree/rootNode1.png)
 
 2. 루트 노드 외에 삽입되는 노드의 색깔은 Red라고 가정하고 시작합니다.
 
-![](../../img/RBTree/RBTree1.png)
+![](../../DataStructure/img/RBTree/RBTree1.png)
 
 3. 노드 3을 삽입하면 BST의 특징에 따라 노드 2의 오른쪽 자식으로 붙게 됩니다.
 
-![](../../img/RBTree/RBTree2.png)
+![](../../DataStructure/img/RBTree/RBTree2.png)
 
 이렇게 되면 Internal property 조건을 위반하게 됩니다. 이를 해결하기 위해 2가지 메커니즘이 존재합니다.
 
@@ -62,7 +62,7 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 
 - Restructuring: 부모의 형제 노드가 Black일 때
 
-![](../../img/RBTree/restructingAndRecoloring.png)
+![](../../DataStructure/img/RBTree/restructingAndRecoloring.png)
 
 ```
 1. 나(z)와 내 부모(v), 내 부모의 부모를 오름차순으로 정렬
@@ -73,7 +73,7 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 
 - Recoloring: 부모의 형제 노드가 Red일 때
 
-![](../../img/RBTree/recoloring.png)
+![](../../DataStructure/img/RBTree/recoloring.png)
 
 ```
 1. 현재 insert된 노드(z), 부모(v)와 부모의 형제(w)를 검정으로 하고 내 부모의 부모를 빨강으로 한다.
@@ -81,10 +81,10 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 ```
 
 <img src="../../DataStructure/img/RBTree/restructuring.png" height="150" width="170">
-<img src = "../../img/RBTree/restructuring2.png" height="150" width="170">
-<img src="../../img/RBTree/restructuring3.png" height="150" width="170">
-<img src = "../../img/RBTree/restructuring4.png" height="150" width="170">
-<img src = "../../img/RBTree/restructuring5.png" height="150" width="170">
+<img src = "../../DataStructure/img/RBTree/restructuring2.png" height="150" width="170">
+<img src="../../DataStructure/img/RBTree/restructuring3.png" height="150" width="170">
+<img src = "../../DataStructure/img/RBTree/restructuring4.png" height="150" width="170">
+<img src = "../../DataStructure/img/RBTree/restructuring5.png" height="150" width="170">
 
 <br>
 <br>
