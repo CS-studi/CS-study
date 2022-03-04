@@ -327,7 +327,7 @@ CMS GC는 복잡하다
 G1 GC는 CMS GC를 대체하기 위해 만들어진 Garbage Collector이다. G1 GC를 이해하기 위해 기존의 Young Gen, Old Gen 영역에 대해서 잊어야 한다.
 
 - Eden → SurvivorX → SurvivorY → Old Gen 영역으로 객체가 이동하는 단계가 사라진 Garbage Collection 방식이다.
-- JDK7에서 정식으로 제공하는 GC이다.
+- Java 11의 Default GC는 G1 GC이다.
 
 > G1 GC의 Garbage Collection 과정
 > 
