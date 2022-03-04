@@ -27,6 +27,10 @@ hash table은 array로 이루어져있고 array 각각의 주소를 `bucket` 이
     - index를 구할 때, 보통 `mod` 연산을 사용한다.
     - hash function을 통해 index를 구하는 과정을 `hashing` 이라고 한다.
 
+<br/>
+
+### Java의 Hash Function의 한계
+
 > 완전 해시 함수
 
 모든 key들이 서로 다른 hash값을 가지고 있어서 해시 충돌이 일어나지 않는 hash function이다. key의 전체집합을 미리 알고 있는 경우에 완전 해시 함수를 만들 수 있다.
@@ -54,7 +58,7 @@ int m = hashTableSize; // m : 해시 테이블의 크기
 int hash = object.hashCode(); // object: 자바 객체, hashCode() : 자바 객체의 hash function 
 int index = hash % m; // hash bucket 인덱스
 ```
-<details><summary>hashCode 메소드</summary>
+<details><summary>Java의 hashCode 메소드</summary>
 <p>
 
 
