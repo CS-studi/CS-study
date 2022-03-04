@@ -370,13 +370,13 @@ Perm Gen 영역은 생명주기가 길다고 판단되는 객체들을 Perm Gen 
 ![Untitled](img/JVM2/Untitled%209.png)
 
 Java8 이전에 `Perm`영역은 보통 Class의 Meta 정보나 Method의 Meta 정보, Static 변수와 상수 정보들이 저장되는 공간으로 흔히 메타데이터 저장 영역이라고도 한다. 이 영역은 Java 8 부터는 Native 영역으로 이동하여 `Metaspace`영역으로 변경되었다. (다만, 기존 Perm영역에 존재하던 Static Object는 Heap 영역으로 옮겨져서 GC의 대상이 최대한 될 수 있도록 하였다)
-
+즉, 각종 메타 정보를 OS가 관리하는 영역으로 옮겨 Perm 영역의 사이즈 제한을 없앤 것이라 할 수 있다
 <br/>
 
 그리고 MetaSpace 영역은 Heap이 아닌 Native Memory 영역으로 취급한다.
 
 - Heap 영역은 JVM에 의해 관리되는 영역이고
-- Native Memory 영역은 OS 레벨에서 관리하는 영역이다
+- Native 영역은 OS 레벨에서 관리하는 영역이다
 
 <br/>
 
