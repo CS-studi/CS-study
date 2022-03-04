@@ -28,9 +28,6 @@
 
 ### 🏔Software Engineering [Link](CS/SoftwareEngineering)
 
-### 💯 Summary [Link](CS/Summary/)
-
-### ⁉️ 면접 예상 질문 [Link](QnA/)
 
 <br><br>
 
