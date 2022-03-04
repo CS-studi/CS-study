@@ -28,6 +28,11 @@
 
 ### 🏔Software Engineering [Link](CS/SoftwareEngineering)
 
+### ☕️Java [Link](Language/java/)
+
+### 📰JavaScript [Link](Language/javascript/)
+
+### 🍎Swift [Link](Language/ios/)
 
 <br><br>
 
