@@ -1,6 +1,6 @@
 # 💾 Database 면접 예상 질문
 
-<br>
+## Database
 <details>
 <summary>데이터베이스를 사용하는 이유가 무엇이나요?</summary>
 
@@ -55,7 +55,7 @@
 
 </details>
 
-<br>
+## DB Clustering&replication
 
 <details>
 <summary>Clustering이 무엇인가요?</summary>
@@ -146,7 +146,7 @@ replica가 많으면 replication lag 시간이 길어지기 때문에, 시간차
 
 </details>
 
-<br>
+## SQL
 
 <details>
 <summary>SQL injection 공격 방식에는 무엇이 있나요?</summary>
@@ -183,7 +183,7 @@ DDL은 (data definition Language) 데이터 정의 언어입니다. 각 릴레�
 </details>
 
 
-<br>
+## RDBMSvs.NoSQL
 
 <details>
 <summary>NOSQL은 무엇이고 어떤 특징이 있나요?</summary>
@@ -249,9 +249,7 @@ mongoDB, couchDB에서 사용합니다.
 Neo4j, Giraph, IBM DB2에서 사용합니다. 
 </details>
 
-<br>
-
-
+## ElasticSearch
 <details>
 <summary>Elasticsearch란?</summary>
 
@@ -336,7 +334,7 @@ ElasticSearch의
 
 </details>
 
-<br>
+## DB 교착상태 & 동시성 제어
 
 <details>
 <summary>잠금기법(Locking)에 대해 설명하시오.</summary>
@@ -386,7 +384,7 @@ ElasticSearch의
 
 </details>
 
-<br>
+## Transaction
 
 <details>
 <summary>트랜잭션 격리 수준은 무엇인가요? 격리 수준의 종류를 설명해주세요</summary>
@@ -441,4 +439,8 @@ Durability - 트랜잭션이 성공적으로 완료되었다면 결과는 영구
 
 
 
-<br>
+## Redis
+
+## Regularization(정규화)
+
+## Index & Hint
