@@ -367,11 +367,11 @@ Perm Gen 영역은 생명주기가 길다고 판단되는 객체들을 Perm Gen 
 > ***Java 8부터 Perm Gen 영역이 사라지고 MetaSpace가 생겼다***
 > 
 
-Java 8부터 Perm Gen 영역이 사라지고 `MetaSpace`가 생겼다
-
 ![Untitled](img/JVM2/Untitled%209.png)
 
-Java8 이전에는 static 객체를 남용하고, Class와 Method의 메타데이터가 증가하여`java.lang.OutOfMemoryError: PermGen space` 가 발생했었다. 그래서 메타데이터는 `MetaSpace`에 저장하고, Class, String 객체들을 Heap 영역에 할당하여 GC 대상이 되도록 수정하였다.
+Java8 이전에 `Perm`영역은 보통 Class의 Meta 정보나 Method의 Meta 정보, Static 변수와 상수 정보들이 저장되는 공간으로 흔히 메타데이터 저장 영역이라고도 한다. 이 영역은 Java 8 부터는 Native 영역으로 이동하여 `Metaspace`영역으로 변경되었다. (다만, 기존 Perm영역에 존재하던 Static Object는 Heap 영역으로 옮겨져서 GC의 대상이 최대한 될 수 있도록 하였다)
+
+<br/>
 
 그리고 MetaSpace 영역은 Heap이 아닌 Native Memory 영역으로 취급한다.
 
@@ -390,6 +390,8 @@ OutOfMemoryError 에러메시지를 통해 간접적으로 확인할 수 있다.
 ![UXudr.jpg](img/JVM2/UXudr.jpg)
 
 또한 3개의 Oracle 공식 문서를 보면 PermGen이 Heap 영역에 포함되지 않는다고 말한다. ([참고](https://stackoverflow.com/questions/41358895/permgen-is-part-of-heap-or-not))
+- Java의 Heap 영역 : Perm Gen에 있는 클래스의 인스턴스를 저장하는 공간
+- Perm Gen 영역 : 클래스와 메소드의 메타데이터, 상수 풀 정보, JVM/JIT 관련 데이터를 저장하는 공간
 
 <br/>
 
@@ -406,3 +408,15 @@ OutOfMemoryError 에러메시지를 통해 간접적으로 확인할 수 있다.
 **[[JAVA] JVM Execution Engine (실행엔진)](https://joomn11.tistory.com/17)**
 
 # 면접 예상 질문
+
+> Execution Engine의 Interpreter와 JIT Compiler에 대해 아시나요?
+> 
+
+> 가비지 컬랙션이 왜 일어나죠? 어디에서 일어나나요?
+> 
+
+> Minor GC와 Major GC에 대해 설명해보세요
+> 
+
+> Java8부터 Permanent Generation 영역이 사라진 이유를 아시나요?
+>
