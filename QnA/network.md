@@ -1,5 +1,6 @@
 # ⁉️ Network QnA
 
+## GET, POST, DELETE 방식
 <details>
 <summary>GET과 POST의 차이점에 대해서 설명하시오.</summary>
 <div markdown="2">       
@@ -31,6 +32,8 @@ PUT과 PATCH는 요청된 자원을 수정할 때 사용한다는 공통점을 �
 </div>
 </details>
 
+
+## Rest and RestAPI
 <details>
 <summary>REST의 특징에 대해서 설명하시오.</summary>
 REST는 HTTP 프로토콜을 활용하기 때문에 웹의 장점을 활용할 수 있다는 특징이 있습니다. 그 예로 Uniform Interface, Stateless, Cacheable, client-server 구조, 계층형 구조 등이 있습니다.
@@ -57,6 +60,8 @@ REST는 HTTP 프로토콜을 활용하기 때문에 웹의 장점을 활용할 �
 RESTful하다는 것은 REST의 원리를 따르는 API를 의미합니다. REST의 특징들인 클라이언트-서버 구조, Stateless, Cacheable, Layered system, Uniform Interface를 따라야 하고 REST API 설계시 URI는 정보의 자원을 표현해야하고 자원에 대한 행위는 HTTP Method로 표현합니다.
 </details>
 
+
+## HTTP와 HTTPS의 차이점 & HTTP문제점
 <details>
 <summary>HTTP와 HTTPS의 차이점을 설명하시오.</summary>
 <div markdown="2">       
@@ -86,6 +91,7 @@ https는 http+ ssl/tls 입니다. 엄밀히 말하면 http의 소켓 부분을 s
 </div>
 </details>
 
+## 웹 통신의 큰 흐름
 
 <details>
 <summary>웹 통신의 큰 흐름에 대해 설명해보세요</summary>
@@ -158,6 +164,8 @@ https는 http+ ssl/tls 입니다. 엄밀히 말하면 http의 소켓 부분을 s
 </div>
 </details>
 
+
+## TCP와 UDP의 차이점 + QUIC
 <details>
 <summary>TCP와 UDP의 특징과 차이점을 설명해주세요.</summary>
 <div markdown="2">
@@ -286,7 +294,7 @@ AIMD, Slow Start, 혼잡 회피, 빠른 재전송, 빠른 회복 기법이 있�
 </div>
 </details>
 
-
+## DNS round robin 방식
 <details> 
 <summary>DNS Round Robin 원리에 대해 설명해주세요</summary>
 <div markdown="2">
@@ -307,6 +315,7 @@ DNS response를 캐시에 저장하는 시간이 TTL값을 짧게 설정하면 D
 </div>
 </details>
 
+## 네트워크 시스템의 Layer and Architecture
 <details>
 <summary>OSI 7 계층에 대해 설명하시오.</summary>
 인터넷 프로토콜 스택과 비슷하지만, Presentation layer와 Session layer가 추가되었습니다.
@@ -335,6 +344,7 @@ EndPoint 간 신뢰성 있는 데이터 전송을 담당하는 계층입니다. 
 
 </details>
 
+## 쿠키, 세션, jwt 토큰
 <details> 
 <summary>사용자 인증 방식의 종류를 말해보세요</summary>
 <div markdown="2">
@@ -411,6 +421,7 @@ Refresh Token을 사용하므로써 Access Token의 탈취 위험성으로부터
 </div>
 </details>
 
+## TCP 3 way-handshake
 
 <details> 
 <summary>TCP 3 way handshake란?</summary>
@@ -454,6 +465,7 @@ TCP가 통신하기 앞서 논리적인 접속을 성립하기 위해 3 way hand
 </div>
 </details>
 
+## SSL, 공개키, 대칭키
 
 <details> 
 <summary>SSL과 TLS에 대해서 설명하시오.</summary>
@@ -503,6 +515,7 @@ HTTP통신에 암호화를 더해 HTTPS 통신을 할 때 SSL은 HTTP를 대신�
 </div>
 </details>
 
+## CORS
 <details>
 <summary>CORS에 대해서 설명하시오.</summary>
 브라우저에서는 보안적인 이유로 cross-origin HTTP 요청들을 제한합니다. 그래서 cross-origin 요청을 하려면 서버의 동의가 필요합니다. 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절합니다.
@@ -533,7 +546,7 @@ Origin헤더에 현재 요청하는 origin과, Access-Control-Request-Method헤�
 브라우저가 서버에서 응답한 헤더를 보고 유효한 요청인지 확인합니다. 만약 유효하지 않은 요청이라면 요청은 중단되고 에러가 발생합니다. 만약 유효한 요청이라면 원래 요청으로 보내려던 요청을 다시 요청하여 리소스를 응답받습니다.
 </details>
 
-
+## 소켓 통신
 <details> 
 <summary>http통신과 socket 통신의 차이점을 설명하시오.</summary>
 <div markdown="2">
@@ -557,6 +570,7 @@ http 통신은 단방향 통신으로 클라이언트는 서버에 요청, 서�
 </div>
 </details>
 
+## 프록시
 <details>
 <summary>proxy server란 무엇이고 왜 사용하나요?</summary>
 프록시 서버란 클라이언트와 서버 간의 중계 서버로 통신을 대리 수행해주는 서버입니다. 
@@ -599,6 +613,7 @@ http 통신은 단방향 통신으로 클라이언트는 서버에 요청, 서�
 리버스 프록시 뒤에 여러 대의 애플이케이션 서버를 둠으로써 사용자 요청을 분산할 수 있습니다. end-point마다 호출 서버를 설정할 수 있어 서버의 트래픽을 분산할 수도 있습니다.
 </details>
 
+## OAuth
 <details> 
 <summary>OAuth란 무엇인가요?</summary>
 <div markdown="2">
@@ -662,66 +677,3 @@ Resource owner password credentials grant는 resource owner의 인증정보를 c
 
 </div>
 </details>
-
-<!-- 
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details>
-
-
-<details> 
-<summary></summary>
-<div markdown="2">
-
-
-</div>
-</details> -->
