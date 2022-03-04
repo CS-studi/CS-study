@@ -3,10 +3,10 @@
   - ClassLoader
   - Runtime Data Area
 - [JVM(2)](JVM2.md)
+  - Execution Engine
   - GC
     - Java 버전별 동장 방식(Java8, Java11)
     - GC 모니터링 방법
-  - Execution Engine
 - OOP
   - OOP 특징
   - SOLID 원칙
