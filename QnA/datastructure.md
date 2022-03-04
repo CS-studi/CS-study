@@ -1,5 +1,6 @@
 # ⁉️ Datastructure QnA
 
+## Array vs. LinkedList
 <details>
 <summary>Array와 LinkedList의 차이점을 설명하세요</summary>
 <div markdown="2">       
@@ -78,6 +79,8 @@ linked list
 </div>
 </details>
 
+## Tree
+
 <details>
 <summary>BST와 binary tree에 대해서 설명하시오.</summary>
 <div markdown="2">       
@@ -114,6 +117,7 @@ full binary tree는 잎새 노드를 제외한 모든 노드가 자식 노드를
 </div>
 </details>
 
+## Stack and Queue
 
 <details>
 <summary>Stack, Queue, LinkedList의 차이점을 설명하세요</summary>
@@ -143,6 +147,8 @@ Stack은 먼저 들어간 데이터가 가장 늦게 나오는 LIFO 구조입니
 </div>
 </details>
 
+## Heap
+
 <details>
 <summary>Priority Queue의 동작 원리에 대해서 설명하시오.</summary>
 <div markdown="2">       
@@ -165,7 +171,7 @@ Stack은 먼저 들어간 데이터가 가장 늦게 나오는 LIFO 구조입니
 </div>
 </details>
 
-
+## Red-BlackTree
 <details>
 <summary>red black tree의 정의, 성질 4가지를 말하시오</summary>
 <div markdown="2">       
@@ -189,7 +195,7 @@ hash의 seperate chaining을 할 때, red-black tree로 링크드 리스트를 �
 </details>
 
 
-
+## Hash Table
 <details>
 <summary>해시 테이블에 데이터를 저장하는 과정을 설명해보세요</summary>
 <div markdown="2">       
@@ -246,9 +252,7 @@ Seperate Chaining 방식을 따르는 해시 테이블에서 해싱 충돌이 �
 </details>
 
 
-
-
-
+## Graph
 <details>
 <summary>그래프를 구현하는 방식들의 장단점을 비교하시오.</summary>
 <div markdown="2">       
@@ -274,6 +278,7 @@ DFS는 깊이 우선 탐색으로 탐색 노드의 인접 노드의 자식들을
 </div>
 </details>
 
+## MinimumSpanningTree
 <details>
 <summary>최소 스패닝 트리에 대해서 설명해주세요.</summary>
 <div markdown="2">       
