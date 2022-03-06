@@ -84,38 +84,53 @@
 
 - dfs는 스택으로 구현할 수 있음
     
-    ![18.png](../../DataStructure/img/Graph/18.png)
+![18.png](../../DataStructure/img/Graph/18.png)
 
 ```python
 def dfs(graph, v, visited):
     # 노드v를 방문처리
     visited[v] = True
-    print(v, end=" ")
+    print(v, "visit!")
     for i in graph[v]:
         if not visited[i]:
             dfs(graph, i, visited)
+    print(v, "pop!")
 
-# 2차원 리스트로 표현된 노드 정보
-# 1번째 원소 = [2,3,8] : 노드1과 연결된 노드2,노드3,노드8
+
 graph = [
-		[1,2,4],
-		[0,2],
-		[0,1,3,4],
-		[2,4],
-		[0,2,3]
+    [1, 2, 4],
+    [0, 2],
+    [0, 1, 3, 4],
+    [2, 4],
+    [0, 2, 3]
 ]
 visited = [False] * 5
 
-dfs(graph, 1, visited)
+dfs(graph, 0, visited)
+
+"""
+0 visit!
+1 visit!
+2 visit!
+3 visit!
+4 visit!
+4 pop!
+3 pop!
+2 pop!
+1 pop!
+0 pop!
+"""
 ```
 
 <br/>
   
 - bfs는 queue로 구현할 수 있음
-    ![19.png](../../DataStructure/img/Graph/17.png)
+
+![19.png](../../DataStructure/img/Graph/17.png)
 
 ```python
 from collections import deque
+
 
 def bsf(graph, start, visited):
     # 큐에 start노드를 집어 넣는다
@@ -123,23 +138,33 @@ def bsf(graph, start, visited):
     # start노드를 방문처리한다
     visited[start] = True
     while queue:
+        print(queue, end=" ")
         # 큐에서 노드를 꺼낸다
         now = queue.popleft()
         # 꺼낸 노드를 출력한다 : 방문처리할때 출력해도 무관하지만, 이 방법이 더 간결
-        print(now, end=" ")
+        print(now, "visit!")
         for i in graph[now]:
             if not visited[i]:
                 queue.append(i)
                 # 큐의 집어넣고나서, 방문 처리한다
                 visited[i] = True
 
+
 graph = [
-		[1,2,4],
-		[0,2],
-		[0,1,3,4],
-		[2,4],
-		[0,2,3]
+    [1, 2, 4],
+    [0, 2],
+    [0, 1, 3, 4],
+    [2, 4],
+    [0, 2, 3]
 ]
 visited = [False] * 5
-bsf(graph, 1, visited)
+bsf(graph, 0, visited)
+
+"""
+deque([0]) 0 visit!
+deque([1, 2, 4]) 1 visit!
+deque([2, 4]) 2 visit!
+deque([4, 3]) 4 visit!
+deque([3]) 3 visit!
+"""
 ```
