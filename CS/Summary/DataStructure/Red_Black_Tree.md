@@ -85,7 +85,7 @@ Red-Black Tree는 균형 잡힌 이진 탐색 트리( __balanced binary search t
 ```
 
 
-<img src = "../../DataStructure/img/RBTree/recoloring1.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring2.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring3.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring4.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring5.png" height="150" width="170">
+<img src = "../../DataStructure/img/RBTree/recoloring1.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring2.png" height="150" width="170"> <img src = "../../DataStructure/img/RBTree/recoloring3.png" height="150" width="170">
 
 - 부모와 부모의 형제를 검정으로 바꾸면 Depth Property 조건을 만족하나요? -> Black Depth는 일제히 1 증가하기 때문에 만족합니다.
 
