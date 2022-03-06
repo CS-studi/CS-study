@@ -20,7 +20,7 @@
 ## 🔗Links
 ### 🏔Data Structure [Link](CS/DataStructure) [QnA](QnA/datastructure.md) [Summary](CS/Summary/DataStructure)
 
-### 🏔Network [Link](CS/Network) [QnA](QnA/network.md)
+### 🏔Network [Link](CS/Network) [QnA](QnA/network.md) [Summary](CS/Summary/Network)
 
 ### 🏔Database [Link](CS/Database) [QnA](QnA/database.md)
 
@@ -49,4 +49,4 @@
 | 소프트웨어공학     | 2022/02/27 | 8주차   |[Agile, waterfall, CICD + devOps](CS/SoftwareEngineering/Agile_Waterfall_CICD_Devops.md)<br>[TDD](CS/SoftwareEngineering/TDD.md)<br>[Monolithic vs. MSA](CS/SoftwareEngineering/MicroserviceArchitecture.md)<br>[MVVM, MVC 패턴](CS/SoftwareEngineering/MVC_MVVM.md)|
 |소프트웨어공학, 자료구조 요약|2022/03/02|9주차|[Docker & Kubernetes](CS/SoftwareEngineering/dockerKubernetes.md)<br/>[AWS, cloudflare, GCP](CS/SoftwareEngineering/AWS_GCP_Cloudflare.md)<br/>[StackAndQueue 요약](CS/Summary/DataStructure/StackAndQueue.md), [Heap 요약](CS/Summary/DataStructure/Heap.md)<br/>[Tree 요약](CS/Summary/DataStructure/Tree.md), [ArrayVSLinkedList 요약](CS/Summary/DataStructure/ArrayVSLinkedList.md)|
 |자료구조 요약, 언어|2022/03/06|9주차|Red-BlackTree 요약<br/>Hash Table 요약<br/>[Graph 요약](CS/Summary/DataStructure/Graph.md)<br/> [MinimumSpanningTree 요약](CS/Summary/DataStructure/MST.md)<br/> ---- <br/>JVM1<br>[JVM2](Language/java/JVM2.md)<br>Hoisitng<br>Class와 Struct의 차이|
-|네트워크 요약, 언어|2022/03/09|10주차|	GET, POST, DELETE 방식<br/> Rest and RestAPI<br/> HTTP와 HTTPS의 차이점 & HTTP문제점<br/> SSL, 공개키, 대칭키<br/> --- <br/>OOP<br>Collection<br>Event Loop<br>ARC/순환참조|
+|네트워크 요약, 언어|2022/03/09|10주차|	GET, POST, DELETE 방식 요약<br/> Rest and RestAPI 요약<br/> HTTP와 HTTPS의 차이점 & HTTP문제점 요약<br/> SSL, 공개키, 대칭키 요약<br/> --- <br/>OOP<br>Collection<br>Event Loop<br>ARC/순환참조|
