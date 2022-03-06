@@ -86,7 +86,60 @@
     
     ![18.png](../../DataStructure/img/Graph/18.png)
 
+```python
+def dfs(graph, v, visited):
+    # 노드v를 방문처리
+    visited[v] = True
+    print(v, end=" ")
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+# 2차원 리스트로 표현된 노드 정보
+# 1번째 원소 = [2,3,8] : 노드1과 연결된 노드2,노드3,노드8
+graph = [
+		[1,2,4],
+		[0,2],
+		[0,1,3,4],
+		[2,4],
+		[0,2,3]
+]
+visited = [False] * 5
+
+dfs(graph, 1, visited)
+```
+
 <br/>
   
 - bfs는 queue로 구현할 수 있음
     ![19.png](../../DataStructure/img/Graph/17.png)
+
+```python
+from collections import deque
+
+def bsf(graph, start, visited):
+    # 큐에 start노드를 집어 넣는다
+    queue = deque([start])
+    # start노드를 방문처리한다
+    visited[start] = True
+    while queue:
+        # 큐에서 노드를 꺼낸다
+        now = queue.popleft()
+        # 꺼낸 노드를 출력한다 : 방문처리할때 출력해도 무관하지만, 이 방법이 더 간결
+        print(now, end=" ")
+        for i in graph[now]:
+            if not visited[i]:
+                queue.append(i)
+                # 큐의 집어넣고나서, 방문 처리한다
+                visited[i] = True
+
+graph = [
+		[1,2,4],
+		[0,2],
+		[0,1,3,4],
+		[2,4],
+		[0,2,3]
+]
+visited = [False] * 5
+bsf(graph, 1, visited)
+```
