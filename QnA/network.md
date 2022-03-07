@@ -1,6 +1,6 @@
 # ⁉️ Network QnA
 
-## GET, POST, DELETE 방식
+## HTTP Method
 <details>
 <summary>GET과 POST의 차이점에 대해서 설명하시오.</summary>
 <div markdown="2">       
