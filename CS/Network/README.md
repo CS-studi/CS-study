@@ -1,6 +1,6 @@
 # 🌌  Network
-- [GET, POST 방식의 차이점](HTTPMethod.md) 👈
-- [Rest and RestAPI](Rest.md)
+- [HTTP Method](HTTPMethod.md) 👈
+- [Rest and RestAPI](REST.md)
 - [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](HttpHttps.md)
 - [SSL, 공개키/비공개키](SSL.md)
 - [TCP 3-way-handshake](TCP_3way_handshake.md)

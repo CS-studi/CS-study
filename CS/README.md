@@ -30,7 +30,7 @@
 <br>
 
 # 🌌 Network 
-- [GET, POST 방식의 차이점](Network/HTTPMethod.md) 👈
+- [HTTP Method](Network/HTTPMethod.md) 👈
 - [Rest and RestAPI](Network/Rest.md)
 - [HTTP 와 HTTPS 의 차이점 & HTTP 의 문제점들](Network/HttpHttps.md)
 - [SSL, 공개키/비공개키](Network/SSL.md)
