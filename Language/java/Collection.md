@@ -115,7 +115,7 @@ public boolean add(E e) {
     return true;
 }
 ```
-
+`if (s == elementData.length)`
 - ArrayList에 데이터를 추가하면 `s` (현재까지 저장된 데이터 개수)와 `elementData.length` (Object 배열의 할당된 길이)를 비교하여 Object 배열의 사이즈를 조정해야 할지 판단한다.
     - `elementData = grow();` 코드를 통해 Object 배열의 크기를 동적으로 늘어나게 해준다.
 
@@ -176,7 +176,7 @@ private int newCapacity(int minCapacity) {
 
 - `newCapacity(minCapacity)` 메소드는 새롭게 할당할 배열의 사이즈를 반환하는 메소드이다.
     - `할당된 Object 배열의 사이즈 x 1.5` (newCapacity)가 `현재 사이즈 + 1` (minCapacity) 보다 작거나 같을 때, elementData가 빈 Object 배열이라면 `DEFAULT_CAPACITY` (10) 을 반환한다.
-    - `할당된 Object 배열의 사이즈 x 1.5` (newCapacity)가 `현재 사이즈 + 1` (minCapacity) 보다 크면, `할당된 Object 배열의 사이즈 x 1.5` (newCapacity) 을 반환한다. (최대 크기 MAX_ARRAY_SIZE는 `Integer.MAX_VALUE - 8` ==2147483639 이다
+    - `할당된 Object 배열의 사이즈 x 1.5` (newCapacity)가 `현재 사이즈 + 1` (minCapacity) 보다 크면, `할당된 Object 배열의 사이즈 x 1.5` (newCapacity) 을 반환한다. (최대 크기 MAX_ARRAY_SIZE는 `Integer.MAX_VALUE - 8` ==2147483639 이다)
 - **일반적인 상황에서 새로운 Object 배열을 기존 Object 배열의 1.5배 크기로 확장시킨다**
 
 ```java
@@ -190,8 +190,8 @@ private static int hugeCapacity(int minCapacity) {
 ```
 
 - 만약 `newCapacity(minCapacity)` 메소드에서 `할당된 Object 배열의 사이즈 x 1.5` (newCapacity)가 MAX_ARRAY_SIZE를 넘어갈 경우 `hugeCapacity(minCapacity)` 메소드를 수행한다
-- `현재 사이즈 + 1` (minCapacity)가 MAX_ARRAY_SIZE보다 크다면, 새로운 배열의 사이즈를 `Integer.MAX_VALUE` (2147483647)로 설정한다.
-- `현재 사이즈 + 1` (minCapacity)가 int의 표현 범위를 넘어서면 OutOfMemoryError를 발생시킨다.
+    - `현재 사이즈 + 1` (minCapacity)가 MAX_ARRAY_SIZE보다 크다면, 새로운 배열의 사이즈를 `Integer.MAX_VALUE` (2147483647)로 설정한다.
+    - `현재 사이즈 + 1` (minCapacity)가 int의 표현 범위를 넘어서면 OutOfMemoryError를 발생시킨다.
 
 </details>
 
