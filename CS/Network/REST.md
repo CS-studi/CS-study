@@ -189,6 +189,10 @@ __REST가 필요한 이유__
 
 [HATEOAS](https://wallees.wordpress.com/2018/04/19/rest-api-hateoas/)
 
+[REST 4](https://blog.npcode.com/2017/03/02/바쁜-개발자들을-위한-rest-논문-요약/)
+
+[REST 5](https://berrrrr.github.io/programming/2019/11/03/restapi-uniform-interface/)
+
 <br>
 
 
