@@ -619,7 +619,7 @@ mymap.remove(1); // key를 기준으로 제거
 
 > TreeSet과 TreeMap의 공통점
 > 
-- 데이터에 정렬 순서가 있다.
+- 데이터에 정렬 순서가 있다.(정렬 기준은 데이터의 key값(해시값)이다)
 - Red-Black Tree로 구현되어 있다.
 - 하나의 Node는 `value`, `left 노드 참조 변수`, `right 노드 참조 변수` 3가지 정보를 가진다
 
@@ -631,7 +631,6 @@ mymap.remove(1); // key를 기준으로 제거
 | TreeSet | TreeMap |
 | --- | --- |
 | 저장하는 데이터는 한 개뿐이다. (해당 데이터는 HashMap의 key로 저장된다) | 저장하는 데이터는 key-value 구조의 Map.Entry이다. |
-| 정렬 기준은 데이터이다. | 정렬 기준은 key값이다 |
 
 <br/>
 
