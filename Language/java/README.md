@@ -7,7 +7,7 @@
   - GC
     - Java 버전별 동장 방식(Java8, Java11)
     - GC 모니터링 방법
-- OOP
+- [OOP](OOP.md)
   - OOP 특징
   - SOLID 원칙
     - SOLID 원칙에 대한 예시
