@@ -18,6 +18,31 @@ Java의 Collection란 데이터의 집합, 그룹을 의미한다.
 - Collection Interface는 크게 `List`, `Set`, `Queue` 3가지로 분류된다.
 - `Map` 인터페이스는 Collection 인터페이스를 상속받지 않지만 Collection으로 분류한다.
 
+## Collection 특징
+| 컬렉션 | 특징 |
+| --- | --- |
+| ArrayList | 배열기반, 데이터의 추가와 삭제에 불리, 순차적인 추가/삭제는 제일 빠름, 임의의 요소에 대한 접근성이 뛰어남 |
+| Linked List | 연결기반, 데이터의 추가와 삭제에 유리, 임의의 요소에 대한 접근성이 좋지 않다. |
+| HashMap | 배열과 연결이 결합된 형태, 추가/삭제/검색/접근성이 모두 뛰어남, 검색에는 최고 성능을 보인다. |
+| TreeMap | 연결기반, 정렬과 검색(특히 범위검색)에 적합, 검색 성능은 HashMap 보다 떨어진다. |
+| HashSet | 내부적으로 HashMap을 이용해서 구현 |
+| TreeSet | 내부적으로 TreeMap을 이용해서 구현 |
+| LinkedHashMap | HashMap에 저장순서 유지기능을 추가 |
+| LinkedHashSet | HashSet에 저장순서 유지기능을 추가 |
+
+
+## Collections 클래스
+`Collections 클래스`는 모든 컬렉션의 알고리즘을 담당한다.
+- 유틸리티 클래스로써 static 메소드로 구성되어 있고 컬렉션들을 컨트롤하는데에 사용된다.
+- **주의할 점은 자바의 Collection은 인터페이스이며, Collections는 클래스라는 점이다**.
+
+> 대표적인 메소드
+>
+
+- 정렬(Sorting) : 정렬 알고리즘은 요소가 오름차순이 되도록 리스트를 재정렬함
+- 셔플링(Shuffling) : 셔플링 알고리즘은 랜덤으로 목록을 재정렬함 (우연한 게임을 구현할 때 유용)
+- 탐색 (Searching) : 이진 검색 알고리즘은 정렬된 목록에서 지정된 요소를 검색
+
 <br/>
 
 # *List Interface*
@@ -633,6 +658,8 @@ mymap.remove(1); // key를 기준으로 제거
 | 저장하는 데이터는 한 개뿐이다. (해당 데이터는 HashMap의 key로 저장된다) | 저장하는 데이터는 key-value 구조의 Map.Entry이다. |
 
 <br/>
+
+
 
 # 면접 예상 질문
 
