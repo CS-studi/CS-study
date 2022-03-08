@@ -187,11 +187,45 @@ class 자식클래스 extends 부모클래스 {
 - 클래스는 단 하나의 기능만을 가진다.
 - 클래스의 변경 사유는 단 한가지여야 한다.
 
-### OCP(Open Close Principle) 개발 폐쇄의 원칙
-### LSP(Liskov Substitution Priciple) 리스코브 치환의 원칙
-### ISP(Interface Segregation Principle) 인터페이스 분리의 원칙
-### DIP(Dependency Inversion Principle) 의존성 역전의 원칙
+>![srp](img/OOP/srp.png)
 
+어떤 사람은 누군가의 자식이며 친구, 부하직원 역할을 한다. 만약 친구 사이가 멀어지게 된다면 더이상 게임과 술먹는 것을 하지 않게 되는데, 더 이상 하지 않은 행동을 적어 놓는것은 비효율적이다.
+
+
+### OCP(Open Close Principle) 개발 폐쇄의 원칙
+- 확장에는 열려있고, 변경에는 닫혀있어야 한다.
+- 비즈니스 로직에 변경이 생겨도, 기존 구성 요소를 수정하지 않고, 구성 요소를 쉽게 확장해서 재사용하는 것이 이상적인 구조이다.
+
+> ![ocp](img/OOP/ocp.png)
+동물이 추가될 때마다 기존 코드를 수정하고 있다. 아래와 같이 강아지, 고양이, 돼지가 동물을 상속하도록 코드를 수정한다면 OCP에 준수하는 코드가 될 수 있다.
+
+### LSP(Liskov Substitution Priciple) 리스코브 치환의 원칙
+- 더 높은 수준의 클래스 및 구성 요소에 영향을 주지 않고 낮은 수준의 클래스를 대체할 수 있다.
+
+LSP를 준수하지 않은 예시
+
+> ![lsp](img/OOP/lsp.png)
+
+해당 코드에서 ArrayList를 LinkedList로 수정할 경우 ArrayList를 파라미터로 받는 메서드도 수정을 해야한다. 해당 코드는 sum메서드 한 곳만 수정하면 되지만 여러군데에서 사용했을 경우 모두 수정을 해야하는 번거로움이 있다. 하위 타임이 상위타입을 대체할 수 있도록 LSP 원칙을 준수하도록 코드를 수정해야한다.
+
+> ![lsp2](img/OOP/lsp2.png)
+
+### ISP(Interface Segregation Principle) 인터페이스 분리의 원칙
+- 하나의 일반적인 인터페이스가 아닌 여러개의 명확한 인터페이스를 사용한다. (SRP :'클래스'의 단일 책임을 강조, ISP :'인터페이스'의 단일 책임을 강조)
+
+>![ISP](img/OOP/isp.png)
+
+### DIP(Dependency Inversion Principle) 의존성 역전의 원칙
+- 실제 사용 관계는 않지만 추상을 매개로 호출함으로서 관계를 느슨하게 만드는 것을 의미
+- 구체적인 class가 아닌, 인터페이스에 의존함으로써 DIP를 해결한다.
+
+![dip1](img/oop/dip1.png)
+
+아이는 (구체적인)레고에 의존하고 있다. 만약 레고가 아닌 퍼즐을 갖고 놀고싶다면?
+
+![dip2](img/oop/dip2.png)
+
+해당 의존관계를 장난감 인터페이스를 사용하여 역전시킨다. 구체적인 레고에 의존하던 것으로 변경한다.
 
 <br><br>
 
@@ -210,3 +244,9 @@ class 자식클래스 extends 부모클래스 {
 <br>
 
 ## ⁉️ 면접 예상 질문
+
+> SOLID 원칙이 무엇인가요?
+
+>> SOLID 원칙 들을 설명해주세요
+
+> OOP가 무엇인가요?
