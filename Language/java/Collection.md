@@ -581,7 +581,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
 - Node<K, V> 배열을 순회 탐색하면서 삭제할 데이터의 key값과 동일한 Node가 있는지 확인한다. 있다면 해당 Node를 삭제하고 없으면 null을 반환한다.
 
-# 📌TreeMap
+## 📌TreeMap
 
 ```java
 TreeMap<K, V> mymap = new TreeMap<>();
