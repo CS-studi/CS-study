@@ -14,7 +14,7 @@
   - OOP 특징
   - SOLID 원칙
     - SOLID 원칙에 대한 예시
-- Collection
+- [Collection](java/Collection.md)
   - List, Map, Set interface
   - HashMap의 동작 원리
     - Hash 충돌
