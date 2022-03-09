@@ -432,14 +432,13 @@ public boolean add(E e) {
 
 일단 HashSet은 내부적으로 HashMap을 사용한다. HashMap의 key는 객체의 해시값이다. 자바에서 객체의 해시값은 `hashCode()` 메소드로 구할 수 있다.
 
-다만 hashCode() 메소드는 정수 값을 반환하기 때문에 모든 객체의 해시값은 int의 표현범위 내에 존재한다. 그렇기 때문에 `해시 충돌`이 날 경우를 대비하여 `equals()` 메소드로 동등비교를 수행해준다. (동등 비교는 객체가 가지고 있는 데이터의 값 자체를 비교하는 것이다)
+다만 hashCode() 메소드의 반환 값은 int형 정수이다. 다시 말해 객체의 original hash값이 다를지라도 hashCode()의 반환 값이 동일할 수 있다. 따라서 두 객체의 hashCode() 값이 같으면 `equals()` 메소드로 동등비교를 수행하여 동등 객체인지 판별한다. (동등 비교는 객체가 가지고 있는 데이터의 값 자체를 비교하는 것이다)
 
 ![Untitled](img/Collection/Untitled%202.png)
 
-이처럼 HashMap은 객체를 저장하기 전에 객체의 key값(해시 값) 즉, `hashCode() 반환 값`을 보고 기존의 데이터와 비교한다. 만약 HashMap에 hashCode() 반환 값이 같은 기존의 객체가 존재한다면(**해시 충돌**) `equals()` 메소드로 동등 비교를 한번 더 한다. 그럼에도 불구하고 동일하다면 HashMap에 해당 객체를 저장하지 않는다.
+이처럼 HashMap은 key-value쌍의 데이터를 저장하기 전에 객체의 key값(`hashCode() 반환 값`)을 보고 기존의 데이터와 비교한다. 만약 hashCode() 반환 값이 같은 기존의 데이터가 존재한다면, `equals()` 메소드로 동등 비교를 한번 더 수행한다. 그럼에도 불구하고 동일하다면 HashMap에 해당 객체를 저장하지 않는다.
 
-그렇기 때문에 HashSet에 중복 데이터를 저장할 수 없다.
-
+이와 같은 이유로 HashSet에 중복 데이터를 저장할 수 없다.
 <br/>
 
 ## 📌TreeSet
