@@ -130,7 +130,7 @@ Content-Type: text/html;
 - HTTP Response Message는 3부분으로 구성됨
     1. 시작줄 : `HTTP 버전` & `상태 코드(Status Code)` & `상태 메시지(Status Message)`
     2. 헤더 : Request에 대한 정보를 나타냄
-    3. 본문 : RequestBody (Request와 함께 전송할 데이터)
+    3. 본문 : ResponseBody (Response와 함께 전송할 데이터)
 
 ### 상태 코드(Status Code)
 
