@@ -63,7 +63,7 @@ public class changeShape{
 ```
 
 #### 캡슐화
-자바의 접근 제어지
+자바의 접근 제어
 - public
 - protected
 - default
@@ -171,7 +171,7 @@ class 자식클래스 extends 부모클래스 {
 ### OOP를 실세계에 빗대어 보면
 1. OOP 4대 특성 :주방도구(utensil)
     - 추상화, 상속, 캡슐화, 다형성
-2. OOㅇ(객체 지향 설계) 5원칙 :주방 도구 설명서
+2. OOD(객체 지향 설계) 5원칙 :주방 도구 설명서
     - SOLID
 3. DP(디자인 패턴) :레시피
 
