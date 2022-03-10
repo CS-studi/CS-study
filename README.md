@@ -1,4 +1,8 @@
+
+<div align=center>
+  
 ![header](https://capsule-render.vercel.app/api?type=Cylinder&color=gradient&section=header&text=CS-studi/CS-study&fontSize=40&animation=fadeIn)
+
 
 # ✨ CS-study
 
@@ -53,3 +57,7 @@
 |자료구조 요약, 언어|2022/03/06|9주차|[Red-BlackTree](CS/Summary/DataStructure/Red_Black_Tree.md)<br/>[Hash Table](CS/Summary/DataStructure/HashTable.md)<br/>[Graph](CS/Summary/DataStructure/Graph.md)<br/> [MinimumSpanningTree](CS/Summary/DataStructure/MST.md)<br/> --- <br/>JVM1<br>[JVM2](Language/java/JVM2.md)<br>[Hoisitng](Language/javascript/Hoisting.md)<br>[Class와 Struct의 차이](Language/ios/class_struct.md)|
 |네트워크 요약|2022/03/09|10주차|	[HTTP Method](CS/Summary/Network/HTTPMethod.md) <br/> [Rest and RestAPI](CS/Summary/Network/RESTAPI.md)<br/> [HTTP와 HTTPS의 차이점 & HTTP문제점](CS/Summary/Network/HttpHttps.md)<br/> [SSL, 공개키, 대칭키](CS/Summary/Network/SSL.md)<br/> --- <br/>[OOP](Language/java/OOP.md)<br>[Collection](Language/java/Collection.md)<br>Event Loop<br>ARC/순환참조|
 |네트워크 요약|2022/03/13|10주차| TCP 3 way-handshake<br/>TCP와 UDP의 차이점 + QUIC<br/>[DNS round robin 방식](CS/Summary/Network/DNSRoundRobin.md)<br/>웹 통신의 큰 흐름<br/>|
+  
+  
+  
+</div>
