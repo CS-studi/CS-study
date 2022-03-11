@@ -1,7 +1,7 @@
 
 <div align=center>
   
-![header](https://capsule-render.vercel.app/api?type=Cylinder&color=gradient&section=header&text=✨CS-studi/CS-study✨&fontSize=40&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=Cylinder&color=gradient&section=header&text=✨CS-studi/CS-study✨&fontSize=45&animation=fadeIn)
 
 > 함께 성장하고 각자 목표한 바를 이루기 위한 모임
 
