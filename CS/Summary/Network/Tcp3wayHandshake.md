@@ -16,19 +16,19 @@ TCP는 통신하기에 앞서 논리적인 접속을 성립하기 위해 3-way h
 3. A -> B :ACK
 ```
 
-    1. A -> B :SYN
-        - 접속 요청 프로세스가 연결 요청 메시지 전송(SYN)
-        - 송신자가 최초로 데이터를 전송할 때 Seq Number를 임의의 랜덤 숫자로 지정하고, SYN 플래그 비트를 1로 설정한 세그먼트를 전송한다.
-        - A :Closed, B :Listen
-    2. B -> A :SYN + ACK
-        - 접속 요청을 받은 프로세스 B가 요청 수락, 접속 요청 프로세스 A에게 포트를 열어달라는 메시지 전송(SYN+ACK)
-        - 수신자는 Ack Number 필드를 Seq Number + 1로 지정, SYN과 ACK 플래그 비트를 1로 설정한 세그먼트를 전송
-        - A :Closed, B :Syn_Rcv
-    3. A -> B :ACK
-        - 마지막으로 접속 요청 프로세스 A가 수락 확인을 보내 연결을 맺음
-        - 이때 전송할 데이터가 있으면 이 단계에서 데이터를 전송할 수 있다.
-        - 초기 => A :Established, B :Syn_Rcv
-        - 후기 => A :Established, B :Established
+1. A -> B :SYN
+    - 접속 요청 프로세스가 연결 요청 메시지 전송(SYN)
+    - 송신자가 최초로 데이터를 전송할 때 Seq Number를 임의의 랜덤 숫자로 지정하고, SYN 플래그 비트를 1로 설정한 세그먼트를 전송한다.
+    - A :Closed, B :Listen
+2. B -> A :SYN + ACK
+    - 접속 요청을 받은 프로세스 B가 요청 수락, 접속 요청 프로세스 A에게 포트를 열어달라는 메시지 전송(SYN+ACK)
+    - 수신자는 Ack Number 필드를 Seq Number + 1로 지정, SYN과 ACK 플래그 비트를 1로 설정한 세그먼트를 전송
+    - A :Closed, B :Syn_Rcv
+3. A -> B :ACK
+    - 마지막으로 접속 요청 프로세스 A가 수락 확인을 보내 연결을 맺음
+    - 이때 전송할 데이터가 있으면 이 단계에서 데이터를 전송할 수 있다.
+    - 초기 => A :Established, B :Syn_Rcv
+    - 후기 => A :Established, B :Established
 
 <br><br>
 
