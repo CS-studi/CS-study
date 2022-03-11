@@ -10,6 +10,8 @@ TCP는 통신하기에 앞서 논리적인 접속을 성립하기 위해 3-way h
 - TCP/IP 프로토콜을 이용해서 통신을 하는 응용 프로그램이 데이터를 전송하기 전에 먼저 정확한 전송을 보장하기 위해 상대방 컴퓨터와 사전에 세션을 수립하는 과정
     > ![3way](../../Network/img/TCP_3way_handshake/3wayhandshake2.png)
 
+(A 프로세스(클라이언트)가 B프로세스(서버)에 연결을 요청)
+
 ```
 1. A -> B :SYN
 2. B -> A :SYN + ACK
@@ -34,14 +36,15 @@ TCP는 통신하기에 앞서 논리적인 접속을 성립하기 위해 3-way h
 
 ## 4-way handshake
 TCP 연결을 해제하는 과정이다.
+> ![4way](../../Network/img/TCP_3way_handshake/4wayhandshake.png)
+
+(A 프로세스(클라이언트)가 B프로세스(서버)에 연결 해제를 요청)
 ```
 1. A -> B :FIN
 2. B -> A :ACK
 3. B -> A :FIN
 4. A -> B :ACK
 ```
-- A프로세스가 B프로세스에 연결 해제를 요청
-> ![4way](../../Network/img/TCP_3way_handshake/4wayhandshake.png)
 
 1. A -> B :FIN
     - 프로세스 A가 연결을 종료하겠다는 FIN 플래그 전송
