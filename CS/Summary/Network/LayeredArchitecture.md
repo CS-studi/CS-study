@@ -5,11 +5,9 @@
 ## 인터넷 프로토콜 스택 5계층
 
 `Protocol` : 컴퓨터나 원거리 통신 장비 사이에서 메시지를 주고 받는 양식과 규칙
-
 - 서로 다른 환경에서 데이터의 형태를 일정하게 규정하여 충돌 및 지연 등의 문제를 방지한다
 
 `Protocol Stack` : 다양한 계층의 프로토콜들을 모두 합친 것
-
 - 하나의 프로토콜에서 모든 작업을 수행하지 않고 다수의 통신 프로토콜을 사용한다. (데이터 처리 시스템에서 통신의 복잡도를 높히기 때문)
 
 `인터넷 프로토콜 스택 5계층`
@@ -18,10 +16,12 @@
     - `PDU` : 메시지
     - `프로토콜` : HTTP(웹 문서 및 request 전송), SMTP(전자 메일 전송), FTP(파일 전송)
     - 전송 계층 프로토콜을 기반으로 호스트 간 연결을 확립
+
 2. `전송 계층` : Endpoint 간에 응용 계층의 메시지를 신뢰성 있게 전달하기 위해 논리적 통신 서비스를 제공하는 계층 (Endpoint는 클라이언트와 서버를 의미)
     - `PDU` : 세그먼트(TCP), 데이터그램(UDP)
     - `프로토콜` : TCP, UDP
     - Port 번호에 해당하는 응용 프로세스에 데이터를 전달함(Port 번호로 동일 호스트 내에 프로세스를 구분함)
+
 3. `네트워크 계층` : 논리적 주소 체계에 따라 라우팅을 통해 호스트들 사이에 패킷 전달을 제공하는 계층
     - `PDU` : 데이터그램 (IP 패킷이라고 많이 부르지만, IP 데이터그램이라고 부르는 것이 더 정확함, [참고](https://itwiki.kr/w/IP_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B7%B8%EB%9E%A8))
     - `프로토콜` : IP
@@ -76,6 +76,8 @@
 
 - 현대의 인터넷이 TCP/IP 모델을 따르는 이유는 OSI 모델이 TCP/IP 모델과의 시장 점유 싸움에서 졌기 때문이다.
 
+<br/>
+
 ## TCP/IP 계층
 
 ![https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/Network/img/Network_Layer/2.png](https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/Network/img/Network_Layer/2.png)
@@ -105,7 +107,7 @@ TCP/IP 계층은 2가지 버전이 있다 → `TCP/IP Original(4계층)`, `TCP/I
 
 ## IPv4 와 IPv6
 
-기존 IPv4의 주소 고갈문제와 를 해결하고자 IPv6가 생겼다.
+기존 IPv4의 주소 고갈문제를 해결하고자 IPv6가 생겼다.
 
 `IPv4 와 IPv6의 헤더`
 
