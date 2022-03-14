@@ -85,7 +85,7 @@
 TCP/IP 계층은 2가지 버전이 있다 → `TCP/IP Original(4계층)`, `TCP/IP Updated(5계층)`
 
 - 오늘날에는 `TCP/IP Updated(5계층)` 모델이 더 많이 사용된다
-- 인터넷 프로토콜 스택 5계층이 사용 중인 `TCP/IP Updated(5계층)` 모델을 따른다.
+- 현재 인터넷 프로토콜 스택 5계층은 `TCP/IP Updated(5계층)` 모델을 따른다.
 
 <br/>
 
