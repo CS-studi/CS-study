@@ -403,7 +403,7 @@ signature = SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
     
     Refresh Token을 활용하면 Access Token의 만료 기한을 짧게 설정하면서, 사용자가 자주 로그인 할 필요가 없다. 또한 서버가 강제로 Refresh Token을 만료시킬 수 있다.
     
-    그러나 서버의 Stateless함을 갖게 한다는 점에서 이점이 있는 JWT의 장점을 완벽하게 누릴 수 없다는 단점이 있다.
+    **하지만 Refresh Token을 서버에 저장해야 하기 때문에 Stateless한 서버구조를 갖게하는 JWT의 장점을 완벽하게 누릴 수 없다.**
 
 
 <br/>    
