@@ -94,7 +94,6 @@ PDU는 SDU(Service Data Unit) 와 PCI(Protocol Control Information)로 구성되
 
 Layered Architecture 를 사용하면 `복잡한 시스템을 명확하고 구체적으로 구분`할 수 있고, 각 계층이 자신의 역할에 집중할 수 있게 되고, 모듈로써 제공할 수 있다.
 
-+
 
 네트워크를 계층으로 나눈 이유
 
