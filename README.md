@@ -3,6 +3,12 @@
   
 ![header](https://capsule-render.vercel.app/api?type=Cylinder&color=gradient&section=header&text=✨CS-studi/CS-study✨&fontSize=45&animation=fadeIn)
 
+<div align=right>
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCS-studi%2FCS-study&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+</div>
+
 
 __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 
@@ -37,12 +43,6 @@ __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 <br><br>
 
 ## 👊 Schedule/스터디 스케줄
-
-<div align=right>
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCS-studi%2FCS-study&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
-</div>
 
 | **과목** | **일자** | **주차** | **주제**|
 | ------------- | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------| 
