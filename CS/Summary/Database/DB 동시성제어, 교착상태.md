@@ -159,15 +159,23 @@ DB에서 하나의 데이터에 Lock을 걸려는 트랜잭션간에 Race Condit
 
 > DB Blocking 예시
 > 
-- S-Lock이 설정된 데이터에 접근하려는 트랜잭션은 Blocking 되지 않는다. (`S-Lock 👈 S-Lock`)
+- S-Lock이 설정된 데이터를 Read하려는 트랜잭션은 **Blocking 되지 않는다.** (`S-Lock 👈 S-Lock`)
     
     ```java
     1. 트랜잭션1이 데이터a를 읽고 있음 // 데이터a에 S-Lock이 걸림
     2. 트랜잭션2는 데이터a를 읽기 위해 S-Lock을 걸려 함 // 걸 수 있음
     3. 트랜잭션2는 데이터a를 읽음
     ```
+
+- S-Lock이 설정된 데이터를 Update, Delete하려는 트랜잭션은 **Blocking 된다.** (`S-Lock 👈 X-Lock`)
     
-- X-Lock이 설정된 데이터에 접근하려는 트랜잭션은 Blocking 된다. (`X-Lock 👈 S-Lock 또는 X-Lock 👈 X-Lock`)
+    ```java
+    1. 트랜잭션1이 데이터a를 읽고 있음 // 데이터a에 S-Lock이 걸림
+    2. 트랜잭션2는 데이터a를 변경하기 위해 X-Lock을 걸려 함 // 걸 수 없음
+    3. 트랜잭션2는 Blocking 됨 // 트랜잭션1이 S-Lock을 해제할 때까지
+    ```
+
+- X-Lock이 설정된 데이터를 Read, Update, Delete하려는 트랜잭션은 **Blocking 된다.** (`X-Lock 👈 S-Lock 또는 X-Lock 👈 X-Lock`)
     
     ```java
     1. 트랜잭션1이 데이터a를 변경하고 있음 // 데이터a에 X-Lock이 걸림
