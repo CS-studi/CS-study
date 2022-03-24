@@ -64,4 +64,5 @@ __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 |네트워크 요약|2022/03/16|11주차|[네트워크 시스템의 Layer and Architecture](CS/Summary/Network/LayeredArchitecture.md) <br/>[쿠키, 세션, jwt 토큰](CS/Summary/Network/cookie_session_jwt.md) <br/>[프록시](CS/Summary/Network/proxy.md) <br/>[소켓 통신](CS/Summary/Network/soket.md)<br/>|
 |네트워크, 데이터베이스 요약|2022/03/20|11주차|[CORS](CS/Summary/Network/CORS.md)<br>[OAUTH](CS/Summary/Network/Oauth.md)<br>[데이터베이스](CS/Summary/Database/Database.md)<br>[RDBMS vs. NoSQL](CS/Summary/Database/RDBMSNoSQL.md)|
 |데이터베이스 요약|2022/03/23|12주차|[ElasticSearch](CS/Summary/Database/elasticSearch.md)<br/>[Redis](CS/Summary/Database/Redis.md)<br/>[DB Clustering&replication](CS/Summary/Database/DB%20클러스터링%2C%20리플리케이션.md)<br/>Transaction|
+|데이터베이스 요약|2022/03/23|12주차|[DB 교착상태 & 동시성 제어](CS/Summary/Database/DB%20%EB%8F%99%EC%8B%9C%EC%84%B1%EC%A0%9C%EC%96%B4%2C%20%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C.md)<br/>Regularization(정규화)<br/>Index & Hint<br/>Process, Thread|
 </div>
