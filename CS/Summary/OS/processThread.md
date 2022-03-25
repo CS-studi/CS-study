@@ -4,9 +4,13 @@
 
 `디스크에 실행 파일 등의 형태로 존재하는 프로그램 메모리에 적재 -> 실행 -> 생명력을 가진 프로세스`
 
+<br>
+
 ## Process Context
 
 ⇒ 여러 프로세스가 실행 중인 시분할 환경에서 CPU의 점유권이 계속적으로 바뀐다. CPU의 점유권을 빼앗겼다가 다시 되찾은 프로세스의 이전 상태를 재현하기 위해서 필요한 정보 = `Process Context`
+
+<br>
 
 ### Context 종류
 
@@ -22,6 +26,8 @@
         - 운영 체제 커널의 자료구조로서 프로세스에게 할당할 자원을 설정하고 감시하는 데 필요한 프로세스 정보
     - Kernal Stack
         - 프로세스가 시스템 콜을 하면 PC가 kernal 주소공간의 code를 가리키며 명령어를 수행한다. 이 때 code를 수행하는데 필요한 정보를 kernal stack에 쌓아둔다.
+
+<br>
 
 ## Process State
 
@@ -63,6 +69,7 @@
 5. running → ready
     - timer interrupt(=할당된 시간이 끝날경우)가 들어와서 cpu점유권을 반환하고 ready 상태로 바뀐다.
     
+<br>
 
 ## PCB(Process Control Block)
 
@@ -89,6 +96,8 @@
 2. CPU 점유권을 얻는 상황
     - 운영체제는 Kernal data에 저장된 해당 프로세스의 PCB에서 CPU의 PC값 및 레지스터 값을 복원시키고 CPU 점유권을 다시 해당 프로세스에게 넘겨주면서 실행한다.
 
+<br>
+
 ### Context switch 판단 기준
 
 ⇒ context switch가 발생하는지 판단하는 기준은 `CPU 점유권 기준` 보다 `프로세스 기준` 으로 판단하는 것이 옳다.
@@ -96,6 +105,8 @@
 → CPU 점유권이 system call이나 interrupt로 인하여 OS로 넘어가는 것은 context switch를 판단하는 기준이 되기 힘들다.
 
 → Context, 즉 문맥 수행하던 프로세스 A에서 cpu 점유권이 프로세스 B로 넘어가면 문맥이 바뀐 것.
+
+<br>
 
 ## Scheduler
 
@@ -116,7 +127,9 @@
     - 메모리에 많은 프로그램 동시에 올라갈 때 → 중기 스케줄러가 swap out 시킴
         - degree of multiprogramming 제어
             - 중기 스케줄러에 의해 메모리를 뺴앗긴 프로세스 Suspended state
-            
+
+
+<br><br>
 
 # Thread
 
@@ -133,6 +146,8 @@
 
 ⇒ `code, data 영역 shared`
 
+<br><br>
+
 # Multi-Process & Multi-Thread
 
 ## Multi-Process
@@ -140,6 +155,8 @@
 ⇒ `하나의 프로그램을 여러 프로세스로 구성하여 각 프로세스가 병렬적으로 작업 수행`
 
 → 각 프로세스 간 메모리 구분이 필요하거나 독립된 주소 공간을 가져야 할 경우 사용한다.
+
+<br>
 
 ### Multi-Process 장점
 
@@ -152,9 +169,13 @@
     - 독립된 메모리 영역이기 때문에 context switching이 자주일어나는데, context  switching과정에서 캐시 메모리 초기화 등 무거운 작업이 진행되고 시간 소모가 크기 때문에 오버헤드가 발생한다.
 - 프로세스 간의 통신 방식이 따로 필요하다(w/ ICPC)
 
+<br>
+
 ## Multi-Thread
 
 ⇒ `하나의 프로세스에 여러 스레드로 자원을 공유하며 작업을 나누어 수행하는 것이다.`
+
+<br>
 
 ### Multi-Thread 장점
 
