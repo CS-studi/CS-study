@@ -111,8 +111,8 @@ Trade-Off관계에 있는 동시성과 데이터 일관성은 격리수준으로
     2. 트랜잭션2가 name=hjoon인 행의 name 속성을 top으로 변경하고 commit한다
         - undo 세그먼트 영역의 데이터에 x-lock을 걸 수 없다. → 따라서 실제 레코드에 x-lock을 건다.
         - 변경을 마치고 commit되면 실제 레코드에 변경 사항이 반영된다
-        - → `ok`(실제 레코드에 name=hjoon인 행은 없고 name=sun인 행만 존재한다.)
-    3. 트랜잭션1이 `name=hjoon`인 행의 name 속성을 sum으로 변경하려 한다. 
+        - → `ok`(실제 레코드에 name=hjoon인 행은 없고 name=top인 행만 존재한다.)
+    3. 트랜잭션1이 `name=hjoon`인 행의 name 속성을 sun으로 변경하려 한다. 
         - undo 세그먼트 영역의 데이터에 x-lock을 걸 수 없다 → 실제 레코드에 x-lock을 걸려고 시도한다.
         - **하지만 실제 레코드에 name=hjoon인 행이 존재하지 않는다.**
         - → `0 row(s) affected`(실제 레코드에 아무런 변경이 일어나지 않음)
