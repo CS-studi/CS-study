@@ -57,7 +57,8 @@ Trade-Off관계에 있는 동시성과 데이터 일관성은 격리수준으로
     2. 트랜잭션2가 데이터b를 k로 update
     3. 트랜잭션1이 sum 연산을 마침 // 실제 결과 : a+k+c
     ```
-    
+[참고: dirty read, non repeatable read, phantom read](https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels?view=sql-server-ver15#:~:text=Dirty%20Reads%20A,set%20of%20rows.)
+
 - `Dirty Read`⭐
     
     커밋되지 않는 트랜잭션의 데이터 변경사항을 볼 경우, 무효가 된 데이터를 읽어 발생하는 문제 (Inconsistency와 다름)
