@@ -101,60 +101,60 @@
     
     Banker’s 알고리즘은 프로세스가 자원을 최대로 요청한 자원이 가용자원으로 충족되지 않는다면 자원을 할당해주지 않는 보수적인 알고리즘이다.
     
-    ### 📌 `3. Deadlock Detection and Recovery`
+### 📌 `3. Deadlock Detection and Recovery`
+
+데드락이 발생하는 것을 미연에 방지하지는 않지만, detection 루틴으로 데드락을 감지한다. 만약 감지되었다면 recovery한다.
+
+> Deadlock Detection 알고리즘
+> 
+1. `자원 유형 당 인스턴스가 1개`인 경우 ⇒ `Wait-for Graph 알고리즘`을 사용한다.
     
-    데드락이 발생하는 것을 미연에 방지하지는 않지만, detection 루틴으로 데드락을 감지한다. 만약 감지되었다면 recovery한다.
+    ![https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/Wfg.png](https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/Wfg.png)
     
-    > Deadlock Detection 알고리즘
-    > 
-    1. `자원 유형 당 인스턴스가 1개`인 경우 ⇒ `Wait-for Graph 알고리즘`을 사용한다.
-        
-        ![https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/Wfg.png](https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/Wfg.png)
-        
-        `시간 복잡도`
-        
-        - cycle 생성 여부 조사시 프로세스의 수가 n일 때 O(n^2) 시간이 걸린다.
-        
-        Resource Allocation Graph에서 자원을 빼버리고 실선을 이으면 Waif-for graph가 된다.
-        
-    2. `자원 유형 당 인스턴스가 여러 개`인 경우 ⇒ `Banker’s 알고리즘과 유사한 방법`을 활용한다.
-        
-        ![https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/bdetect.png](https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/bdetect.png)
-        
-        `Detection에서 Banker's 알고리즘 방식`
-        
-        - 프로세스가 자원을 요청하면 바로 할당해준다 (Max, Need를 알 필요 없음)
-        - 프로세스가 보유하고 있는 자원을 언젠가 반납할 것이라고 “낙관적”으로 판단 한다.
-            - `프로세스의 요청 자원 (Request) ≤ 시스템 내 가용 자원 + 나머지 프로세스들의 보유 자원(Allocation)` 이라면 safe한 상태
-        
-        현재 시스템 내 가용 자원(Available)이 (0,0,0)이지만 프로세스들이 보유하고 있는 자원(Allocation)이 언젠가 반환될 것이라고 판단하기 때문에 데드락이라고 판단하지 않는다. 
-        
-        (모르겠음.. 스터디원 찬스!)
-        
-        | 프로세스 | Request | Allocation + Avaliable | state |
-        | --- | --- | --- | --- |
-        | P0 | (0, 0, 0) |  | safe |
-        | P1 | (2, 0, 2) |  | safe |
-        | P2 | (0, 0, 0) |  | safe |
-        | P3 | (1, 0, 0) |  | safe |
-        | P4 | (0, 0, 2) |  | safe |
+    `시간 복잡도`
     
-    > Deadlock Recovery 방법
-    > 
-    1. `Process Termination 프로세스 종료`
-        - 방법1 : 모든 데드락 상태인 프로세스를 강제 종료
-        - 방법2 : 데드락 사이클이 없어질 때까지 하나씩 프로세스를 강제 종료
-    2. `Resource Preemption 자원 선점`
-        - 비용을 최소화할 victim 프로세스를 선정
-        - safe state로 롤백하여 프로세스를 재시작
-        - Starvation 문제 (자세히 다루지 않음)
-            - 동일한 프로세스가 계속 victim 프로세스로 선정되는 경우
-            - 비용 요소에 롤백 횟수도 같이 고려해야 함 (단순히 비용만 최소화하면 안 된다는 뜻)
+    - cycle 생성 여부 조사시 프로세스의 수가 n일 때 O(n^2) 시간이 걸린다.
     
-    ### 📌 `4. Deadlock Ignorance`
+    Resource Allocation Graph에서 자원을 빼버리고 실선을 이으면 Waif-for graph가 된다.
     
-    데드락이 일어나지 않는다고 생각하고 아무런 조치도 취하지 않음
+2. `자원 유형 당 인스턴스가 여러 개`인 경우 ⇒ `Banker’s 알고리즘과 유사한 방법`을 활용한다.
     
-    - 데드락이 매우 드물게 발생하므로 데드락에 대한 조치 자체가 더 큰 오버헤드일 수 있음
-    - 만약, 시스템에 데드락이 발생한 경우 시스템이 비정상적으로 작동하는 것을 사람이 느낀 후 직접 프로세스를 죽이는 등의 방법으로 대처함
-    - UNIX, Windows 등 **대부분의 OS에서 채택하였음**
+    ![https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/bdetect.png](https://raw.githubusercontent.com/CS-studi/CS-study/master/CS/OS/img/deadlock/bdetect.png)
+    
+    `Detection에서 Banker's 알고리즘 방식`
+    
+    - 프로세스가 자원을 요청하면 바로 할당해준다 (Max, Need를 알 필요 없음)
+    - 프로세스가 보유하고 있는 자원을 언젠가 반납할 것이라고 “낙관적”으로 판단 한다.
+        - `프로세스의 요청 자원 (Request) ≤ 시스템 내 가용 자원 + 나머지 프로세스들의 보유 자원(Allocation)` 이라면 safe한 상태
+    
+    현재 시스템 내 가용 자원(Available)이 (0,0,0)이지만 프로세스들이 보유하고 있는 자원(Allocation)이 언젠가 반환될 것이라고 판단하기 때문에 데드락이라고 판단하지 않는다. 
+    
+    (모르겠음.. 스터디원 찬스!)
+    
+    | 프로세스 | Request | Allocation + Avaliable | state |
+    | --- | --- | --- | --- |
+    | P0 | (0, 0, 0) |  | safe |
+    | P1 | (2, 0, 2) |  | safe |
+    | P2 | (0, 0, 0) |  | safe |
+    | P3 | (1, 0, 0) |  | safe |
+    | P4 | (0, 0, 2) |  | safe |
+
+> Deadlock Recovery 방법
+> 
+1. `Process Termination 프로세스 종료`
+    - 방법1 : 모든 데드락 상태인 프로세스를 강제 종료
+    - 방법2 : 데드락 사이클이 없어질 때까지 하나씩 프로세스를 강제 종료
+2. `Resource Preemption 자원 선점`
+    - 비용을 최소화할 victim 프로세스를 선정
+    - safe state로 롤백하여 프로세스를 재시작
+    - Starvation 문제 (자세히 다루지 않음)
+        - 동일한 프로세스가 계속 victim 프로세스로 선정되는 경우
+        - 비용 요소에 롤백 횟수도 같이 고려해야 함 (단순히 비용만 최소화하면 안 된다는 뜻)
+
+### 📌 `4. Deadlock Ignorance`
+
+데드락이 일어나지 않는다고 생각하고 아무런 조치도 취하지 않음
+
+- 데드락이 매우 드물게 발생하므로 데드락에 대한 조치 자체가 더 큰 오버헤드일 수 있음
+- 만약, 시스템에 데드락이 발생한 경우 시스템이 비정상적으로 작동하는 것을 사람이 느낀 후 직접 프로세스를 죽이는 등의 방법으로 대처함
+- UNIX, Windows 등 **대부분의 OS에서 채택하였음**
