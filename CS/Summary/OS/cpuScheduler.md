@@ -125,7 +125,7 @@ __프로세스 입장__
 - preemptive
     - 정해진 시간만큼 cpu 버스트를 사용하고 다음 프로세스에게 점유권을 넘겨주기 위해 점유권 빼앗기 때문
 - 짧은 응답 시간 (모든 n개 프로세스, q time, (n-1)*q 미만으로 대기)
-- Quantum이 크면 FCFS, Quantum이 작으면 context switch overhead(dispatcher만 불쌍해짐 ㅠ)
+- Quantum이 크면 FCFS, Quantum이 작으면 context switch overhead(dispatcher만 불쌍해짐)
 - Job의 작업 시간이 분산되어 있으면 효율적, 모두 동일한 작업시간 비효율적
 
 #### Multi-Level Queue (멀티 레벨 큐)
