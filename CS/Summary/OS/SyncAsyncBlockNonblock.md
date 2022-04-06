@@ -102,4 +102,4 @@ ex) Java에서 JDBC를 사용하여 DB에 쿼리를 날리고 결과를 받아�
 
 엔지니어 A,B가 기능 A,B를 개발하는 동안 프로젝트는 계속 진행된다. 따라서 기능A를 개발하는 도중에 엔지니어B는 기능B를 개발할 수 있다.
 
-![Untitled](CS/OS/img/SyncAsyncBlockNonblock/Untitled.png)
+![Untitled](../../OS/img/SyncAsyncBlockNonblock/Untitled.png)
