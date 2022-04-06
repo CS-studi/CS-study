@@ -34,7 +34,7 @@ __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 
 ### 🏔Database [Link](CS/Database) [QnA](QnA/database.md) [Summary](CS/Summary/Database)
 
-### 🏔OS [Link](CS/OS) [QnA](QnA/os.md)
+### 🏔OS [Link](CS/OS) [QnA](QnA/os.md) [Summary](CS/Summary/OS)
 
 ### 🏔Software Engineering [Link](CS/SoftwareEngineering)
 
