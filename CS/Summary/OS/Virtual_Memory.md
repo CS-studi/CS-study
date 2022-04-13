@@ -59,6 +59,10 @@ Pure Demanding Paging의 장점은 메모리를 최대한 효율적으로 사용
     - 곧바로 사용되지 않을 page를 쫒아내는 것이 좋음
     - 동일한 페이지가 여러번 메모리에서 쫒겨났다가 다시들어올 수 있음
 
+    ![replacement](../../OS/img/Virtual_Memory1/replacement.png)
+
+    <br>
+
 - Replacement Algorithm
 
     - page fault rate를 최소화하는 것이 목표
