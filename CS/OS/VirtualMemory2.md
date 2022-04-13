@@ -68,7 +68,7 @@ page reference string이란 시간 순서에 따라 참조된 page 번호들의 
 2. 1, 2번이 다시 참조된다 → hit! (연보라색은 참조할 page가 메모리에 있음을 의미한다)
 3. 5번이 참조되지만 메모리에 없고(page fault), 비어있는 page frame이 없다
     
-    현재 시점 이후 **미래의 page reference string (`1 2 3 4 5` )을 참고하여 가장 먼 미래에 참조될 page를 교체한다** . → 1, 2, 3, 4 중 가장 먼 미래에 참조되는 4번 page를 swap out하고 그 자리에 5번 page를 적재한다.
+    현재 시점 이후 **미래의 page reference string (`1 2 3 4` )을 참고하여 가장 먼 미래에 참조될 page를 교체한다** . → 1, 2, 3, 4 중 가장 먼 미래에 참조되는 4번 page를 swap out하고 그 자리에 5번 page를 적재한다.
     
 
 <br/>
@@ -128,7 +128,7 @@ page frame을 늘려주면 보통의 페이지 교체 알고리즘의 성능은 
 2. 1, 2번 페이지를 다시 참조한다 → 이미 메모리에 적재되어 있다!(hit)
 3. 5번 페이지를 참조한다 → page fault 발생 → victim page를 선택해야 한다.
     
-    OPT 알고리즘과 다르게 LRU는 Online Replacement Algorithm이므로 **과거 page reference string(`1 2 3 4 1 2`)을 참고하여 vicim page를 선택해야한다.**
+    OPT 알고리즘과 다르게 LRU는 Online Replacement Algorithm이므로 **과거 page reference string(`3 4 1 2`)을 참고하여 vicim page를 선택해야한다.**
     
     가장 최근에 사용된 순서는 **`2 → 1 → 4 → 3`** 이므로 victim page는 3번 페이지이다. (FIFO 알고리즘의 경우 가장 먼저 들어온 1번 페이지가 victim이 된다.)
     
