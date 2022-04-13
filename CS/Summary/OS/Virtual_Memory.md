@@ -4,7 +4,7 @@
 <br><br>
 
 # Demanding Paging
-> Page 단위에서 현재 필요한 페이지만 메모리에 올리는 
+> Page 단위에서 현재 필요한 페이지만 메모리에 올리는 방식
 
 - I/O 양의 감소
 - Memory 사용량 감소
