@@ -130,3 +130,11 @@
 - [MVVM, MVC 패턴](SoftwareEngineering/MVC_MVVM.md)
 - [Docker & Kubernetes](SoftwareEngineering/dockerKubernetes.md)
 - [AWS, cloudflare, GCP](SoftwareEngineering/AWS_GCP_Cloudflare.md)
+
+<br>
+
+# 🖥Computer Architecture
+- ARM & AMD 프로세서
+- Floating Point
+- 컴퓨터의 구조
+- CPU 작동 원리
