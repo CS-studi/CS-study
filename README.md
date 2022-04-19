@@ -37,6 +37,8 @@ __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 ### 🏔OS [Link](CS/OS) [QnA](QnA/os.md) [Summary](CS/Summary/OS)
 
 ### 🏔Software Engineering [Link](CS/SoftwareEngineering)
+  
+### 🏔Computer Architecture [Link](CS/ComputerArchitecture)
 
 ### 🏔Language ☕️ [Java](Language/java/) 📰 [JavaScript](Language/javascript/) 🍎 [Swift](Language/ios/)
 
