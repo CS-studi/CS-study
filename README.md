@@ -69,5 +69,5 @@ __함께 성장하고 각자 목표한 바를 이루기 위한 모임__
 |데이터베이스, 운영체제 요약|2022/03/30|13주차|[DB 교착상태 & 동시성 제어](CS/Summary/Database/DB%20%EB%8F%99%EC%8B%9C%EC%84%B1%EC%A0%9C%EC%96%B4%2C%20%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C.md)<br/>[Regularization(정규화)](CS/Summary/Database/%EC%A0%95%EA%B7%9C%ED%99%94.md)<br/>[Index & Hint](CS/Summary/Database/Index%26Hint.md)<br/>[Process, Thread](CS/Summary/OS/processThread.md)|
 |운영체제 요약|2022/04/06|14주차|[CPU 스케줄러 & 스케쥴링 알고리즘](CS/Summary/OS/cpuScheduler.md)<br/>[Process_Synchronization](CS/Summary/OS/Process_Synchronization.md)<br/>[동기와 비동기 & 블로킹과 논블로킹](CS/Summary/OS/SyncAsyncBlockNonblock.md)<br/>[Deadlock](CS/Summary/OS/Deadlock.md)|
 |운영체제 요약|2022/04/13|15주차|[Paging](CS/Summary/OS/Memory_Management_Paging.md)<br>[Segmentation](CS/Summary/OS/Segmentation.md)<br>[Virtual Memory](CS/Summary/OS/Virtual_Memory.md)<br>[Page Replacement](CS/Summary/OS/PageReplacement.md)|
-|컴퓨터 구조 이론|2022/04/20|16주차|[ARM & AMD 프로세서](CS/ComputerArchitecture/ARMAMD.md) <br> [Floating Point](CS/ComputerArchitecture/floatingpoint.md) <br> 컴퓨터의 구조<br>CPU 작동 원리|
+|컴퓨터 구조 이론|2022/04/20|16주차|[ARM & AMD 프로세서](CS/ComputerArchitecture/ARMAMD.md) <br> [Floating Point](CS/ComputerArchitecture/floatingpoint.md) <br> 컴퓨터의 구조<br>[CPU 작동 원리](CS/ComputerArchitecture/CPU%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5.md)|
 </div>
