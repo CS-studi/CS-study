@@ -123,5 +123,9 @@ IR에 MBR의 값이 이미 저장된 상태를 의미한다.
 
 따라서 AC에 MBR을 더해주기만 하면 된다.
 
+# 참고
 
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Computer%20Architecture/%EC%A4%91%EC%95%99%EC%B2%98%EB%A6%AC%EC%9E%A5%EC%B9%98(CPU)%20%EC%9E%91%EB%8F%99%20%EC%9B%90%EB%A6%AC.md
+
+https://velog.io/@gothae/%EC%BB%B4%ED%93%A8%ED%84%B0-%EA%B5%AC%EC%A1%B0-CPU-%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC
 
