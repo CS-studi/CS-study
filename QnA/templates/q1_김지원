@@ -1,0 +1,42 @@
+### 자료구조
+
+- 선형 자료구조와 비선형 자료구조에는 각각 무엇이 있을까요?
+- Array와 LinkedList에 대해 설명해주세요. 
+    - 메모리에 저장되는 방식과 연산 속도 
+    - 각각의 자료구조가 선호되는 상황은?
+- Stack과 Queue에 대해 설명해주세요
+    - Queue 두 개를 이용하여 Stack 구현
+    - Queue와 Priority queue의 차이?
+    - Heap 구현 
+- Binary Tree에 대해 설명해주세요
+    - Binary Search Tree는?
+    - worst case에 대해서
+    - 해결 방안은?
+- Hash Table에 대해 설명해주세요
+    - Hash Function의 정의와 한계
+    - Hash Collision의 해결방안
+    - Open Addressing과 Separate Chaining의 차이점
+        - worst case
+        - 캐시효율
+        - 공간 효율
+        - Resizing 빈도 
+
+
+### 네트워크
+
+- OSI 7 layer와 각 계층에 대해 아는대로 설명해주세요 
+- TCP와 UDP에 대해 설명해주세요 
+    - 3 way handshake와 4 way handshake 과정에 대해 설명
+- HTTP에 대해 설명해주세요
+    - 비연결성과 무상태성에 대해 
+    - HTTP method에는 무엇이 있나?
+    - GET vs POST
+    - PUT vs PATCH 
+- HTTPS란? 
+    - HTTPS의 통신 흐름에 대해 설명해주세요
+- www.naver.com을 주소창에 치면 어떤 과정??
+- 쿠키와 세션의 차이점
+    - 서버기반 인증(쿠키+세션) 동작방식에 대해 설명
+    - 토큰 기반 인증에 대해서 설명해주세요 
+        - 쿠키 세션에 비해 좋은점? 
+
