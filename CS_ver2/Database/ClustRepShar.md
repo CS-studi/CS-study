@@ -169,6 +169,9 @@ __단점__
 <br><br>
 
 ### 참고
+
 [우리 꺼~ ㅎㅎ](CS/)
+
 [Partitioning](https://gmlwjd9405.github.io/2018/09/24/db-partitioning.html)
-[]
+
+[Sharding](https://nesoy.github.io/articles/2018-05/Database-Shard)
