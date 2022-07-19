@@ -42,3 +42,21 @@
 ### Process Context Switch
 
 <br>
+
+
+## Thread
+> 프로세스 내에 실행되는 여러 흐름의 단위
+프로세스는 context switching 시에 많은 비용이 발생한다. 그 이유는 kernel 영역에 들어가서 다시 프로세스를 선정하고 다시 user level로 돌아와 수행하기를 반복하기 때문이다.
+따라서, 실행하는 프로그램의 짜잘한 기능들을 thread를 통해 수행하여 비용을 절감할 수 있다.
+
+thread는
+
+- 별도의 PC, 레지스터 값을 가진다.
+- code, data 영역은 공유한다.
+하나의 프로세스에 여러 개의 스레드가 있고 하나의 task를 수행한다.
+
+
+<br>
+
+## Multi-process & Multi-Thread
+
