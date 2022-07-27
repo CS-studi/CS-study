@@ -57,7 +57,6 @@ thread는
 
 <br>
 
-## Multi-process & Multi-Thread
 
 ### Multi-process
 > 하나의 프로그램을 여러개의 프로세스로 구성하여 각 프로세스가 병렬적으로 작업을 수행하는 것이다. 
