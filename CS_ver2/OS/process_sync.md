@@ -46,7 +46,7 @@
 
 - 특징
 
-    ![m6](../../OS/img/processSynchronization/m6.png)
+    ![m6](./img/processSynchronization/m6.png)
 
     <br>
 
@@ -76,7 +76,7 @@
     - P operation(wait(S), acquire(S))
     - V operation(signal(S), release(S))
 
-    ![s5](../../OS/img/processSynchronization/s5.png)
+    ![s5](./img/processSynchronization/s5.png)
 
 - Signaling 메커니즘으로 lock을 걸지 않은 스레드도 Signal을 보내 lock을 해제할 수 있다.
 
@@ -92,11 +92,11 @@
 - 임계구역 접근 제어에 사용
 
 
-![s6](../../OS/img/processSynchronization/s6.png)
+![s6](./img/processSynchronization/s6.png)
 
 ## Binary semaphore와 mutex lock의 차이점
 
-![s10](../../OS/img/processSynchronization/s10.png)
+![s10](./img/processSynchronization/s10.png)
 
 ## Counting Semaphore(한정된 concurrency, 유한 개수 자원 접근)
 
@@ -104,13 +104,13 @@
 - 유한 개수의 자원의 접근 제어에 사용
 - Busy Waiting이 있다.(spin lock)
 
-![s7](../../OS/img/processSynchronization/s7.png)
+![s7](./img/processSynchronization/s7.png)
 
 <br><br>
 
 - semaphore를 이용한 동기화
 
-![s8](../../OS/img/processSynchronization/s8.png)
+![s8](./img/processSynchronization/s8.png)
 
 <br>
 
