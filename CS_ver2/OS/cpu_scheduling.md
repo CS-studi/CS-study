@@ -250,4 +250,4 @@ FCFS는 도착 순서가, SPN은 크기가 기준이 되는데 그렇지 않을 
 - aging 기법을 활용하여 현재 큐에서 대기한 시간이 일정 시간을 넘기며 상위큐로 이동시켜줘 해결하는 방법도 있다.
 
 
-![mfg](./img/cpu_scheduling/mfg.png)
+![mfg](./img/cpu_scheduling/mfg.jpg)
