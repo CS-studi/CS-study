@@ -92,7 +92,7 @@
 - FCFS는 `Convoy 효과` 를 겪는다.
 > 다른 프로세스들이 하나의 긴 프로세스가 CPU를 놓기를 기다리는 것
 
-![fifo](../../OS/img/cpu_scheduling/fifo.png)
+![fifo](./img/cpu_scheduling/fifo.png)
 
 > A, B, C가 모두 0초에 도착했고 도착시간이 동일하면 알파벳 순으로 실행
 
@@ -120,7 +120,7 @@
 - Starvation : 짧은 프로세스로 인해 긴 프로세스는 영원히 cpu를 점유하지 못할 수 있음
 - CPU 버스트 시간을 미리 알 수 없음, 과거 CPU 사용시간을 이용하여 추정
 
-![sjf](../../OS/img/cpu_scheduling/sjf.png)
+![sjf](./img/cpu_scheduling/sjf.png)
 
 > A,B, C는 모두 0초에 도착했고 A는 100초, B,C는 10초의 시간이 필요
 
@@ -140,7 +140,7 @@
 ### SRTF (Shortest Remaining Time First)
 - 선점
 
-![stcf](../../OS/img/cpu_scheduling/stcf.png)
+![stcf](./img/cpu_scheduling/stcf.png)
 
 >  B, C의 도착시간이 10초일 때 SJF는 100초짜리 작업  a를 다 기다려야하는 문제 발생 
 
@@ -191,7 +191,7 @@
   - q가 작을 수록 context switch 오버헤드가 증가함
 - 시간이 오래 걸리는 job과 짧게 걸리는 job이 섞여 있을 때는 효율적이지만, 모든 시간이 동일한 job만 있을 때는 비효율적이다.
 
-![rr](../../OS/img/cpu_scheduling/rr.png)
+![rr](./img/cpu_scheduling/rr.png)
 
 > time quantum 1초
 
